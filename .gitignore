@@ -1,0 +1,16 @@
+# default executable
+
+a.out
+
+# rider's stuff
+
+.idea/
+
+# objects file
+
+build/
+*.o
+
+# executables
+
+megaphone
