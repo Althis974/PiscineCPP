@@ -19,7 +19,7 @@ OBJECTS		=	$(addprefix build/, $(FILENAMES:.cpp=.o))
 
 FLAGS		=	-Wall -Wextra -Werror
 
-LOADIR		=	./extra/Progress_Bar-for-Makefile
+LOADIR		=	../extra/Progress_Bar-for-Makefile
 LOADF		=	$(LOADIR)/loading.sh
 
 .PHONY: all clean fclean re
