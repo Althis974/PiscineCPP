@@ -1,3 +1,8 @@
+# CMake files
+
+CMakeLists.txt
+cmake-build-debug/
+
 # default executable
 
 a.out
