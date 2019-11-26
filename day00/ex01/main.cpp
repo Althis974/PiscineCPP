@@ -13,14 +13,19 @@
 
 #include <iostream>
 #include <string>
+#include "Contact.h"
 #include "PhoneBook.h"
 
 int main()
 {
-	PhoneBook phonebook;
+	PhoneBook phoneBook;
 
-	phonebook.setFirstName("bonobo");
-	std::cout << phonebook.getFirstName() << std::endl;
+	std::cout << phoneBook.count << std::endl;
+
+	phoneBook.addContact();
+
+	std::cout << phoneBook.count << std::endl;
+	std::cout << "phoneBook firstname: " << phoneBook.contacts[0].getFirstName() << std::endl;
 
 	return 0;
 }
