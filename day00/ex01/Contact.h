@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   PhoneBook.h                                       .::    .:/ .      .::   */
+/*   Contact.h                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
@@ -15,19 +15,24 @@
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 
-
 #include <string>
 
-class PhoneBook
+class Contact
 {
 
 public:
 
-	// Constructor
-	PhoneBook();
+	// Constructors
+	Contact();
+
+	Contact(std::string firstName, std::string lastName, std::string nickname,
+			std::string login, std::string postalAddress,
+			std::string emailAddress, std::string phoneNumber,
+			std::string birthdayDate, std::string favoriteMeal,
+			std::string underwearColor, std::string darkestSecret);
 
 	// Destructor
-	~PhoneBook();
+	~Contact();
 
 	// Getters
 	std::string const	getFirstName();
@@ -72,4 +77,4 @@ private:
 };
 
 
-#endif // PHONEBOOK_H
+#endif // CONTACT_H
