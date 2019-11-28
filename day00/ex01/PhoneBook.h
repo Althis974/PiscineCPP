@@ -15,30 +15,35 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
-#include <string>
 #include "Contact.h"
 
-class PhoneBook
+int const	COLUMN_WIDTH = 10;
+
+class 		PhoneBook
 {
 
 public:
 
-	// Constructor
-	PhoneBook();
+			// Constructor
+			PhoneBook();
 
-	// Destructor
-	~PhoneBook();
+			// Destructor
+			~PhoneBook();
 
-	// Commands
-	void		addContact();
-	void		searchContact();
+			// Commands
+			void		addContact();
+			void		searchContact();
 
-	// Security
-	void		firewall(std::string *input, int maxChar);
+			// Security
+			void		firewall(std::string *input, size_t maxChar);
 
-	// List of contacts
-	int 		count;
-	Contact		contacts[8];
+			// List of contacts
+			int 		count;
+			Contact		contacts[8];
+
+			// Display
+			void		display();
+			std::string	truncate(std::string field);
 };
 
 

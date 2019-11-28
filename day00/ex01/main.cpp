@@ -16,17 +16,56 @@
 #include "Contact.h"
 #include "PhoneBook.h"
 
-int main()
+int 	findCommand(std::string const *command)
 {
+	if (*command == "ADD")
+		return (1);
+	else if (*command == "SEARCH")
+		return(2);
+	else if (*command == "EXIT")
+		return (3);
+
+	return (0);
+}
+
+int		checkCommand(std::string *command)
+{
+	while (!findCommand(command))
+	{
+		std::cout << "Invalid command. You misspelled that?\nThen try again: ";
+		std::cin >> *command;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	}
+	return (findCommand(command));
+}
+
+int		main()
+{
+	std::string command;
 	PhoneBook phoneBook;
 
-	std::cout << phoneBook.count << std::endl;
+	std::cout << "\n------ WELCOME TO A WHOLE NEW WORLD! ------\n" << std::endl;
+	std::cout << "\nJust kidding, that's just a new phonebook.\n" << std::endl;
+	std::cout << "\nPS: Alien aren't allowed here. ";
+	std::cout << "So go back fill your space logbook!\n" << std::endl;
 
-	phoneBook.addContact();
+	std::cout << "\n\n\n--- WAITING FOR YOUR COMMAND... ---\n\n\n" << std::endl;
+	std::cin >> command;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-	std::cout << phoneBook.count << std::endl;
-	std::cout << "phoneBook firstname: " << phoneBook.contacts[0].getFirstName() << std::endl;
+	while (checkCommand(&command) != 3)
+	{
+		if (checkCommand(&command) == 1)
+			phoneBook.addContact();
+		else if (checkCommand(&command) == 2)
+			phoneBook.display();
 
+		std::cout << "\n----- WAITING FOR YOUR COMMAND... -----\n" << std::endl;
+		std::cin >> command;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	}
+
+	std::cout << "--- SEE YOU COMMANDER! WATCH OUT FOR ALIEN! ---" << std::endl;
 	return 0;
 }
 
