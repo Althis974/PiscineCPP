@@ -30,11 +30,11 @@ void	PhoneBook::addContact()
 {
 	std::string		infos[11];
 
-	if (count >= 7)
+	if (count > 7)
 	{
-		std::cout << "No more row for new contact. Sorry!" << std::endl
-		<< "Btw noone has that much friends." << std::endl
-		<< "You should seriously question yourself." << std::endl;
+		std::cout << "\nNo more row for new contact. Sorry!" << std::endl;
+		std::cout << "Btw no one has that much friend." << std::endl;
+		std::cout << "You should seriously question yourself." << std::endl;
 		return;
 	}
 
@@ -43,54 +43,43 @@ void	PhoneBook::addContact()
 	std::cout << "Enter first name: ";
 	std::cin >> infos[0];
 	firewall(&infos[0], 20);
-	//std::cout << infos[0] << std::endl;
 
 	std::cout << "Enter last name: ";
 	std::cin >> infos[1];
 	firewall(&infos[1], 20);
-	//std::cout << infos[1] << std::endl;
 
 	std::cout << "Enter nickname: ";
 	std::cin >> infos[2];
 	firewall(&infos[2], 20);
-	//std::cout << infos[2] << std::endl;
 
 	std::cout << "Enter login: ";
 	std::cin >> infos[3];
 	firewall(&infos[3], 10);
-	//std::cout << infos[3] << std::endl;
 
 	std::cout << "Enter postal address: ";
 	std::getline(std::cin, infos[4]);
-	//std::cout << infos[4] << std::endl;
 
 	std::cout << "Enter email address: ";
 	std::cin >> infos[5];
 	firewall(&infos[5], 30);
-	//std::cout << infos[5] << std::endl;
 
 	std::cout << "Enter phone number: ";
 	std::cin >> infos[6];
 	firewall(&infos[6], 20);
-	//std::cout << infos[6] << std::endl;
 
 	std::cout << "Enter birthday date: ";
 	std::cin >> infos[7];
 	firewall(&infos[7], 20);
-	//std::cout << infos[7] << std::endl;
 
 	std::cout << "Enter favorite meal: ";
 	std::getline(std::cin, infos[8]);
-	//std::cout << infos[8] << std::endl;
 
 	std::cout << "Enter underwear color: ";
 	std::cin >> infos[9];
 	firewall(&infos[9], 20);
-	//std::cout << infos[9] << std::endl;
 
 	std::cout << "Enter darkest secret: ";
 	std::getline(std::cin, infos[10]);
-	//std::cout << infos[10] << std::endl;
 
 	Contact contact(infos[0], infos[1], infos[2], infos[3], infos[4],
 			infos[5], infos[6], infos[7], infos[8], infos[9],
@@ -144,42 +133,47 @@ void	PhoneBook::display()
 
 void	PhoneBook::searchContact()
 {
-	int          index;
+	int			i;
+	std::string	index;
 
-	std::cout << "Enter the index of the desired friend: ";
+	std::cout << "\n\nEnter the index of the desired friend: ";
 	std::cin >> index;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-	while (std::cin.good() && (index >= 0 && index < count))
+	while (index.length() != 1 || stringIsAlpha(index))
 	{
-		if (!std::cin.good())
-			std::cout << "Is it that hard to enter an int?\nThen try again: ";
-		else if (index > count)
-			std::cout << "Remember: You haven't that much friend.\nTry again: ";
+		std::cout << "Is it that hard to type a number?\nThen try again: ";
 		std::cin >> index;
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
-	if (std::cin.good() && (index >= 0 && index < count))
+	i = stoi(index);
+	if (i >= 0 && i < count)
 	{
 		std::cout << "\nOh. I won't judge." << std::endl;
-		std::cout << "But I expected better from you.\n" << std::endl;
+		std::cout << "But I expected better from you." << std::endl;
+		std::cout << "Here is what you asked for anyway: \n" << std::endl;
 
-		std::cout << contacts[index].getFirstName() << std::endl;
-		std::cout << contacts[index].getLastName() << std::endl;
-		std::cout << contacts[index].getNickname() << std::endl;
-		std::cout << contacts[index].getLogin() << std::endl;
-		std::cout << contacts[index].getPostalAddress() << std::endl;
-		std::cout << contacts[index].getEmailAddress() << std::endl;
-		std::cout << contacts[index].getPhoneNumber() << std::endl;
-		std::cout << contacts[index].getBirthdayDate() << std::endl;
-		std::cout << contacts[index].getFavoriteMeal() << std::endl;
-		std::cout << contacts[index].getUnderwearColor() << std::endl;
-		std::cout << contacts[index].getDarkestSecret() << std::endl;
+		std::cout << contacts[i].getFirstName() << std::endl;
+		std::cout << contacts[i].getLastName() << std::endl;
+		std::cout << contacts[i].getNickname() << std::endl;
+		std::cout << contacts[i].getLogin() << std::endl;
+		std::cout << contacts[i].getPostalAddress() << std::endl;
+		std::cout << contacts[i].getEmailAddress() << std::endl;
+		std::cout << contacts[i].getPhoneNumber() << std::endl;
+		std::cout << contacts[i].getBirthdayDate() << std::endl;
+		std::cout << contacts[i].getFavoriteMeal() << std::endl;
+		std::cout << contacts[i].getUnderwearColor() << std::endl;
+		std::cout << contacts[i].getDarkestSecret() << std::endl;
+	}
+	else if (i >= count && count > 7)
+	{
+		std::cout << "\nNo one has that much friend." << std::endl;
+		std::cout << "You should seriously question yourself." << std::endl;
 	}
 	else
 	{
-		std::cin.clear();
-		std::cout << "Sorry, that index cannot be found. :(" << std::endl;
+		std::cout << "\nRemember: You haven't that much friend.\nGo make you ";
+		std::cout << "some more! Or not. I don't really mind." << std::endl;
 	}
 }
 
@@ -189,4 +183,14 @@ std::string	PhoneBook::truncate(std::string field)
 						field.length() - (COLUMN_WIDTH - 1));
 	field.append(".");
 	return (field);
+}
+
+int const	PhoneBook::stringIsAlpha(std::string str)
+{
+	for (size_t i = 0; i < str.length(); ++i)
+	{
+		if (isalpha(str[i]))
+			return (1);
+	}
+	return (0);
 }

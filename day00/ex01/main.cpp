@@ -18,11 +18,11 @@
 
 int 	findCommand(std::string const *command)
 {
-	if (*command == "ADD")
+	if (*command == "SEARCH" || *command == "search" || *command == "Search")
 		return (1);
-	else if (*command == "SEARCH")
+	else if (*command == "ADD" || *command == "add" || *command == "Add")
 		return(2);
-	else if (*command == "EXIT")
+	else if (*command == "EXIT" || *command == "exit" || *command == "Exit")
 		return (3);
 
 	return (0);
@@ -56,16 +56,16 @@ int		main()
 	while (checkCommand(&command) != 3)
 	{
 		if (checkCommand(&command) == 1)
-			phoneBook.addContact();
-		else if (checkCommand(&command) == 2)
 			phoneBook.display();
+		else if (checkCommand(&command) == 2)
+			phoneBook.addContact();
 
 		std::cout << "\n----- WAITING FOR YOUR COMMAND... -----\n" << std::endl;
 		std::cin >> command;
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 
-	std::cout << "--- SEE YOU COMMANDER! WATCH OUT FOR ALIEN! ---" << std::endl;
+	std::cout << "\n-- SEE YOU COMMANDER! WATCH OUT FOR ALIEN! --" << std::endl;
 	return 0;
 }
 
