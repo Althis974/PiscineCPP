@@ -50,6 +50,7 @@ int		main()
 	std::cout << "So go back fill your space logbook!\n" << std::endl;
 
 	std::cout << "\n\n\n--- WAITING FOR YOUR COMMAND... ---\n\n\n" << std::endl;
+	std::cout << "SEARCH | ADD | EXIT: ";
 	std::cin >> command;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
