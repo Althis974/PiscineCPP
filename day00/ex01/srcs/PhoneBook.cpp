@@ -11,7 +11,7 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "PhoneBook.h"
+#include "../includes/PhoneBook.h"
 #include <iostream>
 #include <iomanip>
 #include <limits>
@@ -177,7 +177,7 @@ void	PhoneBook::searchContact()
 	}
 }
 
-std::string	PhoneBook::truncate(std::string field)
+std::string	PhoneBook::truncate(std::string field) const
 {
 	field = field.erase((COLUMN_WIDTH - 1),
 						field.length() - (COLUMN_WIDTH - 1));
@@ -185,7 +185,7 @@ std::string	PhoneBook::truncate(std::string field)
 	return (field);
 }
 
-int const	PhoneBook::stringIsAlpha(std::string str)
+int			PhoneBook::stringIsAlpha(std::string str) const
 {
 	for (size_t i = 0; i < str.length(); ++i)
 	{

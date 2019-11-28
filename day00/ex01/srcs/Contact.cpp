@@ -11,8 +11,7 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "Contact.h"
-#include <iostream>
+#include "../includes/Contact.h"
 #include <string>
 
 // Constructors
@@ -45,57 +44,57 @@ Contact::~Contact()
 
 // Getters
 
-std::string const	Contact::getFirstName()
+std::string		Contact::getFirstName() const
 {
 	return this->_firstName;
 }
 
-std::string const	Contact::getLastName()
+std::string		Contact::getLastName() const
 {
 	return this->_lastName;
 }
 
-std::string const	Contact::getNickname()
+std::string		Contact::getNickname() const
 {
 	return this->_nickname;
 }
 
-std::string const	Contact::getLogin()
+std::string		Contact::getLogin() const
 {
 	return this->_login;
 }
 
-std::string const	Contact::getPostalAddress()
+std::string		Contact::getPostalAddress() const
 {
 	return this->_postalAddress;
 }
 
-std::string const	Contact::getEmailAddress()
+std::string		Contact::getEmailAddress() const
 {
 	return this->_emailAddress;
 }
 
-std::string const	Contact::getPhoneNumber()
+std::string		Contact::getPhoneNumber() const
 {
 	return this->_phoneNumber;
 }
 
-std::string const	Contact::getBirthdayDate()
+std::string		Contact::getBirthdayDate() const
 {
 	return this->_birthdayDate;
 }
 
-std::string const	Contact::getFavoriteMeal()
+std::string		Contact::getFavoriteMeal() const
 {
 	return this->_favoriteMeal;
 }
 
-std::string const	Contact::getUnderwearColor()
+std::string		Contact::getUnderwearColor() const
 {
 	return this->_underwearColor;
 }
 
-std::string const	Contact::getDarkestSecret()
+std::string		Contact::getDarkestSecret() const
 {
 	return this->_darkestSecret;
 }

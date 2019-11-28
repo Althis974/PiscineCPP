@@ -43,10 +43,10 @@ public:
 
 			// Display
 			void		display();
-			static std::string	truncate(std::string field);
+			std::string	truncate(std::string field) const;
 
 			// Utils
-			static int const	stringIsAlpha(std::string str);
+			int			stringIsAlpha(std::string str) const;
 };
 
 

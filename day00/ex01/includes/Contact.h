@@ -35,17 +35,17 @@ public:
 	~Contact();
 
 	// Getters
-	std::string const	getFirstName();
-	std::string const	getLastName();
-	std::string const	getNickname();
-	std::string const	getLogin();
-	std::string const	getPostalAddress();
-	std::string const	getEmailAddress();
-	std::string const	getPhoneNumber();
-	std::string const	getBirthdayDate();
-	std::string const	getFavoriteMeal();
-	std::string const	getUnderwearColor();
-	std::string const	getDarkestSecret();
+	std::string			getFirstName() const;
+	std::string			getLastName() const;
+	std::string			getNickname() const;
+	std::string			getLogin() const;
+	std::string			getPostalAddress() const;
+	std::string			getEmailAddress() const;
+	std::string			getPhoneNumber() const;
+	std::string			getBirthdayDate() const;
+	std::string			getFavoriteMeal() const;
+	std::string			getUnderwearColor() const;
+	std::string			getDarkestSecret() const;
 
 	// Setters
 	void				setFirstName(std::string firstName);
