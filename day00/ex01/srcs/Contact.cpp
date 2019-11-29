@@ -12,7 +12,6 @@
 /* ************************************************************************** */
 
 #include "../includes/Contact.h"
-#include <string>
 
 // Constructors
 

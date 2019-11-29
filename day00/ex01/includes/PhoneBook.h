@@ -16,6 +16,9 @@
 #define SYSTEM_H
 
 #include "Contact.h"
+#include <iostream>
+#include <iomanip>
+#include <limits>
 
 int const	COLUMN_WIDTH = 10;
 

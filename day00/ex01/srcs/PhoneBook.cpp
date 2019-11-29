@@ -12,9 +12,6 @@
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.h"
-#include <iostream>
-#include <iomanip>
-#include <limits>
 
 PhoneBook::PhoneBook()
 {
