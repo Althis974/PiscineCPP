@@ -14,7 +14,7 @@
 NAME		=	zombieEvent
 
 HEADER		=	./includes/
-FILENAMES	=	main.cpp Zombie.cpp ZombieHorde.cpp
+FILENAMES	=	main.cpp Zombie.cpp ZombieEvent.cpp
 
 SOURCES		=	$(addprefix srcs/, $(FILENAMES))
 OBJECTS		=	$(addprefix build/, $(FILENAMES:.cpp=.o))

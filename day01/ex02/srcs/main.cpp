@@ -11,7 +11,6 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../includes/Zombie.hpp"
 #include "../includes/ZombieEvent.hpp"
 
 int		main()
@@ -25,7 +24,7 @@ int		main()
 	billy = zombieEvent.newZombie("billy");
 
 	zombieEvent.setZombieType("pumpdead");
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 10; ++i)
 		zombieEvent.randomChump();
 
 	delete francky;
