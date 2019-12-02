@@ -18,6 +18,7 @@
 
 class ZombieEvent
 {
+
 public:
 
 	// Constructor
