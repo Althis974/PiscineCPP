@@ -32,7 +32,7 @@ public:
 	// Create new zombie on the heap
 	Zombie* newZombie(const std::string& name) const;
 
-	// Create nez zombie on the stack
+	// Create new zombie on the stack
 	void randomChump() const;
 
 private:
