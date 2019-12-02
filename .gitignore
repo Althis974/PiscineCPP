@@ -21,4 +21,5 @@ build/
 megaphone
 phonebook
 account
-zombie
+zombieEvent
+zombieHorde
