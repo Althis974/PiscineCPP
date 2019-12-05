@@ -12,7 +12,6 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
 
 int main(int ac, char **av)
 {
@@ -23,9 +22,7 @@ int main(int ac, char **av)
 		{
 			s = av[i];
 			for (size_t j = 0; j < s.length(); ++j)
-			{
 				s.at(j) = std::toupper(s[j]);
-			}
 			std::cout << s;
 		}
 		std::cout << std::endl;
