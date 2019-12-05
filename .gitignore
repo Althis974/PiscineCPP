@@ -16,6 +16,10 @@ a.out
 build/
 *.o
 
+# random files
+
+*.replace
+
 # executables
 
 megaphone
@@ -24,3 +28,5 @@ account
 zombieEvent
 zombieHorde
 humanBrain
+violence
+replace
