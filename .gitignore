@@ -19,6 +19,7 @@ build/
 # random files
 
 *.replace
+*.log
 
 # executables
 
@@ -31,3 +32,4 @@ humanBrain
 violence
 replace
 human
+logger
