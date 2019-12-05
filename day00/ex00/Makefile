@@ -58,6 +58,6 @@ $(NAME): $(OBJECTS)
 	@printf "\n\033[1m\033[34m\t\t\t\t⥷ $@⭃\t\tProject\t\t\033[0m \033[1m⟿  \
 		\033[32mCreation Success\033[0m ✅\n"
 
-build/%.o: ./%.cpp $(HEADER) | build
+build/%.o: ./%.cpp | build
 	@sh $(LOADF) $(LOADIR) $< o y
 	@clang++ $(FLAGS) -c $< -o $@
