@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   Contact.h                                       .::    .:/ .      .::   */
+/*   Contact.hpp                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/11/22 14:07:16 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/22 14:07:16 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/06 14:21:38 by rlossy       #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/06 14:21:38 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <string>
 
@@ -77,4 +76,4 @@ private:
 };
 
 
-#endif // CONTACT_H
+#endif // CONTACT_HPP

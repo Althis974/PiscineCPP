@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   PhoneBook.h                                         .::    .:/ .      .::   */
+/*   PhoneBook.hpp                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/11/25 15:19:31 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/25 15:19:31 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/06 14:21:32 by rlossy       #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/06 14:21:32 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-#ifndef SYSTEM_H
-#define SYSTEM_H
-
-#include "Contact.h"
+#include "Contact.hpp"
 #include <iostream>
 #include <iomanip>
 #include <limits>
@@ -53,4 +52,4 @@ public:
 };
 
 
-#endif //PHONEBOOK_H
+#endif //PHONEBOOK_HPP

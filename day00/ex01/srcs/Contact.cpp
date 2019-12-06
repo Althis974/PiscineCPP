@@ -11,7 +11,7 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../includes/Contact.h"
+#include "../includes/Contact.hpp"
 
 // Constructors
 

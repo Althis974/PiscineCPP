@@ -13,8 +13,8 @@
 
 #include <iostream>
 #include <string>
-#include "../includes/Contact.h"
-#include "../includes/PhoneBook.h"
+#include "../includes/Contact.hpp"
+#include "../includes/PhoneBook.hpp"
 
 int 	findCommand(std::string const *command)
 {
