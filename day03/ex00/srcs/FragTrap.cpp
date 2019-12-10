@@ -145,7 +145,7 @@ void			FragTrap::vaulthunter_dot_exe(std::string const &target)
 			  << std::endl;
 }
 
-//Action Packages
+// Action Packages
 
 std::string		FragTrap::_vaultHunterQuotes[5] = {
 		"[Funzerker] I'm a sexy dinosaur! Rawr!",
