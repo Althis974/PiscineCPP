@@ -20,7 +20,7 @@ FragTrap::FragTrap(std::string const &name) : _name(name), _hitPts(100),
 					_meleeDamage(30), _rangedDamage(20), _armor(5)
 {
 	std::cout << "Booting sequence complete. Hello! I am your new steward bot.";
-	std::cout << " Designation: <" << this->_name << ">, Hyperion Robot, Class";
+	std::cout << " Designation: " << this->_name << ", Hyperion Robot, Class";
 	std::cout << " C. Please adjust factory settings to meet your needs before";
 	std::cout << " deployment.\n" << std::endl;
 }
@@ -34,7 +34,7 @@ FragTrap::FragTrap(const FragTrap &src) : _name(src._name),
 					_rangedDamage(src._rangedDamage), _armor(src._armor)
 {
 	std::cout << "Booting sequence complete. Hello! I am your new steward bot.";
-	std::cout << " Designation: <" << this->_name << ">, Hyperion Robot, Class";
+	std::cout << " Designation: " << this->_name << ", Hyperion Robot, Class";
 	std::cout << " C. Please adjust factory settings to meet your needs before";
 	std::cout << " deployment.\n" << std::endl;
 }
@@ -52,10 +52,8 @@ FragTrap::~FragTrap()
 void			FragTrap::setName(std::string const &name)
 {
 	this->_name = name;
-	std::cout << "<" << this->_name << "> New Designation means new ";
-	std::cout << "directives! Directive one: Protect humanity! Directive two:";
-	std::cout << " Obey Jack at all costs. Directive three: Dance!\n"
-			  << std::endl;
+	std::cout << "<" << this->_name << "> New Designation: ";
+	std::cout << this->_name << ", Hyperion Robot, Class C.\n" << std::endl;
 }
 
 // Assignation operator overload
@@ -143,26 +141,16 @@ void			FragTrap::vaulthunter_dot_exe(std::string const &target)
 	std::cout << "I promise!\n" << std::endl;
 	std::cout << "*" << this->_name << " activates VaultHunter.EXE on "
 			  << target << "*" << std::endl;
-	std::cout << FragTrap::_vaultHunterQuotes[std::rand() % 15] << "\n"
+	std::cout << FragTrap::_vaultHunterQuotes[std::rand() % 5] << "\n"
 			  << std::endl;
 }
 
 //Action Packages
 
-std::string		FragTrap::_vaultHunterQuotes[15] = {
+std::string		FragTrap::_vaultHunterQuotes[5] = {
 		"[Funzerker] I'm a sexy dinosaur! Rawr!",
 		"[Meat Unicycle] I AM ON FIRE!!! OH GOD, PUT ME OUT!!!",
 		"[Shhhhh...trap] I'm a robot ninja...",
 		"[Blightbot] Mini-trap, pretend you're a Siren!",
-		"[Mechromagician] Anarchy and mini-trap and awesomeness, oh my!",
-		"[Miniontrap] I'm going commando!",
-		"[Rubber Ducky] I am rubber, and you are so dead!",
-		"[Senseless Sacrifice] For you...I commit...seddoku...",
-		"[Medbot] Nurse Clap is here!",
-		"[Clap-in-the-Box] Gotta blow up a bad guy, GOTTA BLOW UP A BAD GUY!",
-		"[Gun Wizard] You can call me Gundalf!",
-		"[One Shot Wonder] One shot, make it count!",
-		"[Laser Inferno] Laaasers!",
-		"[Torgue Fiesta] I brought you a present: EXPLOSIONS!",
-		"[Pirate Ship Mode] Time to get swabby!"
+		"[Mechromagician] Anarchy and mini-trap and awesomeness, oh my!"
 };
