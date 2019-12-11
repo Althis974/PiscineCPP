@@ -52,10 +52,8 @@ FragTrap::~FragTrap()
 void			FragTrap::setName(std::string const &name)
 {
 	this->_name = name;
-	std::cout << "<" << this->_name << "> New Designation means new ";
-	std::cout << "directives! Directive one: Protect humanity! Directive two:";
-	std::cout << " Obey Jack at all costs. Directive three: Dance!\n"
-			  << std::endl;
+	std::cout << "<" << this->_name << "> New Designation: ";
+	std::cout << this->_name << ", Hyperion Robot, Class C.\n" << std::endl;
 }
 
 // Assignation operator overload
