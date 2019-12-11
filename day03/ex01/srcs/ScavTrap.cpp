@@ -105,7 +105,6 @@ void			ScavTrap::takeDamage(unsigned int amount)
 			  << std::endl;
 
 	this->_hitPts >= amount ? this->_hitPts -= amount : this->_hitPts = 0;
-
 }
 
 // Repair
