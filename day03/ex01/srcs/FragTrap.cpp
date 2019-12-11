@@ -19,6 +19,7 @@ FragTrap::FragTrap(std::string const &name) : _name(name), _hitPts(100),
 					_maxHitPts(100), _energy(100), _maxEnergy(100), _level(1),
 					_meleeDamage(30), _rangedDamage(20), _armor(5)
 {
+	std::cout << "<" << this->_name << "> ";
 	std::cout << "Booting sequence complete. Hello! I am your new steward bot.";
 	std::cout << " Designation: " << this->_name << ", Hyperion Robot, Class";
 	std::cout << " C. Please adjust factory settings to meet your needs before";
@@ -33,6 +34,7 @@ FragTrap::FragTrap(const FragTrap &src) : _name(src._name),
 					_level(src._level), _meleeDamage(src._meleeDamage),
 					_rangedDamage(src._rangedDamage), _armor(src._armor)
 {
+	std::cout << "<" << this->_name << "> ";
 	std::cout << "Booting sequence complete. Hello! I am your new steward bot.";
 	std::cout << " Designation: " << this->_name << ", Hyperion Robot, Class";
 	std::cout << " C. Please adjust factory settings to meet your needs before";

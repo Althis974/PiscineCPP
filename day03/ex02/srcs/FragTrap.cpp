@@ -26,6 +26,7 @@ FragTrap::FragTrap(std::string const &name) : ClapTrap(name, 100,
 	this->_takeDamageMessage = "I'm too pretty to die!";
 	this->_beRepairedMessage = "Health! Eww, what flavor is red?";
 
+	std::cout << "<" << this->_name << "> ";
 	std::cout << "Booting sequence complete. Hello! I am your new steward bot.";
 	std::cout << " Designation: " << this->_name << ", Hyperion Robot, Class";
 	std::cout << " C. Please adjust factory settings to meet your needs before";
@@ -43,6 +44,7 @@ FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 	this->_takeDamageMessage = "I'm too pretty to die!";
 	this->_beRepairedMessage = "Health! Eww, what flavor is red?";
 
+	std::cout << "<" << this->_name << "> ";
 	std::cout << "Booting sequence complete. Hello! I am your new steward bot.";
 	std::cout << " Designation: " << this->_name << ", Hyperion Robot, Class";
 	std::cout << " C. Please adjust factory settings to meet your needs before";
