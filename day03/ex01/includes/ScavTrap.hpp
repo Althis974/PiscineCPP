@@ -64,8 +64,7 @@ private:
 	unsigned int	_rangedDamage;
 	unsigned int	_armor;
 
-	static std::string _vaultHunterQuotes[5];
-
+	static std::string _ChallengesQuotes[5];
 };
 
 

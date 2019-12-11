@@ -134,13 +134,13 @@ void			ScavTrap::challengeNewcomer(std::string const & target)
 	std::cout << "<" << this->_name << "> I have an IDEA!\n" << std::endl;
 	std::cout << "*" << this->_name << " challenges " << target << "*"
 			  << std::endl;
-	std::cout << ScavTrap::_vaultHunterQuotes[std::rand() % 5] << "\n"
+	std::cout << ScavTrap::_ChallengesQuotes[std::rand() % 5] << "\n"
 			  << std::endl;
 }
 
 // Challenges
 
-std::string		ScavTrap::_vaultHunterQuotes[5] = {
+std::string		ScavTrap::_ChallengesQuotes[5] = {
 		"You versus me! Me versus you! Either way!",
 		"I will prove to you my robotic superiority!",
 		"Dance battle! Or, you know... regular battle.",
