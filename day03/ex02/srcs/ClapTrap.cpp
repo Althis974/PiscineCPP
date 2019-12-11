@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string const &name, unsigned int hitPts,
 	this->_setNameMessage += "lots of guns and a lot of dying. You'd think I ";
 	this->_setNameMessage += "would have gotten some better benefits out of ";
 	this->_setNameMessage += "the whole thing but no, demoted back to ";
-	this->_setNameMessage += "door-opening servitude!";
+	this->_setNameMessage += "door-opening servitude!\n";
 	this->_rangedAttackMessage = "Crit-i-cal!";
 	this->_meleeAttackMessage = "Pain school is now in session";
 	this->_takeDamageMessage = "No fair! I wasn't ready.";
