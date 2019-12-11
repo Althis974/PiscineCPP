@@ -147,7 +147,7 @@ void			NinjaTrap::ninjaShoebox(ScavTrap & target)
 			  << target.getName() << "*\n" << std::endl;
 }
 
-// Challenges
+// Talk like ninja
 
 std::string		NinjaTrap::_NinjaQuotes[5] = {
 		"I'm cloaking...",
