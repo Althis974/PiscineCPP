@@ -145,5 +145,5 @@ std::string		ScavTrap::_ChallengesQuotes[5] = {
 		"I will prove to you my robotic superiority!",
 		"Dance battle! Or, you know... regular battle.",
 		"Man versus machine! Very tiny streamlined machine!",
-		"Care to have a friendly duel?",
+		"Care to have a friendly duel?"
 };
