@@ -33,7 +33,7 @@ public:
 	ClapTrap(const ClapTrap &src);
 
 	// Destructor
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	// Setter
 	void			setName(std::string const &name);

@@ -28,7 +28,7 @@ public:
 	ScavTrap(const ScavTrap &src);
 
 	// Destructor
-	~ScavTrap();
+	virtual ~ScavTrap();
 
 	// Assignation operator overload
 	ScavTrap &			operator=(ScavTrap const &rhs);

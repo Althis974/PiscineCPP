@@ -29,7 +29,7 @@ public:
 	SuperTrap(const SuperTrap &src);
 
 	// Destructor
-	~SuperTrap();
+	virtual ~SuperTrap();
 
 	// Assignation operator overload
 	SuperTrap &			operator=(SuperTrap const &rhs);

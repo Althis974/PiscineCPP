@@ -28,7 +28,7 @@ public:
 	FragTrap(const FragTrap &src);
 
 	// Destructor
-	~FragTrap();
+	virtual ~FragTrap();
 
 	// Assignation operator overload
 	FragTrap &			operator=(FragTrap const &rhs);

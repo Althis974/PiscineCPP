@@ -31,7 +31,7 @@ public:
 	NinjaTrap(const NinjaTrap &src);
 
 	// Destructor
-	~NinjaTrap();
+	virtual ~NinjaTrap();
 
 	// Assignation operator overload
 	NinjaTrap &			operator=(NinjaTrap const &rhs);
