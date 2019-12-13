@@ -17,9 +17,16 @@
 #include "Fixed.hpp"
 #include <sstream>
 
+typedef struct		s_operands
+{
+	char			op;
+	Fixed			nb;
+	Fixed			nb2;
+}					t_operands;
+
 class Parser
 {
-
+	
 public:
 
 	// Constructor
@@ -42,18 +49,11 @@ public:
 	Fixed			lookForTerms(std::string const &expr);
 
 	// Do operations
-	static void		do_op(struct operands *operands);
+	static void		do_op(t_operands *operands);
 
 private:
 
 	size_t			_pos;
-};
-
-struct				operands
-{
-	char			op;
-	Fixed			nb;
-	Fixed			nb2;
 };
 
 #endif //PARSER_HPP

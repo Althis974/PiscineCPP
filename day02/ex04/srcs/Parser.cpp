@@ -78,7 +78,7 @@ Fixed				Parser::lookForNumbers(std::string const &expr)
 
 Fixed				Parser::lookForFactors(std::string const &expr)
 {
-	operands operands;
+	t_operands operands;
 
 	operands.nb = lookForNumbers(expr);
 
@@ -102,7 +102,7 @@ Fixed				Parser::lookForFactors(std::string const &expr)
 
 Fixed				Parser::lookForTerms(std::string const &expr)
 {
-	operands operands;
+	t_operands operands;
 
 	operands.nb = lookForFactors(expr);
 
@@ -124,7 +124,7 @@ Fixed				Parser::lookForTerms(std::string const &expr)
 	return (operands.nb);
 }
 
-void				Parser::do_op(struct operands *operands)
+void				Parser::do_op(t_operands *operands)
 {
 	if (operands->op == '+')
 		operands->nb = operands->nb + operands->nb2;
