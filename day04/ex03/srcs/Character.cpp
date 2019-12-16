@@ -66,7 +66,7 @@ const std::string &		Character::getName() const
 
 void					Character::equip(AMateria *materia)
 {
-	if (this->_index < 3)
+	if (this->_index < 4)
 	{
 		this->_inventory[this->_index] = materia;
 		this->_index++;

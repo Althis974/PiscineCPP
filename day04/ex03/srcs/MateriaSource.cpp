@@ -50,11 +50,11 @@ MateriaSource &			MateriaSource::operator=(const MateriaSource &rhs)
 
 // Learn a materia
 
-void					MateriaSource::learnMateria(AMateria *m)
+void					MateriaSource::learnMateria(AMateria *materia)
 {
-	if (this->_index < 3)
+	if (this->_index < 4)
 	{
-		this->_inventory[this->_index] = m;
+		this->_inventory[this->_index] = materia;
 		this->_index++;
 	}
 }

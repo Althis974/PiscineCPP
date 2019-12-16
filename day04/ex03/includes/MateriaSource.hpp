@@ -36,7 +36,7 @@ public:
 	MateriaSource &			operator=(const MateriaSource &rhs);
 
 	// Learn a materia
-	virtual void			learnMateria(AMateria *m);
+	virtual void			learnMateria(AMateria *materia);
 
 	// Create a materia
 	virtual AMateria *		createMateria(const std::string &type);
