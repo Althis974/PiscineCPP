@@ -34,10 +34,10 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "\n----- Try to decrement Scott -----\n" << std::endl;
+	std::cout << "\n----- Try to increment Scott -----\n" << std::endl;
 	try
 	{
-		scott.decrementGrade();
+		scott.incrementGrade();
 		std::cout << scott << std::endl;
 	}
 	catch (std::exception &e)
@@ -45,10 +45,10 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "\n----- Try to increment Scott -----\n" << std::endl;
+	std::cout << "\n----- Try to decrement Scott -----\n" << std::endl;
 	try
 	{
-		scott.incrementGrade();
+		scott.decrementGrade();
 		std::cout << scott << std::endl;
 	}
 	catch (std::exception &e)
