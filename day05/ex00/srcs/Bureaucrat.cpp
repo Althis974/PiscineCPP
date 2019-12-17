@@ -50,7 +50,7 @@ Bureaucrat &			Bureaucrat::operator=(const Bureaucrat &rhs)
 
 // Getters
 
-std::string		Bureaucrat::getName() const
+std::string				Bureaucrat::getName() const
 {
 	return (this->_name);
 }
