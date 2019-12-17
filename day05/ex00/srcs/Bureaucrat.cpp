@@ -147,7 +147,7 @@ int 							GradeTooHighException::getGrade() const
 // Returns a pointer to the error description
 const char *					GradeTooHighException::what() const throw()
 {
-	return ("Custom Exception: GradeTooHighException: Grade is too high!");
+	return ("Bureaucrat::GradeTooHighException: Grade is too high!");
 }
 
 /*
@@ -199,5 +199,5 @@ int								GradeTooLowException::getGrade() const
 
 const char *					GradeTooLowException::what() const throw()
 {
-	return ("Custom Exception: GradeTooLowException: Grade is too low!");
+	return ("Bureaucrat::GradeTooLowException: Grade is too low!");
 }
