@@ -72,15 +72,6 @@ void Bureaucrat::setGrade(int grade)
 	this->_grade = grade;
 }
 
-// Insertion operator overload
-
-std::ostream &			operator<<(std::ostream &out, const Bureaucrat &rhs)
-{
-	out << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
-
-	return (out);
-}
-
 // Increment
 
 void					Bureaucrat::incrementGrade()
@@ -93,6 +84,15 @@ void					Bureaucrat::incrementGrade()
 void					Bureaucrat::decrementGrade()
 {
 	this->setGrade(this->_grade + 1);
+}
+
+// Insertion operator overload
+
+std::ostream &			operator<<(std::ostream &out, const Bureaucrat &rhs)
+{
+	out << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
+
+	return (out);
 }
 
 /*
