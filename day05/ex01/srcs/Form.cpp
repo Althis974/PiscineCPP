@@ -13,6 +13,10 @@
 
 #include "../includes/Form.hpp"
 
+/*
+**	Form
+*/
+
 // Constructor
 
 Form::Form(const std::string &name, int gradeToBeSigned, int gradeToBeExecuted)
