@@ -26,7 +26,6 @@ public:
 
 	class InvalidFormException : public std::exception
 	{
-
 		public:
 
 			// Constructor
