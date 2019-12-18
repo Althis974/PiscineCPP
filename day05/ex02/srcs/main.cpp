@@ -42,7 +42,7 @@ int	main()
 	std::cout << robotomyRequest << std::endl;
 	std::cout << presidentialPardon << std::endl;
 
-	std::cout << "\n----- Try to execute Form shrubberyCreation with Bruce "
+	std::cout << "\n----- Try to execute Form ShrubberyCreation with Bruce "
 			  << "-----\n" << std::endl;
 	try
 	{
@@ -54,7 +54,7 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "\n----- Try to sign Form shrubberyCreation with Bruce "
+	std::cout << "\n----- Try to sign Form ShrubberyCreation with Bruce "
 			  << "-----\n" << std::endl;
 	try
 	{
@@ -65,7 +65,7 @@ int	main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << "\n----- Try to execute Form shrubberyCreation with Bruce "
+	std::cout << "\n----- Try to execute Form SShrubberyCreation with Bruce "
 			  << "-----\n" << std::endl;
 	try
 	{
@@ -76,7 +76,7 @@ int	main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << "\n----- Try to execute Form shrubberyCreation with Maggie "
+	std::cout << "\n----- Try to execute Form ShrubberyCreation with Maggie "
 			  << "-----\n" << std::endl;
 	try
 	{
