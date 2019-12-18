@@ -234,30 +234,32 @@ const char *					GradeTooLowException::what() const throw()
 **	UnsignedException
 */
 
+typedef Form::UnsignedException UnsignedException;
+
 // Constructor
 
-Form::UnsignedException::UnsignedException()
+UnsignedException::UnsignedException()
 {
 
 }
 
 // Copy constructor
 
-Form::UnsignedException::UnsignedException(const UnsignedException &src)
+UnsignedException::UnsignedException(const UnsignedException &src)
 {
 	*this = src;
 }
 
 // Destructor
 
-Form::UnsignedException::~UnsignedException() throw()
+UnsignedException::~UnsignedException() throw()
 {
 
 }
 
 // Assignation operator overload
 
-Form::UnsignedException &		Form::UnsignedException::operator=(const
+UnsignedException &				UnsignedException::operator=(const
 															UnsignedException&)
 {
 	return (*this);
@@ -265,7 +267,7 @@ Form::UnsignedException &		Form::UnsignedException::operator=(const
 
 // Returns a pointer to the error description
 
-const char *					Form::UnsignedException::what() const throw()
+const char *					UnsignedException::what() const throw()
 {
-	return ("Form::UnsignedException: Form is not signed!");
+	return ("Form::UnsignedException: form is not signed!");
 }

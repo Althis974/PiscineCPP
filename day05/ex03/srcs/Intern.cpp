@@ -40,7 +40,7 @@ Intern::~Intern()
 
 // Assignation operator overload
 
-Intern &	Intern::operator=(const Intern &rhs)
+Intern &					Intern::operator=(const Intern &rhs)
 {
 	(void)rhs;
 
@@ -49,7 +49,8 @@ Intern &	Intern::operator=(const Intern &rhs)
 
 // Make a form
 
-Form *		Intern::makeForm(const std::string& form, const std::string& target)
+Form *						Intern::makeForm(const std::string& form, const
+															std::string& target)
 {
 	if (form == "ShrubberyCreation")
 	{
@@ -78,31 +79,32 @@ Form *		Intern::makeForm(const std::string& form, const std::string& target)
 **	InvalidFormException
 */
 
+typedef Intern::InvalidFormException InvalidFormException;
+
 // Constructor
 
-Intern::InvalidFormException::InvalidFormException()
+InvalidFormException::InvalidFormException()
 {
 
 }
 
 // Copy constructor
 
-Intern::InvalidFormException::InvalidFormException(const
-													InvalidFormException &src)
+InvalidFormException::InvalidFormException(const InvalidFormException &src)
 {
 	*this = src;
 }
 
 // Destructor
 
-Intern::InvalidFormException::~InvalidFormException() throw()
+InvalidFormException::~InvalidFormException() throw()
 {
 
 }
 
 // Assignation operator overload
 
-Intern::InvalidFormException &	Intern::InvalidFormException::operator=(const
+InvalidFormException &		InvalidFormException::operator=(const
 														InvalidFormException &)
 {
 	return (*this);
@@ -110,8 +112,7 @@ Intern::InvalidFormException &	Intern::InvalidFormException::operator=(const
 
 // Returns a pointer to the error description
 
-const char *					Intern::InvalidFormException::what() const
-																		throw()
+const char *				InvalidFormException::what() const throw()
 {
 	return ("Intern::InvalidFormException: Invalid form type!");
 }
