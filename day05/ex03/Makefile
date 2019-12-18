@@ -16,6 +16,7 @@ NAME		=	intern
 HEADER		=	./includes/
 FILENAMES	=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 FILENAMES   +=  RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+
 SOURCES		=	$(addprefix srcs/, $(FILENAMES))
 OBJECTS		=	$(addprefix build/, $(FILENAMES:.cpp=.o))
 
