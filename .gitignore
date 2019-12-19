@@ -20,6 +20,7 @@ build/
 
 *.replace
 *.log
+*_shrubbery
 
 # executables
 
@@ -47,3 +48,9 @@ sorcerer
 weapon
 materia
 mine
+bureaucrat
+form
+forms
+intern
+officeBlock
+central
