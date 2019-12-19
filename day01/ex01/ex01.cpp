@@ -11,6 +11,8 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
+#include <iostream>
+
 void		memoryLeak()
 {
 	std::string*		panthere = new std::string("String panthere");
