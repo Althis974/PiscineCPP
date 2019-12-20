@@ -120,8 +120,8 @@ void	PhoneBook::display()
 				truncate(lastName): lastName;
 		std::cout << "|" << std::setw(COLUMN_WIDTH) << lastName;
 
-		nickname = (nickname.length() > COLUMN_WIDTH) ? \
-            truncate(nickname) : nickname;
+		nickname = (nickname.length() > COLUMN_WIDTH) ?
+            	truncate(nickname) : nickname;
 		std::cout << "|" << std::setw(COLUMN_WIDTH) << nickname;
 		std::cout << "|" << std::endl;
 	}
