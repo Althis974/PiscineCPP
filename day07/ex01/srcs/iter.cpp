@@ -13,12 +13,17 @@
 
 #include <iostream>
 
+// Take an array of any type, a length and a function as arguments.
+// Apply the function on each element of the array until it reaches the length.
+
 template <typename T>
 void				iter(T *array, size_t len, void (*f)(const T &))
 {
 	for (size_t i = 0; i < len; ++i)
 		f(array[i]);
 }
+
+// Print
 
 template <typename T>
 void				print(T const & x)
