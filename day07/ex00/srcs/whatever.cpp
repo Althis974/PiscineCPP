@@ -13,17 +13,23 @@
 
 #include <iostream>
 
+// Compares two arguments and returns the smallest one
+
 template <typename T>
 const T &			min(const T &a, const T &b)
 {
 	return (a < b ? a : b);
 }
 
+// Compares two arguments and returns the biggest one
+
 template <typename T>
 const T &			max(const T &a, const T &b)
 {
 	return (a > b ? a : b);
 }
+
+// Swaps the value of two arguments
 
 template <typename T>
 void				swap(T &a, T &b)
