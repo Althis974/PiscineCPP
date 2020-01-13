@@ -16,27 +16,6 @@
 
 #include "Account.class.hpp"
 
-Account::Account(int initial_deposit) : _amount(initial_deposit),
-										_nbDeposits(0), _nbWithdrawals(0)
-{
-	this->_accountIndex = _nbAccounts;
-	_nbAccounts++;
-	_totalAmount += initial_deposit;
-
-	_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount
-			  << ";created" << std::endl;
-}
-
-Account::~Account()
-{
-	_nbAccounts--;
-
-	_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount
-			  << ";closed" << std::endl;
-}
-
 int		Account::_nbAccounts = 0;
 int		Account::_totalAmount = 0;
 int		Account::_totalNbDeposits = 0;
@@ -59,12 +38,34 @@ int		Account::getNbWithdrawals()
 {
 	return (Account::_totalNbWithdrawals);
 }
+
 void	Account::displayAccountsInfos()
 {
 	_displayTimestamp();
 	std::cout << "accounts:" << _nbAccounts << ";total:" << _totalAmount
 			  << ";deposits:" << _totalNbDeposits
 			  << ";withdrawals:"<< _totalNbWithdrawals << std::endl;
+}
+
+Account::Account(int initial_deposit) : _amount(initial_deposit),
+										_nbDeposits(0), _nbWithdrawals(0)
+{
+	this->_accountIndex = _nbAccounts;
+	_nbAccounts++;
+	_totalAmount += initial_deposit;
+
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount
+			  << ";created" << std::endl;
+}
+
+Account::~Account()
+{
+	_nbAccounts--;
+
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount
+			  << ";closed" << std::endl;
 }
 
 void	Account::makeDeposit( int deposit )
@@ -109,6 +110,9 @@ bool	Account::makeWithdrawal(int withdrawal)
 
 int		Account::checkAmount() const
 {
+	static unsigned int nbCall = 0;
+	nbCall++;
+	//std::cout << "nbCall = " << nbCall << std::endl;
 	return (this->_amount);
 }
 
@@ -118,6 +122,7 @@ void	Account::displayStatus() const
 	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount
 			  << ";deposits:" << this->_nbDeposits
 			  << ";withdrawals:" << this->_nbWithdrawals << std::endl;
+	checkAmount();
 }
 
 void	Account::_displayTimestamp()
