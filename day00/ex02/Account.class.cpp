@@ -44,20 +44,20 @@ int		Account::_totalNbWithdrawals = 0;
 
 int		Account::getNbAccounts()
 {
-	return Account::_nbAccounts;
+	return (Account::_nbAccounts);
 }
 
 int		Account::getTotalAmount()
 {
-	return Account::_totalAmount;
+	return (Account::_totalAmount);
 }
 int		Account::getNbDeposits()
 {
-	return Account::_totalNbDeposits;
+	return (Account::_totalNbDeposits);
 }
 int		Account::getNbWithdrawals()
 {
-	return Account::_totalNbWithdrawals;
+	return (Account::_totalNbWithdrawals);
 }
 void	Account::displayAccountsInfos()
 {
@@ -92,7 +92,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	if (this->_amount < withdrawal)
 	{
 		std::cout << "refused" << std::endl;
-		return false;
+		return (false);
 	}
 
 	this->_amount -= withdrawal;
@@ -104,12 +104,12 @@ bool	Account::makeWithdrawal(int withdrawal)
 	_totalAmount -= withdrawal;
 	_totalNbWithdrawals++;
 
-	return true;
+	return (true);
 }
 
 int		Account::checkAmount() const
 {
-	return this->_amount;
+	return (this->_amount);
 }
 
 void	Account::displayStatus() const
