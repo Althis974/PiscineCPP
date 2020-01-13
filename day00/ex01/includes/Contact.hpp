@@ -24,11 +24,12 @@ public:
 	// Constructors
 	Contact();
 
-	Contact(std::string firstName, std::string lastName, std::string nickname,
-			std::string login, std::string postalAddress,
-			std::string emailAddress, std::string phoneNumber,
-			std::string birthdayDate, std::string favoriteMeal,
-			std::string underwearColor, std::string darkestSecret);
+	Contact(const std::string &firstName, const std::string &lastName,
+			const std::string &nickname, const std::string &login,
+			const std::string &postalAddress, const std::string &emailAddress,
+			const std::string &phoneNumber, const std::string &birthdayDate,
+			const std::string &favoriteMeal, const std::string &underwearColor,
+			const std::string &darkestSecret);
 
 	// Destructor
 	~Contact();
@@ -47,17 +48,17 @@ public:
 	std::string			getDarkestSecret() const;
 
 	// Setters
-	void				setFirstName(std::string firstName);
-	void				setLastName(std::string lastName);
-	void				setNickname(std::string nickname);
-	void				setLogin(std::string login);
-	void				setPostalAddress(std::string postalAddress);
-	void				setEmailAddress(std::string emailAddress);
-	void				setPhoneNumber(std::string phoneNumber);
-	void				setBirthdayDate(std::string birthdayDate);
-	void				setFavoriteMeal(std::string favoriteMeal);
-	void				setUnderwearColor(std::string underwearColor);
-	void				setDarkestSecret(std::string darkestSecret);
+	void				setFirstName(const std::string &firstName);
+	void				setLastName(const std::string &lastName);
+	void				setNickname(const std::string &nickname);
+	void				setLogin(const std::string &login);
+	void				setPostalAddress(const std::string &postalAddress);
+	void				setEmailAddress(const std::string &emailAddress);
+	void				setPhoneNumber(const std::string &phoneNumber);
+	void				setBirthdayDate(const std::string &birthdayDate);
+	void				setFavoriteMeal(const std::string &favoriteMeal);
+	void				setUnderwearColor(const std::string &underwearColor);
+	void				setDarkestSecret(const std::string &darkestSecret);
 
 private:
 
