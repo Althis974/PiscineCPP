@@ -13,9 +13,9 @@
 
 #include "../includes/PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook() : _count(0)
 {
-	this->count = 0;
+
 }
 
 PhoneBook::~PhoneBook()
@@ -27,7 +27,7 @@ void	PhoneBook::addContact()
 {
 	std::string		infos[11];
 
-	if (count > 7)
+	if (this->_count > 7)
 	{
 		std::cout << "\nNo more row for new contact. Sorry!" << std::endl;
 		std::cout << "Btw no one has that much friend." << std::endl;
@@ -82,7 +82,7 @@ void	PhoneBook::addContact()
 			infos[5], infos[6], infos[7], infos[8], infos[9],
 			infos[10]);
 
-	contacts[count++] = contact;
+	this->_contacts[this->_count++] = contact;
 }
 
 void	PhoneBook::firewall(std::string *input, size_t maxChar)
@@ -105,11 +105,11 @@ void	PhoneBook::display()
 	std::cout << "\n\n--------- CONTACTS LIST ---------\n\n" << std::endl;
 
 	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-	for (int i = 0; i < count; ++i)
+	for (int i = 0; i < this->_count; ++i)
 	{
-		firstName = contacts[i].getFirstName();
-		lastName = contacts[i].getLastName();
-		nickname = contacts[i].getNickname();
+		firstName = this->_contacts[i].getFirstName();
+		lastName = this->_contacts[i].getLastName();
+		nickname = this->_contacts[i].getNickname();
 
 		std::cout << "|" << std::setw(COLUMN_WIDTH) << i;
 		firstName = (firstName.length() > COLUMN_WIDTH) ?
@@ -125,6 +125,7 @@ void	PhoneBook::display()
 		std::cout << "|" << std::setw(COLUMN_WIDTH) << nickname;
 		std::cout << "|" << std::endl;
 	}
+
 	searchContact();
 }
 
@@ -143,26 +144,27 @@ void	PhoneBook::searchContact()
 		std::cin >> index;
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
+
 	i = stoi(index);
-	if (i >= 0 && i < count)
+	if (i >= 0 && i < this->_count)
 	{
 		std::cout << "\nOh. I won't judge." << std::endl;
 		std::cout << "But I expected better from you." << std::endl;
 		std::cout << "Here is what you asked for anyway: \n" << std::endl;
 
-		std::cout << contacts[i].getFirstName() << std::endl;
-		std::cout << contacts[i].getLastName() << std::endl;
-		std::cout << contacts[i].getNickname() << std::endl;
-		std::cout << contacts[i].getLogin() << std::endl;
-		std::cout << contacts[i].getPostalAddress() << std::endl;
-		std::cout << contacts[i].getEmailAddress() << std::endl;
-		std::cout << contacts[i].getPhoneNumber() << std::endl;
-		std::cout << contacts[i].getBirthdayDate() << std::endl;
-		std::cout << contacts[i].getFavoriteMeal() << std::endl;
-		std::cout << contacts[i].getUnderwearColor() << std::endl;
-		std::cout << contacts[i].getDarkestSecret() << std::endl;
+		std::cout << this->_contacts[i].getFirstName() << std::endl;
+		std::cout << this->_contacts[i].getLastName() << std::endl;
+		std::cout << this->_contacts[i].getNickname() << std::endl;
+		std::cout << this->_contacts[i].getLogin() << std::endl;
+		std::cout << this->_contacts[i].getPostalAddress() << std::endl;
+		std::cout << this->_contacts[i].getEmailAddress() << std::endl;
+		std::cout << this->_contacts[i].getPhoneNumber() << std::endl;
+		std::cout << this->_contacts[i].getBirthdayDate() << std::endl;
+		std::cout << this->_contacts[i].getFavoriteMeal() << std::endl;
+		std::cout << this->_contacts[i].getUnderwearColor() << std::endl;
+		std::cout << this->_contacts[i].getDarkestSecret() << std::endl;
 	}
-	else if (i >= count && count > 7)
+	else if (i >= this->_count && this->_count > 7)
 	{
 		std::cout << "\nNo one has that much friend." << std::endl;
 		std::cout << "You should seriously question yourself." << std::endl;
@@ -179,6 +181,7 @@ std::string	PhoneBook::truncate(std::string field) const
 	field = field.erase((COLUMN_WIDTH - 1),
 						field.length() - (COLUMN_WIDTH - 1));
 	field.append(".");
+
 	return (field);
 }
 
@@ -189,5 +192,6 @@ int			PhoneBook::stringIsAlpha(std::string str) const
 		if (isalpha(str[i]))
 			return (1);
 	}
+
 	return (0);
 }

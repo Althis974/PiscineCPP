@@ -33,22 +33,24 @@ public:
 			~PhoneBook();
 
 			// Commands
-			void		addContact();
-			void		searchContact();
+			void			addContact();
+			void			searchContact();
 
 			// Security
-			void		firewall(std::string *input, size_t maxChar);
-
-			// List of contacts
-			int 		count;
-			Contact		contacts[8];
+			static void		firewall(std::string *input, size_t maxChar);
 
 			// Display
-			void		display();
-			std::string	truncate(std::string field) const;
+			void			display();
+			std::string		truncate(std::string field) const;
 
 			// Utils
-			int			stringIsAlpha(std::string str) const;
+			int				stringIsAlpha(std::string str) const;
+
+private:
+
+			// List of contacts
+			int 			_count;
+			Contact			_contacts[8];
 };
 
 
