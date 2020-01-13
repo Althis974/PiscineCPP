@@ -13,10 +13,9 @@
 
 #include <iostream>
 #include <string>
-#include "../includes/Contact.hpp"
 #include "../includes/PhoneBook.hpp"
 
-int 	findCommand(std::string const *command)
+int 	findCommand(const std::string *command)
 {
 	if (*command == "SEARCH" || *command == "search" || *command == "Search")
 		return (1);
@@ -36,6 +35,7 @@ int		checkCommand(std::string *command)
 		std::cin >> *command;
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
+
 	return (findCommand(command));
 }
 
@@ -67,6 +67,7 @@ int		main()
 	}
 
 	std::cout << "\n-- SEE YOU COMMANDER! WATCH OUT FOR ALIEN! --" << std::endl;
-	return 0;
+
+	return (0);
 }
 
