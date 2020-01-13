@@ -13,16 +13,19 @@
 
 #include <iostream>
 
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
-	if (ac > 1)
+	if (argc > 1)
 	{
 		std::string s;
-		for (int i = 1; i < ac; ++i)
+
+		for (int i = 1; i < argc; ++i)
 		{
-			s = av[i];
+			s = argv[i];
+
 			for (size_t j = 0; j < s.length(); ++j)
 				s.at(j) = std::toupper(s[j]);
+
 			std::cout << s;
 		}
 		std::cout << std::endl;
