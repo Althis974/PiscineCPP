@@ -15,26 +15,25 @@
 
 // Melee attack
 
-void Human::meleeAttack(std::string const &target)
+void	Human::meleeAttack(const std::string &target)
 {
-	std::cout << "STOP DYING AT ME!!\n*" << target << " fainted!*"
-	<< std::endl;
+	std::cout << "STOP DYING AT ME!!\n*" << target << " fainted!*" << std::endl;
 }
 
 // Ranged attack
 
-void Human::rangedAttack(std::string const &target)
+void	Human::rangedAttack(const std::string &target)
 {
 	std::cout << "Your FAMILY is next!!\n*" << target << " is rushing on you*\n"
-	<< std::endl;
+			  << std::endl;
 }
 
 // Intimidating shout
 
-void Human::intimidatingShout(std::string const &target)
+void	Human::intimidatingShout(const std::string &target)
 {
 	std::cout << "I'LL SLICE OFF YOUR EYELIDS SO YOU CAN WATCH THE END!!\n*"
-	<< target << " is shivering*\n" << std::endl;
+			  << target << " is shivering*\n" << std::endl;
 }
 
 // Pointer to member
@@ -43,15 +42,15 @@ typedef void(Human::*actionPtr) (std::string const &);
 
 // Action
 
-void Human::action(std::string const &action_name, std::string const &target)
+void	Human::action(const std::string &action_name, const std::string &target)
 {
-	std::string actionNames[3] = {
+	std::string	actionNames[3] = {
 			"Melee Attack",
 			"Ranged Attack",
 			"Intimidating Shout"
 	};
 
-	actionPtr actions[3] = {
+	actionPtr	actions[3] = {
 			&Human::meleeAttack,
 			&Human::rangedAttack,
 			&Human::intimidatingShout
@@ -60,8 +59,6 @@ void Human::action(std::string const &action_name, std::string const &target)
 	for (int i = 0; i < 3; ++i)
 	{
 		if (actionNames[i] == action_name)
-		{
 			(this->*actions[i])(target);
-		}
 	}
 }

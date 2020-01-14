@@ -12,20 +12,22 @@
 /* ************************************************************************** */
 
 #include "../includes/Human.hpp"
+#include <string>
+#include <iostream>
 
-int 		main()
+int 				main()
 {
-	Human krieg;
-	std::string target = "Skagzilla";
+	Human			krieg;
+	std::string		target = "Skagzilla";
 
-	std::cout << "\n\n----- Welcome to the Circle of Ssslaughter! " <<
-	"This WILL get ugly! -----\n\n" << std::endl;
+	std::cout << "\n\n----- Welcome to the Circle of Ssslaughter! "
+			  << "This WILL get ugly! -----\n\n" << std::endl;
 
 	krieg.action("Intimidating Shout", target);
 	krieg.action("Ranged Attack", target);
 	krieg.action("Melee Attack", target);
 
 	std::cout << "\n\n ----- DAMMIT! You weren't ssssupposed to live! -----\n\n"
-	<< std::endl;
+			  << std::endl;
 }
 
