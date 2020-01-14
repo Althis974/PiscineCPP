@@ -15,26 +15,26 @@
 
 // Constructor
 
-Pony::Pony(std::string const &name) : _name(name)
+Pony::Pony(const std::string &name) : _name(name)
 {
-	std::cout << _name << "! Say hello.\n" << std::endl;
+	std::cout << this->_name << "! Say hello.\n" << std::endl;
 }
 
 // Destructor
 
 Pony::~Pony()
 {
-	std::cout << "\n*" << _name << " whines*" << std::endl;
+	std::cout << "\n*" << this->_name << " whines*" << std::endl;
 }
 
 // Setters
 
-void			Pony::setAge(std::string const &age)
+void			Pony::setAge(const std::string &age)
 {
 	this->_age = age;
 }
 
-void			Pony::setColor(std::string const &color)
+void			Pony::setColor(const std::string &color)
 {
 	this->_color = color;
 }
@@ -43,15 +43,15 @@ void			Pony::setColor(std::string const &color)
 
 std::string		Pony::getName() const
 {
-	return this->_name;
+	return (this->_name);
 }
 
 std::string		Pony::getAge() const
 {
-	return this->_age;
+	return (this->_age);
 }
 
 std::string		Pony::getColor() const
 {
-	return this->_color;
+	return (this->_color);
 }

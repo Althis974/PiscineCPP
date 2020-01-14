@@ -23,25 +23,25 @@ class Pony
 public:
 
 	// Constructor
-	Pony(std::string const &name);
+	Pony(const std::string &name);
 
 	//Destructor
     ~Pony();
 
     // Setters
-    void        setAge(std::string const& age);
-    void        setColor(std::string const& color);
+    void       		setAge(const std::string &age);
+    void       		setColor(const std::string &color);
 
     // Getters
-    std::string getName() const;
-    std::string getAge() const;
-    std::string getColor() const;
+    std::string		getName() const;
+    std::string		getAge() const;
+    std::string		getColor() const;
 
 private:
 
-    std::string _name;
-    std::string _age;
-    std::string _color;
+    std::string		_name;
+    std::string		_age;
+    std::string		_color;
 };
 
 #endif //PONY_HPP

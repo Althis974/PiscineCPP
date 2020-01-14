@@ -42,7 +42,7 @@ void		ponyOnTheHeap()
 	delete pissForBrains;
 }
 
-int				main()
+int			main()
 {
 	std::cout << "\n\n--- Pony on the Stack ---\n" << std::endl;
 	ponyOnTheStack();
