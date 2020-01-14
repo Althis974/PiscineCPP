@@ -23,18 +23,18 @@ class HumanA
 public:
 
 	// Constructor
-	HumanA(std::string const &name, Weapon &w);
+	HumanA(const std::string &name, Weapon &w);
 
 	// Destructor
 	~HumanA();
 
 	// Attack
-	void	attack() const;
+	void			attack() const;
 
 private:
 
-	std::string _name;
-	Weapon &_weapon;
+	std::string		_name;
+	Weapon &		_weapon;
 };
 
 #endif //HUMANA_HPP

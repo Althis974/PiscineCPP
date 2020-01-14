@@ -23,21 +23,21 @@ class HumanB
 public:
 
 	// Constructor
-	HumanB(std::string const &name);
+	HumanB(const std::string &name);
 
 	// Destructor
 	~HumanB();
 
 	// Setter
-	void	setWeapon(Weapon &w);
+	void			setWeapon(Weapon &w);
 
 	// Attack
-	void	attack() const;
+	void			attack() const;
 
 private:
 
-	std::string _name;
-	Weapon *_weapon;
+	std::string		_name;
+	Weapon *		_weapon;
 };
 
 

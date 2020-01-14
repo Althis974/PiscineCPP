@@ -15,7 +15,7 @@
 
 // Constructor
 
-Weapon::Weapon(std::string const &type) : _type(type)
+Weapon::Weapon(const std::string &type) : _type(type)
 {
 
 }
@@ -29,7 +29,7 @@ Weapon::~Weapon()
 
 // Setter
 
-void			Weapon::setType(std::string const &type)
+void			Weapon::setType(const std::string &type)
 {
 	this->_type = type;
 }
@@ -38,5 +38,5 @@ void			Weapon::setType(std::string const &type)
 
 std::string		Weapon::getType() const
 {
-	return this->_type;
+	return (this->_type);
 }

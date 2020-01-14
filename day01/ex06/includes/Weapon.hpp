@@ -22,20 +22,20 @@ class Weapon
 public:
 
 	// Constructor
-	Weapon(std::string const &type);
+	Weapon(const std::string &type);
 
 	// Destructor
 	~Weapon();
 
 	// Setter
-	void setType(std::string const &type);
+	void			setType(const std::string &type);
 
 	// Getter
-	std::string getType() const;
+	std::string		getType() const;
 
 private:
 
-	std::string _type;
+	std::string		_type;
 };
 
 
