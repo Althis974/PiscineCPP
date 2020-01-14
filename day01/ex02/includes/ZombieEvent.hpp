@@ -28,18 +28,18 @@ public:
 	~ZombieEvent();
 
 	// Setting zombie type
-	void setZombieType(const std::string& type);
+	void					setZombieType(const std::string &type);
 
 	// Create new zombie on the heap
-	Zombie* newZombie(const std::string& name) const;
+	Zombie*					newZombie(const std::string &name) const;
 
 	// Create new zombie on the stack
-	void randomChump() const;
+	void					randomChump() const;
 
 private:
 
-	std::string _type;
-	static std::string _names[8];
+	std::string				_type;
+	static std::string		_names[8];
 };
 
 

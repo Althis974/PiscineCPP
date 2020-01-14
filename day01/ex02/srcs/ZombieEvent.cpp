@@ -30,21 +30,21 @@ ZombieEvent::~ZombieEvent()
 
 // ZombieType setter
 
-void ZombieEvent::setZombieType(std::string const &type)
+void			ZombieEvent::setZombieType(const std::string &type)
 {
 	this->_type = type;
 }
 
 // Create zombie with the chosen type
 
-Zombie *ZombieEvent::newZombie(std::string const &name) const
+Zombie *		ZombieEvent::newZombie(const std::string &name) const
 {
-	return new Zombie(name, this->_type);
+	return (new Zombie(name, this->_type));
 }
 
 // Create zombie with random name
 
-void	ZombieEvent::randomChump() const
+void			ZombieEvent::randomChump() const
 {
 	Zombie z = Zombie(ZombieEvent::_names[std::rand() % 8],
 						this->_type);
@@ -52,7 +52,7 @@ void	ZombieEvent::randomChump() const
 
 // Pool of names for random
 
-std::string ZombieEvent::_names[] = {
+std::string		ZombieEvent::_names[] = {
 		"TK Baha",
 		"Clark",
 		"Jacques O'Lantern",

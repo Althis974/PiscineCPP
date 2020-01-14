@@ -15,9 +15,9 @@
 
 int		main()
 {
-	Zombie *francky;
-	Zombie *billy;
-	ZombieEvent zombieEvent;
+	Zombie			*francky;
+	Zombie			*billy;
+	ZombieEvent		zombieEvent;
 
 	zombieEvent.setZombieType("undead marines");
 	francky = zombieEvent.newZombie("francky");

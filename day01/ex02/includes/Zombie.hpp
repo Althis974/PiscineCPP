@@ -23,18 +23,18 @@ class Zombie
 public:
 
 	// Constructor
-	Zombie(std::string const &name, std::string const &type);
+	Zombie(const std::string &name, const std::string &type);
 
 	// Destructor
 	~Zombie();
 
 	// Announces
-	void		announce() const;
+	void			announce() const;
 
 private:
 
-	std::string _name;
-	std::string _type;
+	std::string		_name;
+	std::string		_type;
 };
 
 

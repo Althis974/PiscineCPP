@@ -15,8 +15,8 @@
 
 // Constructor
 
-Zombie::Zombie(std::string const &name, std::string const &type) : _name(name),
-		_type(type)
+Zombie::Zombie(const std::string &name, const std::string &type) : _name(name),
+				_type(type)
 {
 	this->announce();
 }
@@ -31,7 +31,7 @@ Zombie::~Zombie()
 
 // Announces
 
-void Zombie::announce() const
+void	Zombie::announce() const
 {
 	std::cout << "<" << this->_name << " (" << this->_type
 			  << ")> Braiiiiiiinnnssss..." << std::endl;
