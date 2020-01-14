@@ -26,26 +26,26 @@ class Logger
 public:
 
 	// Constructor
-	Logger(std::string const &filename);
+	Logger(const std::string &filename);
 
 	// Destructor
 	~Logger();
 
 	// Make log entry with message
-	void log(std::string const &dest, std::string const &message);
+	void			log(const std::string &dest, const std::string &message);
 
 private:
 
 	// Log to standard output
-	void logToConsole(std::string const &message);
+	void			logToConsole(const std::string &message);
 
 	// Log to file
-	void logToFile(std::string const &message);
+	void			logToFile(const std::string &message);
 
 	// Make message be a log entry
-	std::string makeLogEntry(std::string const &message) const;
+	std::string		makeLogEntry(const std::string &message) const;
 
-	std::string _filename;
+	std::string		_filename;
 };
 
 

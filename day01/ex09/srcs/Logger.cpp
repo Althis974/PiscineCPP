@@ -15,7 +15,7 @@
 
 // Constructor
 
-Logger::Logger(std::string const &filename) : _filename(filename)
+Logger::Logger(const std::string &filename) : _filename(filename)
 {
 
 }
@@ -29,14 +29,14 @@ Logger::~Logger()
 
 // Log to standard output
 
-void Logger::logToConsole(std::string const &message)
+void			Logger::logToConsole(const std::string &message)
 {
 	std::cout << makeLogEntry(message);
 }
 
 // Log to file
 
-void Logger::logToFile(std::string const &message)
+void			Logger::logToFile(const std::string &message)
 {
 	std::ofstream outputFileStream(this->_filename);
 
@@ -45,7 +45,7 @@ void Logger::logToFile(std::string const &message)
 
 // // Make message be a log entry
 
-std::string Logger::makeLogEntry(std::string const &message) const
+std::string		Logger::makeLogEntry(const std::string &message) const
 {
 	time_t t = time(nullptr);
 	tm* timePtr = localtime(&t);
@@ -64,23 +64,23 @@ std::string Logger::makeLogEntry(std::string const &message) const
 				 << std::setw(2) << std::right << std::setfill('0')
 				 << timePtr->tm_sec << "] > " << message << " <" << std::endl;
 
-	return stringStream.str();
+	return (stringStream.str());
 }
 
 // Pointer to member
 
-typedef void(Logger::*logAction) (std::string const &);
+typedef void(Logger::*logAction) (const std::string &);
 
 // Make log entry with message
 
-void Logger::log(std::string const &dest, std::string const &message)
+void			Logger::log(const std::string &dest, const std::string &message)
 {
-	std::string destinationNames[2] = {
+	std::string	destinationNames[2] = {
 			"File",
 			"Console"
 	};
 
-	logAction destinations[2] = {
+	logAction	destinations[2] = {
 			&Logger::logToFile,
 			&Logger::logToConsole
 	};

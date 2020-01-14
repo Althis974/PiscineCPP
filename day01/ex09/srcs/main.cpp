@@ -13,9 +13,9 @@
 
 #include "../includes/Logger.hpp"
 
-int main()
+int			main()
 {
-	Logger logger("Tron.log");
+	Logger	logger("Tron.log");
 
 	logger.log("Console", "whoami");
 	logger.log("File", "Hello Sam.");
