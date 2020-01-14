@@ -27,13 +27,14 @@ int		main(int argc, char **argv)
 	if (argc == 1 || (argc == 2 && std::string(argv[1]) == "--"))
 	{
 		stream(std::cin);
+
 		return (0);
 	}
 
 	for (int i = 1; i < argc; ++i)
 	{
-		std::string args = argv[i];
-		DIR *dir = opendir(args.c_str());
+		std::string		args = argv[i];
+		DIR	*			dir = opendir(args.c_str());
 
 		if (i == 1 && args == "--")
 			continue;
@@ -49,12 +50,12 @@ int		main(int argc, char **argv)
 			else if (dir != nullptr)
 			{
 				closedir(dir);
-				std::cerr << argv[0] << ": " << args << ": Is a directory"
-					<< std::endl;
+				std::cout << argv[0] << ": " << args << ": Is a directory"
+						  << std::endl;
 			}
 			else
-				std::cerr << argv[0] << ": " << args << ": "
-					<< strerror(errno) << std::endl;
+				std::cout << argv[0] << ": " << args << ": "
+						  << strerror(errno) << std::endl;
 		}
 	}
 
