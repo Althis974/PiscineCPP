@@ -25,29 +25,29 @@ class Replace
 public:
 
 	// Constructor
-	Replace(std::string const &filename, std::string const &s1,
-			std::string const &s2);
+	Replace(const std::string &filename, const std::string &s1,
+			const std::string &s2);
 
 	// Destructor
 	~Replace();
 
 	// Getter
-	std::string	getFilename() const;
+	std::string		getFilename() const;
 
 	// Arguments checker
-	int			checker(std::ifstream *fileStream);
+	int				checker(std::ifstream *fileStream);
 
 	// Replace occurrences and write it to new file
-	int			replaceToNewFile(std::stringstream const &buffer);
+	int				replaceToNewFile(const std::stringstream &buffer);
 
 	// Create and open new file
-	int			writeToNewFile(std::string const &stringBuffer);
+	int				writeToNewFile(const std::string &stringBuffer);
 
 private:
 
-	std::string	_filename;
-	std::string	_s1;
-	std::string	_s2;
+	std::string		_filename;
+	std::string		_s1;
+	std::string		_s2;
 
 };
 

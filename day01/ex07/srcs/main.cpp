@@ -12,12 +12,15 @@
 /* ************************************************************************** */
 
 #include "../includes/Replace.hpp"
+#include <iostream>
+#include <fstream>
 
 int		main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
 		std::cout << "Usage: ./replace [filename] [s1] [s2]" << std::endl;
+
 		return (1);
 	}
 	else
@@ -37,7 +40,6 @@ int		main(int argc, char **argv)
 		buffer << inputFileStream.rdbuf();
 
 		// Replace occurrences and write it to new file
-
 		if (replace.replaceToNewFile(buffer))
 			return (1);
 
