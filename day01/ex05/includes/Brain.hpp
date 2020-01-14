@@ -30,7 +30,7 @@ public:
 	~Brain();
 
 	// Identify
-	std::string	identify() const;
+	std::string		identify() const;
 };
 
 

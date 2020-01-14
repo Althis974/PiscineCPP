@@ -29,14 +29,14 @@ Human::~Human()
 
 // Getter
 
-const Brain &Human::getBrain() const
+const Brain &		Human::getBrain() const
 {
-	return this->_brain;
+	return (this->_brain);
 }
 
 // Identify
 
-std::string Human::identify() const
+std::string 		Human::identify() const
 {
-	return this->_brain.identify();
+	return (this->_brain.identify());
 }

@@ -29,11 +29,11 @@ Brain::~Brain()
 
 // Identify
 
-std::string Brain::identify() const
+std::string		Brain::identify() const
 {
 	std::stringstream stringStream;
 
 	stringStream << this;
 
-	return stringStream.str();
+	return (stringStream.str());
 }

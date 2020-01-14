@@ -15,6 +15,7 @@
 #define HUMAN_HPP
 
 # include "Brain.hpp"
+#include <string>
 
 class Human
 {
@@ -28,14 +29,14 @@ public:
 	~Human();
 
 	// Getter
-	const Brain &getBrain() const;
+	const Brain &		getBrain() const;
 
 	// Identify
-	std::string identify() const;
+	std::string			identify() const;
 
 private:
 
-	const Brain _brain;
+	const Brain			_brain;
 };
 
 
