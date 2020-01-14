@@ -22,9 +22,7 @@ ZombieHorde::ZombieHorde(int n) : _nb(n)
 	this->_zombies = new Zombie[n];
 
 	for (int i = 0; i < n; ++i)
-	{
-		_zombies[i].setName(_names[std::rand() % 10]);
-	}
+		this->_zombies[i].setName(_names[std::rand() % 10]);
 }
 
 // Destructor
@@ -39,15 +37,15 @@ ZombieHorde::~ZombieHorde()
 
 // Announce
 
-void ZombieHorde::announce() const
+void			ZombieHorde::announce() const
 {
 	for (int i = 0; i < this->_nb; ++i)
-		_zombies[i].announce();
+		this->_zombies[i].announce();
 }
 
 // Pool of names for random
 
-std::string ZombieHorde::_names[] = {
+std::string		ZombieHorde::_names[] = {
 		"TK Baha",
 		"Clark",
 		"Jacques O'Lantern",

@@ -30,14 +30,14 @@ Zombie::~Zombie()
 
 // Setter
 
-void Zombie::setName(std::string &name)
+void	Zombie::setName(const std::string &name)
 {
 	this->_name = name;
 }
 
 // Announces
 
-void Zombie::announce() const
+void	Zombie::announce() const
 {
 	std::cout << "<" << this->_name << " (" << this->_type
 			  << ")> Braiiiiiiinnnssss..." << std::endl;

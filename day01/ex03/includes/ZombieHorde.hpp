@@ -15,6 +15,7 @@
 #define ZOMBIEHORDE_HPP
 
 #include "Zombie.hpp"
+#include <iostream>
 
 class ZombieHorde
 {
@@ -28,13 +29,13 @@ public:
 	~ZombieHorde();
 
 	// Announce
-	void				announce() const;
+	void					announce() const;
 
 private:
 
-	int					_nb;
-	Zombie				*_zombies;
-	static std::string	_names[10];
+	int						_nb;
+	Zombie *				_zombies;
+	static std::string		_names[10];
 };
 
 

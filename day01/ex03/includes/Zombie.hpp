@@ -29,15 +29,15 @@ public:
 	~Zombie();
 
 	// Setter
-	void		setName(std::string &name);
+	void			setName(const std::string &name);
 
 	// Announces
-	void		announce() const;
+	void			announce() const;
 
 private:
 
-	std::string _name;
-	std::string _type;
+	std::string		_name;
+	std::string		_type;
 };
 
 
