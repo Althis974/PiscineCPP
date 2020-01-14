@@ -38,7 +38,7 @@ void	Human::intimidatingShout(const std::string &target)
 
 // Pointer to member
 
-typedef void(Human::*actionPtr) (std::string const &);
+typedef void(Human::*actionPtr) (const std::string &);
 
 // Action
 
