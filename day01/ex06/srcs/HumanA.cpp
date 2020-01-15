@@ -15,7 +15,8 @@
 
 // Constructor
 
-HumanA::HumanA(const std::string &name, Weapon &w) : _name(name), _weapon(w)
+HumanA::HumanA(const std::string &name, Weapon &weapon) : _name(name),
+				_weapon(weapon)
 {
 
 }

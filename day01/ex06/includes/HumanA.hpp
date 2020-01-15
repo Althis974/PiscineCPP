@@ -23,7 +23,7 @@ class HumanA
 public:
 
 	// Constructor
-	HumanA(const std::string &name, Weapon &w);
+	HumanA(const std::string &name, Weapon &weapon);
 
 	// Destructor
 	~HumanA();
