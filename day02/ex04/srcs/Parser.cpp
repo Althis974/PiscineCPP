@@ -15,14 +15,14 @@
 
 // Constructor
 
-Parser::Parser()
+Parser::Parser() : _pos(0)
 {
-	_pos = 0;
+
 }
 
 // Copy constructor
 
-Parser::Parser(Parser const &src) : _pos(src._pos)
+Parser::Parser(const Parser &src) : _pos(src._pos)
 {
 
 }
@@ -36,29 +36,32 @@ Parser::~Parser()
 
 // Assignation operator overload
 
-Parser &			Parser::operator=(Parser const &rhs)
+Parser &			Parser::operator=(const Parser &rhs)
 {
 	this->_pos = rhs._pos;
 
 	return (*this);
 }
 
-Fixed				Parser::lookForPriority(std::string const &expr,
-											Fixed const &nb)
+Fixed				Parser::lookForPriority(const std::string &expr,
+											const Fixed &nb)
 {
 	Fixed tmp = nb;
 
 	if (expr.at(this->_pos) == '(')
 	{
 		this->_pos++;
+
 		tmp = lookForTerms(expr);
+
 		if (expr.at(this->_pos) == ')')
 			this->_pos++;
 	}
+
 	return (tmp);
 }
 
-Fixed				Parser::lookForNumbers(std::string const &expr)
+Fixed				Parser::lookForNumbers(const std::string &expr)
 {
 	float result;
 	Fixed nb;
@@ -76,7 +79,7 @@ Fixed				Parser::lookForNumbers(std::string const &expr)
 	return (Fixed(result));
 }
 
-Fixed				Parser::lookForFactors(std::string const &expr)
+Fixed				Parser::lookForFactors(const std::string &expr)
 {
 	t_operands operands;
 
@@ -100,7 +103,7 @@ Fixed				Parser::lookForFactors(std::string const &expr)
 	return (operands.nb);
 }
 
-Fixed				Parser::lookForTerms(std::string const &expr)
+Fixed				Parser::lookForTerms(const std::string &expr)
 {
 	t_operands operands;
 
@@ -136,7 +139,7 @@ void				Parser::do_op(t_operands *operands)
 		operands->nb = operands->nb * operands->nb2;
 }
 
-void				Parser::skipWhiteSpaces(std::string const &expr)
+void				Parser::skipWhiteSpaces(const std::string &expr)
 {
 	while (expr.at(this->_pos) == ' ')
 	{
@@ -145,4 +148,40 @@ void				Parser::skipWhiteSpaces(std::string const &expr)
 		else
 			break;
 	}
+}
+
+int 				Parser::checkExpression(const std::string &expr)
+{
+	if (expr.empty())
+		return (1);
+
+	int nbPar = 0;
+	int nbNum = 0;
+	int nbOp = 0;
+
+	for (size_t i = 0; i < expr.size(); ++i)
+	{
+		if (expr[i] == '(')
+			nbPar++;
+		else if (expr[i] == ')')
+			nbPar--;
+		else if (isdigit(expr[i]))
+		{
+			while ((isdigit(expr[i]) && (isdigit(expr[i + 1])
+					|| expr[i + 1] == '.')) || (expr[i] == '.'
+					&& isdigit(expr[i - 1]) && isdigit(expr[i + 1])))
+			{
+				++i;
+			}
+			nbNum++;
+		}
+		else if (expr[i] == '+' || expr[i] == '-' || expr[i] == '/'
+				|| expr[i] == '*')
+			nbOp++;
+	}
+
+	if (nbPar || (nbNum - nbOp != 1))
+		return (1);
+
+	return (0);
 }

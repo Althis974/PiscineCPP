@@ -22,21 +22,21 @@ Fixed::Fixed() : _value(0)
 
 }
 
-Fixed::Fixed(int const value)
+Fixed::Fixed(const int value)
 {
 	this->_value = value << Fixed::_fractionalBitsNb;
 }
 
-Fixed::Fixed(float const value)
+Fixed::Fixed(const float value)
 {
 	this->_value = (int)roundf(value * (1 << Fixed::_fractionalBitsNb));
 }
 
 // Copy constructor
 
-Fixed::Fixed(Fixed const &src) : _value(src.getRawBits())
+Fixed::Fixed(const Fixed &src)
 {
-
+	Fixed::operator=(src);
 }
 
 // Destructor
@@ -48,7 +48,7 @@ Fixed::~Fixed()
 
 // Assignation operator overload
 
-Fixed &			Fixed::operator=(Fixed const &rhs)
+Fixed &				Fixed::operator=(const Fixed &rhs)
 {
 	this->_value = rhs.getRawBits();
 
@@ -57,145 +57,153 @@ Fixed &			Fixed::operator=(Fixed const &rhs)
 
 // Comparison operators overload
 
-bool			Fixed::operator>(Fixed const &rhs) const
+bool				Fixed::operator>(const Fixed &rhs) const
 {
 	return (this->_value > rhs.getRawBits());
 }
 
-bool			Fixed::operator<(Fixed const &rhs) const
+bool				Fixed::operator<(const Fixed &rhs) const
 {
 	return (this->_value < rhs.getRawBits());
 }
 
-bool 			Fixed::operator>=(Fixed const &rhs) const
+bool 				Fixed::operator>=(const Fixed &rhs) const
 {
 	return (this->_value >= rhs.getRawBits());
 }
 
-bool 			Fixed::operator<=(Fixed const &rhs) const
+bool 				Fixed::operator<=(const Fixed &rhs) const
 {
 	return (this->_value <= rhs.getRawBits());
 }
 
-bool 			Fixed::operator==(Fixed const &rhs) const
+bool 				Fixed::operator==(const Fixed &rhs) const
 {
 	return (this->_value == rhs.getRawBits());
 }
 
-bool 			Fixed::operator!=(Fixed const &rhs) const
+bool 				Fixed::operator!=(const Fixed &rhs) const
 {
 	return (this->_value != rhs.getRawBits());
 }
 
 // Arithmetic operators overload
 
-Fixed			Fixed::operator+(Fixed const &rhs)
+Fixed				Fixed::operator+(const Fixed &rhs)
 {
 	return (this->toFloat() + rhs.toFloat());
 }
 
-Fixed			Fixed::operator-(Fixed const &rhs)
+Fixed				Fixed::operator-(const Fixed &rhs)
 {
 	return (this->toFloat()- rhs.toFloat());
 }
 
-Fixed			Fixed::operator*(Fixed const &rhs)
+Fixed				Fixed::operator*(const Fixed &rhs)
 {
 	return (this->toFloat() * rhs.toFloat());
 }
 
-Fixed			Fixed::operator/(Fixed const &rhs)
+Fixed				Fixed::operator/(const Fixed &rhs)
 {
 	return (this->toFloat() / rhs.toFloat());
 }
 
 // Increment operators overload
 
-Fixed &			Fixed::operator++()
+Fixed &				Fixed::operator++()
 {
 	this->_value++;
 
 	return (*this);
 }
 
-Fixed		Fixed::operator++(int)
+Fixed				Fixed::operator++(int)
 {
 	Fixed tmp(*this);
 	operator++();
 
-	return tmp;
+	return (tmp);
 }
 
 // Decrement operators overload
 
-Fixed &			Fixed::operator--()
+Fixed &				Fixed::operator--()
 {
 	this->_value--;
 
 	return (*this);
 }
 
-Fixed		Fixed::operator--(int)
+Fixed				Fixed::operator--(int)
 {
 	Fixed tmp(*this);
 	operator--();
 
-	return tmp;
+	return (tmp);
+}
+
+// Setter
+
+void				Fixed::setRawBits(const int raw)
+{
+	this->_value = raw;
 }
 
 // Getter
 
-int				Fixed::getRawBits() const
+int					Fixed::getRawBits() const
 {
-	return this->_value;
+	return (this->_value);
 }
 
 // Convert value to float
 
-float			Fixed::toFloat() const
+float				Fixed::toFloat() const
 {
-	return this->_value / (float)(1 << Fixed::_fractionalBitsNb);
+	return (this->_value / (float)(1 << Fixed::_fractionalBitsNb));
 }
 
 // Convert value to int
 
-int				Fixed::toInt() const
+int					Fixed::toInt() const
 {
-	return this->_value >> Fixed::_fractionalBitsNb;
+	return (this->_value >> Fixed::_fractionalBitsNb);
 }
 
 // Returns reference to the smallest value
 
-Fixed &			Fixed::min(Fixed &a, Fixed &b)
+Fixed &				Fixed::min(Fixed &a, Fixed &b)
 {
 	return (a < b ? a : b);
 }
 
 // Function min overload
 
-const Fixed &	Fixed::min(Fixed const &a, Fixed const &b)
+const Fixed &		Fixed::min(const Fixed &a, const Fixed &b)
 {
 	return (a < b ? a : b);
 }
 
 // Returns reference to the biggest value
 
-Fixed &			Fixed::max(Fixed &a, Fixed &b)
+Fixed &				Fixed::max(Fixed &a, Fixed &b)
 {
 	return (a > b ? a : b);
 }
 
 // Function max overload
 
-const Fixed &	Fixed::max(Fixed const &a, Fixed const &b)
+const Fixed &		Fixed::max(const Fixed &a, const Fixed &b)
 {
 	return (a > b ? a : b);
 }
 
 // Insertion operator overload
 
-std::ostream &operator<<(std::ostream &o, Fixed const &rhs)
+std::ostream &		operator<<(std::ostream &out, const Fixed &rhs)
 {
-	o << rhs.toFloat();
-	return o;
+	out << rhs.toFloat();
+
+	return (out);
 }

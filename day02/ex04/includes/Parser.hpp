@@ -33,20 +33,21 @@ public:
 	Parser();
 
 	// Copy constructor
-	Parser(Parser const &src);
+	Parser(const Parser &src);
 
 	// Destructor
 	~Parser();
 
 	// Assignation operator overload
-	Parser &		operator=(Parser const &rhs);
+	Parser &		operator=(const Parser &rhs);
 
 	// Parsing
-	void			skipWhiteSpaces(std::string const &expr);
-	Fixed			lookForPriority(std::string const &expr, Fixed const &nb);
-	Fixed			lookForNumbers(std::string const &expr);
-	Fixed			lookForFactors(std::string const &expr);
-	Fixed			lookForTerms(std::string const &expr);
+	static int 		checkExpression(const std::string &expr);
+	void			skipWhiteSpaces(const std::string &expr);
+	Fixed			lookForPriority(const std::string &expr, const Fixed &nb);
+	Fixed			lookForNumbers(const std::string &expr);
+	Fixed			lookForFactors(const std::string &expr);
+	Fixed			lookForTerms(const std::string &expr);
 
 	// Do operations
 	static void		do_op(t_operands *operands);
