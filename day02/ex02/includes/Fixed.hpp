@@ -24,31 +24,31 @@ public:
 
 	// Constructors
 	Fixed();
-	Fixed(int value);
-	Fixed(float value);
+	Fixed(const int value);
+	Fixed(const float value);
 
 	// Copy constructor
-	Fixed(Fixed const &src);
+	Fixed(const Fixed &src);
 
 	// Destructor
 	~Fixed();
 
 	// Assignation operator overload
-	Fixed &					operator=(Fixed const &rhs);
+	Fixed &					operator=(const Fixed &rhs);
 
 	// Comparison operators overload
-	bool					operator>(Fixed const &rhs) const;
-	bool					operator<(Fixed const &rhs) const;
-	bool					operator>=(Fixed const &rhs) const;
-	bool					operator<=(Fixed const &rhs) const;
-	bool					operator==(Fixed const &rhs) const;
-	bool					operator!=(Fixed const &rhs) const;
+	bool					operator>(const Fixed &rhs) const;
+	bool					operator<(const Fixed &rhs) const;
+	bool					operator>=(const Fixed &rhs) const;
+	bool					operator<=(const Fixed &rhs) const;
+	bool					operator==(const Fixed &rhs) const;
+	bool					operator!=(const Fixed &rhs) const;
 
 	// Arithmetic operators overload
-	Fixed					operator+(Fixed const &rhs);
-	Fixed					operator-(Fixed const &rhs);
-	Fixed					operator*(Fixed const &rhs);
-	Fixed					operator/(Fixed const &rhs);
+	Fixed					operator+(const Fixed &rhs);
+	Fixed					operator-(const Fixed &rhs);
+	Fixed					operator*(const Fixed &rhs);
+	Fixed					operator/(const Fixed &rhs);
 
 	// Increment operators overload
 	Fixed &					operator++();
@@ -57,6 +57,9 @@ public:
 	// Decrement operators overload
 	Fixed &					operator--();
 	Fixed					operator--(int);
+
+	// Setter
+	void					setRawBits(const int raw);
 
 	// Getter
 	int						getRawBits() const;
@@ -71,13 +74,13 @@ public:
 	static Fixed &			min(Fixed &a, Fixed &b);
 
 	// Function min overload
-	static const Fixed &	min(Fixed const &a, Fixed const &b);
+	static const Fixed &	min(const Fixed &a, const Fixed &b);
 
 	// Returns reference to the biggest value
 	static Fixed &			max(Fixed &a, Fixed &b);
 
 	// Function max overload
-	static const Fixed &	max(Fixed const &a, Fixed const &b);
+	static const Fixed &	max(const Fixed &a, const Fixed &b);
 
 private:
 
@@ -87,6 +90,6 @@ private:
 };
 
 // Insertion operator overload
-std::ostream &				operator<<(std::ostream &o, Fixed const &rhs);
+std::ostream &				operator<<(std::ostream &out, const Fixed &rhs);
 
 #endif //FIXED_HPP
