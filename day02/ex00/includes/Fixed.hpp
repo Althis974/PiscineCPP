@@ -25,13 +25,16 @@ public:
 	Fixed();
 
 	// Copy constructor
-	Fixed(Fixed const &src);
+	Fixed(const Fixed &src);
 
 	// Destructor
 	~Fixed();
 
 	// Assignation operator overload
-	Fixed &				operator=(Fixed const &rhs);
+	Fixed &				operator=(const Fixed &rhs);
+
+	// Setter
+	void				setRawBits(const int raw);
 
 	// Getter
 	int					getRawBits() const;

@@ -24,9 +24,11 @@ Fixed::Fixed() : _value(0)
 
 // Copy constructor
 
-Fixed::Fixed(Fixed const &src) : _value(src.getRawBits())
+Fixed::Fixed(Fixed const &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
+
+	Fixed::operator=(src);
 }
 
 // Destructor
@@ -38,19 +40,29 @@ Fixed::~Fixed()
 
 // Assignation operator overload
 
-Fixed & Fixed::operator=(Fixed const &rhs)
+Fixed &		Fixed::operator=(const Fixed &rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
 
 	this->_value = rhs.getRawBits();
 
-	return *this;
+	return (*this);
+}
+
+// Setter
+
+void		Fixed::setRawBits(const int raw)
+{
+	std::cout << "setRawBits member function called" << std::endl;
+
+	this->_value = raw;
 }
 
 // Getter
 
-int Fixed::getRawBits() const
+int			Fixed::getRawBits() const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return this->_value;
+
+	return (this->_value);
 }
