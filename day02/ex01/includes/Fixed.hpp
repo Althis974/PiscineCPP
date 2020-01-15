@@ -24,17 +24,20 @@ public:
 
 	// Constructors
 	Fixed();
-	Fixed(int const value);
-	Fixed(float const value);
+	Fixed(const int value);
+	Fixed(const float value);
 
 	// Copy constructor
-	Fixed(Fixed const &src);
+	Fixed(const Fixed &src);
 
 	// Destructor
 	~Fixed();
 
 	// Assignation operator overload
-	Fixed &				operator=(Fixed const &rhs);
+	Fixed &				operator=(const Fixed &rhs);
+
+	// Setter
+	void				setRawBits(const int raw);
 
 	// Getter
 	int					getRawBits() const;
@@ -52,6 +55,6 @@ private:
 };
 
 // Insertion operator overload
-std::ostream &operator<<(std::ostream &o, Fixed const &rhs);
+std::ostream &			operator<<(std::ostream &out, const Fixed &rhs);
 
 #endif //FIXED_HPP
