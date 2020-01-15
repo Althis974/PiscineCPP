@@ -24,7 +24,7 @@ Fixed::Fixed() : _value(0)
 
 // Copy constructor
 
-Fixed::Fixed(Fixed const &src)
+Fixed::Fixed(const Fixed &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 
