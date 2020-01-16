@@ -13,9 +13,9 @@
 
 #include "../includes/FragTrap.hpp"
 
-int main()
+int 			main()
 {
-	FragTrap fragtrap("FR4G-TP");
+	FragTrap	fragtrap("FR4G-TP");
 
 	fragtrap.rangedAttack("Mitrakk");
 
@@ -38,4 +38,6 @@ int main()
 
 	for (int i = 0; i < 5; ++i)
 		fragtrap.vaulthunter_dot_exe("The Empyrean Sentinel");
+
+	return (0);
 }
