@@ -14,10 +14,10 @@
 #include "../includes/FragTrap.hpp"
 #include "../includes/ScavTrap.hpp"
 
-int main()
+int				main()
 {
-	ScavTrap scavTrap("SC4V-TP");
-	FragTrap fragtrap("FR4G-TP");
+	ScavTrap	scavTrap("SC4V-TP");
+	FragTrap	fragtrap("FR4G-TP");
 
 	scavTrap.challengeNewcomer("FR4G-TP");
 
@@ -38,7 +38,7 @@ int main()
 	for (int i = 0; i < 3; ++i)
 		scavTrap.beRepaired(25);
 
-	ScavTrap claptrap(scavTrap);
+	ScavTrap	claptrap(scavTrap);
 	claptrap.setName("Clappy");
 
 	scavTrap.challengeNewcomer("FR4G-TP");
@@ -52,4 +52,6 @@ int main()
 		scavTrap.takeDamage(50);
 		claptrap.takeDamage(50);
 	}
+
+	return (0);
 }
