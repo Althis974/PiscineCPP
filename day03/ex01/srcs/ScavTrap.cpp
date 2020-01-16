@@ -15,7 +15,7 @@
 
 // Constructor
 
-ScavTrap::ScavTrap(std::string const &name) : _name(name), _hitPts(100),
+ScavTrap::ScavTrap(const std::string &name) : _name(name), _hitPts(100),
 					_maxHitPts(100), _energy(50), _maxEnergy(50), _level(1),
 					_meleeDamage(20), _rangedDamage(15), _armor(3)
 {
@@ -47,16 +47,17 @@ ScavTrap::~ScavTrap()
 
 // Setter
 
-void			ScavTrap::setName(std::string const &name)
+void			ScavTrap::setName(const std::string &name)
 {
 	this->_name = name;
+
 	std::cout << "<" << this->_name << "> New Directives: Wubwubwub. Dubstep ";
 	std::cout << "dubstep. Wubwubwubwub DROP! Dubstep!\n" << std::endl;
 }
 
 // Assignation operator overload
 
-ScavTrap &		ScavTrap::operator= (ScavTrap const &rhs)
+ScavTrap &		ScavTrap::operator=(const ScavTrap &rhs)
 {
 	this->_name = rhs._name;
 	this->_hitPts = rhs._hitPts;
@@ -73,7 +74,7 @@ ScavTrap &		ScavTrap::operator= (ScavTrap const &rhs)
 
 // Ranged attack
 
-void			ScavTrap::rangedAttack(std::string const &target)
+void			ScavTrap::rangedAttack(const std::string &target)
 {
 	std::cout << "<" << this->_name << "> WOW! I hit 'em!" << std::endl;
 	std::cout << "*" << this->_name << " shoots " << target << " right in the";
@@ -83,7 +84,7 @@ void			ScavTrap::rangedAttack(std::string const &target)
 
 // Melee attack
 
-void			ScavTrap::meleeAttack(std::string const &target)
+void			ScavTrap::meleeAttack(const std::string &target)
 {
 	std::cout << "<" << this->_name << "> Meet professor punch!" << std::endl;
 	std::cout << "*" << this->_name << " hits " << target << " right in the";
@@ -122,15 +123,18 @@ void			ScavTrap::beRepaired(unsigned int amount)
 
 // Challenge opponent
 
-void			ScavTrap::challengeNewcomer(std::string const & target)
+void			ScavTrap::challengeNewcomer(const std::string &target)
 {
 	if (this->_energy < 10)
 	{
 		std::cout << "<" << this->_name << "> Hnngh! Empty!" << std::endl;
 		std::cout << "*not enough energy*\n" << std::endl;
+
 		return;
 	}
+
 	this->_energy -= 10;
+
 	std::cout << "<" << this->_name << "> I have an IDEA!\n" << std::endl;
 	std::cout << "*" << this->_name << " challenges " << target << "*"
 			  << std::endl;

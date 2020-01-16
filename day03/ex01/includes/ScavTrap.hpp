@@ -23,7 +23,7 @@ class ScavTrap
 public:
 
 	// Constructor
-	ScavTrap(std::string const &name);
+	ScavTrap(const std::string &name);
 
 	// Copy constructor
 	ScavTrap(const ScavTrap &src);
@@ -32,39 +32,39 @@ public:
 	~ScavTrap();
 
 	// Setter
-	void			setName(std::string const &name);
+	void					setName(const std::string &name);
 
 	// Assignation operator overload
-	ScavTrap &		operator=(ScavTrap const &rhs);
+	ScavTrap &				operator=(const ScavTrap &rhs);
 
 	// Ranged attack
-	void			rangedAttack(std::string const &target);
+	void					rangedAttack(const std::string &target);
 
 	// Melee attack
-	void			meleeAttack(std::string const &target);
+	void					meleeAttack(const std::string &target);
 
 	// Take damage
-	void			takeDamage(unsigned int amount);
+	void					takeDamage(unsigned int amount);
 
 	// Repair
-	void			beRepaired(unsigned int amount);
+	void					beRepaired(unsigned int amount);
 
 	// Challenge opponent
-	void			challengeNewcomer(std::string const & target);
+	void					challengeNewcomer(const std::string &target);
 
 private:
 
-	std::string		_name;
-	unsigned int	_hitPts;
-	unsigned int	_maxHitPts;
-	unsigned int	_energy;
-	unsigned int	_maxEnergy;
-	unsigned int	_level;
-	unsigned int	_meleeDamage;
-	unsigned int	_rangedDamage;
-	unsigned int	_armor;
+	std::string				_name;
+	unsigned int			_hitPts;
+	unsigned int			_maxHitPts;
+	unsigned int			_energy;
+	unsigned int			_maxEnergy;
+	unsigned int			_level;
+	unsigned int			_meleeDamage;
+	unsigned int			_rangedDamage;
+	unsigned int			_armor;
 
-	static std::string _ChallengesQuotes[5];
+	static std::string		_ChallengesQuotes[5];
 };
 
 

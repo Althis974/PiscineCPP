@@ -14,7 +14,6 @@
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
 
-
 #include <string>
 #include <iostream>
 
@@ -24,7 +23,7 @@ class FragTrap
 public:
 
 	// Constructor
-	FragTrap(std::string const &name);
+	FragTrap(const std::string &name);
 
 	// Copy constructor
 	FragTrap(const FragTrap &src);
@@ -33,39 +32,39 @@ public:
 	~FragTrap();
 
 	// Setter
-	void			setName(std::string const &name);
+	void					setName(const std::string &name);
 
 	// Assignation operator overload
-	FragTrap &		operator=(FragTrap const &rhs);
+	FragTrap &				operator=(const FragTrap &rhs);
 
 	// Ranged attack
-	void			rangedAttack(std::string const &target);
+	void					rangedAttack(const std::string &target);
 
 	// Melee attack
-	void			meleeAttack(std::string const &target);
+	void					meleeAttack(const std::string &target);
 
 	// Take damage
-	void			takeDamage(unsigned int amount);
+	void					takeDamage(unsigned int amount);
 
 	// Repair
-	void			beRepaired(unsigned int amount);
+	void					beRepaired(unsigned int amount);
 
 	// Action Packages activating
-	void			vaulthunter_dot_exe(std::string const &target);
+	void					vaulthunter_dot_exe(const std::string &target);
 
 private:
 
-	std::string		_name;
-	unsigned int	_hitPts;
-	unsigned int	_maxHitPts;
-	unsigned int	_energy;
-	unsigned int	_maxEnergy;
-	unsigned int	_level;
-	unsigned int	_meleeDamage;
-	unsigned int	_rangedDamage;
-	unsigned int	_armor;
+	std::string				_name;
+	unsigned int			_hitPts;
+	unsigned int			_maxHitPts;
+	unsigned int			_energy;
+	unsigned int			_maxEnergy;
+	unsigned int			_level;
+	unsigned int			_meleeDamage;
+	unsigned int			_rangedDamage;
+	unsigned int			_armor;
 
-	static std::string _vaultHunterQuotes[15];
+	static std::string		_vaultHunterQuotes[15];
 };
 
 

@@ -15,7 +15,7 @@
 
 // Constructor
 
-FragTrap::FragTrap(std::string const &name) : _name(name), _hitPts(100),
+FragTrap::FragTrap(const std::string &name) : _name(name), _hitPts(100),
 					_maxHitPts(100), _energy(100), _maxEnergy(100), _level(1),
 					_meleeDamage(30), _rangedDamage(20), _armor(5)
 {
@@ -51,16 +51,17 @@ FragTrap::~FragTrap()
 
 // Setter
 
-void			FragTrap::setName(std::string const &name)
+void			FragTrap::setName(const std::string &name)
 {
 	this->_name = name;
+
 	std::cout << "<" << this->_name << "> New Designation: ";
 	std::cout << this->_name << ", Hyperion Robot, Class C.\n" << std::endl;
 }
 
 // Assignation operator overload
 
-FragTrap &		FragTrap::operator= (FragTrap const &rhs)
+FragTrap &		FragTrap::operator=(const FragTrap &rhs)
 {
 	this->_name = rhs._name;
 	this->_hitPts = rhs._hitPts;
@@ -77,7 +78,7 @@ FragTrap &		FragTrap::operator= (FragTrap const &rhs)
 
 // Ranged attack
 
-void			FragTrap::rangedAttack(std::string const &target)
+void			FragTrap::rangedAttack(const std::string &target)
 {
 	std::cout << "<" << this->_name << "> That looks like it hurts!"
 			  << std::endl;
@@ -88,7 +89,7 @@ void			FragTrap::rangedAttack(std::string const &target)
 
 // Melee attack
 
-void			FragTrap::meleeAttack(std::string const &target)
+void			FragTrap::meleeAttack(const std::string &target)
 {
 	std::cout << "<" << this->_name << "> Ready for the PUNCHline?!"
 			  << std::endl;
@@ -129,15 +130,18 @@ void			FragTrap::beRepaired(unsigned int amount)
 
 // Action Packages activating
 
-void			FragTrap::vaulthunter_dot_exe(std::string const &target)
+void			FragTrap::vaulthunter_dot_exe(const std::string &target)
 {
 	if (this->_energy < 25)
 	{
 		std::cout << "<" << this->_name << "> Dangit, I'm out!" << std::endl;
 		std::cout << "*not enough energy*\n" << std::endl;
+
 		return;
 	}
+
 	this->_energy -= 25;
+
 	std::cout << "<" << this->_name << "> This time it'll be awesome, ";
 	std::cout << "I promise!\n" << std::endl;
 	std::cout << "*" << this->_name << " activates VaultHunter.EXE on "
@@ -146,7 +150,7 @@ void			FragTrap::vaulthunter_dot_exe(std::string const &target)
 			  << std::endl;
 }
 
-//Action Packages
+// Action Packages
 
 std::string		FragTrap::_vaultHunterQuotes[15] = {
 		"[Funzerker] I'm a sexy dinosaur! Rawr!",
