@@ -23,7 +23,7 @@ class ClapTrap
 public:
 
 	// Constructor
-	ClapTrap(std::string const &name, unsigned int hitPts,
+	ClapTrap(const std::string &name, unsigned int hitPts,
 			 unsigned int maxHitPts, unsigned int energy,
 			 unsigned int maxEnergy, unsigned int level,
 			 unsigned int meleeDamage, unsigned int rangedDamage,
@@ -39,16 +39,16 @@ public:
 	std::string		getName() const;
 
 	// Setter
-	void			setName(std::string const &name);
+	void			setName(const std::string &name);
 
 	// Assignation operator overload
-	ClapTrap &		operator=(ClapTrap const &rhs);
+	ClapTrap &		operator=(const ClapTrap &rhs);
 
 	// Ranged attack
-	void			rangedAttack(std::string const &target);
+	void			rangedAttack(const std::string &target);
 
 	// Melee attack
-	void			meleeAttack(std::string const &target);
+	void			meleeAttack(const std::string &target);
 
 	// Take damage
 	void			takeDamage(unsigned int amount);

@@ -15,7 +15,7 @@
 
 // Constructor
 
-NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name, 60,
+NinjaTrap::NinjaTrap(const std::string &name) : ClapTrap(name, 60,
 		60, 120, 120, 1, 60,
 		5, 0)
 {
@@ -64,87 +64,138 @@ NinjaTrap::~NinjaTrap()
 
 // Assignation operator overload
 
-NinjaTrap &		NinjaTrap::operator= (NinjaTrap const &rhs)
+NinjaTrap &		NinjaTrap::operator=(const NinjaTrap &rhs)
 {
 	ClapTrap::operator=(rhs);
 
 	return (*this);
 }
 
-// Trap a NinjaTrap
-
-void			NinjaTrap::ninjaShoebox(NinjaTrap & target)
-{
-	if (this->_energy < 30)
-	{
-		std::cout << "<" << this->_name << "> Crap, no more shots left!"
-				  << std::endl;
-		std::cout << "*not enough energy*\n" << std::endl;
-		return;
-	}
-	this->_energy -= 30;
-
-	std::cout << "<" << this->_name << "> "
-			  << NinjaTrap::_NinjaQuotes[std::rand() % 5] << std::endl;
-	std::cout << "*" << this->_name << " shoeboxes "
-			  << target.getName() << "*\n" << std::endl;
-}
-
 // Trap a ClapTrap
 
-void			NinjaTrap::ninjaShoebox(ClapTrap & target)
+void			NinjaTrap::ninjaShoebox(ClapTrap &target)
 {
 	if (this->_energy < 30)
 	{
 		std::cout << "<" << this->_name << "> Crap, no more shots left!"
 				  << std::endl;
 		std::cout << "*not enough energy*\n" << std::endl;
+
 		return;
 	}
+
 	this->_energy -= 30;
 
 	std::cout << "<" << this->_name << "> "
 			  << NinjaTrap::_NinjaQuotes[std::rand() % 5] << std::endl;
 	std::cout << "*" << this->_name << " shoeboxes "
 			  << target.getName() << "*\n" << std::endl;
+
+	std::cout << "      ,\n"
+				 "       |\n"
+				 "    ]  |.-._\n"
+				 "     \\|\"(0)\"| _]\n"
+				 "     `|=\\#/=|\\/\n"
+				 "      :  _  :\n"
+				 "       \\/_\\/ \n"
+				 "        |=| \n"
+				 "        `-'\n" << std::endl;
 }
 
 // Trap a FragTrap
 
-void			NinjaTrap::ninjaShoebox(FragTrap & target)
+void			NinjaTrap::ninjaShoebox(FragTrap &target)
 {
 	if (this->_energy < 30)
 	{
 		std::cout << "<" << this->_name << "> Crap, no more shots left!"
 				  << std::endl;
 		std::cout << "*not enough energy*\n" << std::endl;
+
 		return;
 	}
+
 	this->_energy -= 30;
 
 	std::cout << "<" << this->_name << "> "
 			  << NinjaTrap::_NinjaQuotes[std::rand() % 5] << std::endl;
 	std::cout << "*" << this->_name << " shoeboxes "
 			  << target.getName() << "*\n" << std::endl;
+
+	std::cout << "      ,\n"
+				 "   ,   |\n"
+				 "  ⬤]  |.-._    ______.\n"
+				 "     \\|\"(0)\"| ~(_]----'\n"
+				 "     `|=\\#/=|\\/_(\n"
+				 "      :  _  :\n"
+				 "       \\/_\\/\n"
+				 "        |=|\n"
+				 "        `-'\n" << std::endl;
 }
 
 // Trap a ScavTrap
 
-void			NinjaTrap::ninjaShoebox(ScavTrap & target)
+void			NinjaTrap::ninjaShoebox(ScavTrap &target)
 {
 	if (this->_energy < 30)
 	{
 		std::cout << "<" << this->_name << "> Crap, no more shots left!"
 				  << std::endl;
 		std::cout << "*not enough energy*\n" << std::endl;
+
 		return;
 	}
+
 	this->_energy -= 30;
 
 	std::cout << "<" << this->_name << "> "
 			  << NinjaTrap::_NinjaQuotes[std::rand() % 5]<< std::endl;
 	std::cout << "*" << this->_name << " shoeboxes "
 			  << target.getName() << "*\n" << std::endl;
+
+	std::cout << "     ︵  ,   ︵\n"
+				 "     \\\\  |  //\n"
+				 "   ]  \\\\.|.//\n"
+				 "    \\⌿|\"(0)\"|⍀ _]\n"
+				 "     `|=\\#/=|\\/\n"
+				 "      :  _  :\n"
+				 "       \\/_\\/\n"
+				 "        |=|\n"
+				 "        `-'\n" << std::endl;
+}
+
+// Trap a NinjaTrap
+
+void			NinjaTrap::ninjaShoebox(NinjaTrap &target)
+{
+	if (this->_energy < 30)
+	{
+		std::cout << "<" << this->_name << "> Crap, no more shots left!"
+				  << std::endl;
+		std::cout << "*not enough energy*\n" << std::endl;
+
+		return;
+	}
+
+	this->_energy -= 30;
+
+	std::cout << "<" << this->_name << "> "
+			  << NinjaTrap::_NinjaQuotes[std::rand() % 5] << std::endl;
+	std::cout << "*" << this->_name << " shoeboxes "
+			  << target.getName() << "*\n" << std::endl;
+
+	std::cout << "  ⊿]\n"
+				 "  ||\n"
+				 "  ||  ,\n"
+				 " _||_  |\n"
+				 " `--ʹ  |.-._\n"
+				 "  ||] |=====|\n"
+				 "   . \\|\"(0)\"| ✧_]\n"
+				 "     `|=\\#/=|\\/\n"
+				 "      :  _  :\n"
+				 "       \\/_\\/\n"
+				 "        |=|\n"
+				 "        `-'\n" << std::endl;
 }
 
 // Talk like ninja

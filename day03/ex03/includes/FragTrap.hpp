@@ -15,6 +15,8 @@
 #define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
+#include <iostream>
+#include <string>
 
 class FragTrap : public ClapTrap
 {
@@ -22,7 +24,7 @@ class FragTrap : public ClapTrap
 public:
 
 	// Constructor
-	FragTrap(std::string const &name);
+	FragTrap(const std::string &name);
 
 	// Copy constructor
 	FragTrap(const FragTrap &src);
@@ -31,10 +33,10 @@ public:
 	virtual ~FragTrap();
 
 	// Assignation operator overload
-	FragTrap &			operator=(FragTrap const &rhs);
+	FragTrap &			operator=(const FragTrap &rhs);
 
 	// Action Packages activating
-	void				vaulthunter_dot_exe(std::string const &target);
+	void				vaulthunter_dot_exe(const std::string &target);
 
 private:
 

@@ -15,7 +15,7 @@
 
 // Constructor
 
-ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name, 100,
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name, 100,
 		100, 50, 50, 1, 20,
 		15, 3)
 {
@@ -57,7 +57,7 @@ ScavTrap::~ScavTrap()
 
 // Assignation operator overload
 
-ScavTrap &		ScavTrap::operator= (ScavTrap const &rhs)
+ScavTrap &		ScavTrap::operator=(const ScavTrap &rhs)
 {
 	ClapTrap::operator=(rhs);
 
@@ -66,15 +66,18 @@ ScavTrap &		ScavTrap::operator= (ScavTrap const &rhs)
 
 // Challenge opponent
 
-void			ScavTrap::challengeNewcomer(std::string const & target)
+void			ScavTrap::challengeNewcomer(const std::string &target)
 {
 	if (this->_energy < 10)
 	{
 		std::cout << "<" << this->_name << "> Hnngh! Empty!" << std::endl;
 		std::cout << "*not enough energy*\n" << std::endl;
+
 		return;
 	}
+
 	this->_energy -= 10;
+
 	std::cout << "<" << this->_name << "> I have an IDEA!\n" << std::endl;
 	std::cout << "*" << this->_name << " challenges " << target << "*"
 			  << std::endl;

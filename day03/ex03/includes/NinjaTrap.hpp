@@ -14,10 +14,11 @@
 #ifndef NINJATRAP_HPP
 #define NINJATRAP_HPP
 
-
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include <iostream>
+#include <string>
 
 class NinjaTrap : public ClapTrap
 {
@@ -25,7 +26,7 @@ class NinjaTrap : public ClapTrap
 public:
 
 	// Constructor
-	NinjaTrap(std::string const &name);
+	NinjaTrap(const std::string &name);
 
 	// Copy constructor
 	NinjaTrap(const NinjaTrap &src);
@@ -34,23 +35,23 @@ public:
 	virtual ~NinjaTrap();
 
 	// Assignation operator overload
-	NinjaTrap &			operator=(NinjaTrap const &rhs);
-
-	// Trap a NinjaTrap
-	void				ninjaShoebox(NinjaTrap & target);
+	NinjaTrap &				operator=(const NinjaTrap &rhs);
 
 	// Trap a ClapTrap
-	void				ninjaShoebox(ClapTrap & target);
+	void					ninjaShoebox(ClapTrap &target);
 
 	// Trap a FragTrap
-	void				ninjaShoebox(FragTrap & target);
+	void					ninjaShoebox(FragTrap &target);
 
 	// Trap a ScavTrap
-	void				ninjaShoebox(ScavTrap & target);
+	void					ninjaShoebox(ScavTrap &target);
+
+	// Trap a NinjaTrap
+	void					ninjaShoebox(NinjaTrap &target);
 
 private:
 
-	static std::string	_NinjaQuotes[5];
+	static std::string		_NinjaQuotes[5];
 };
 
 

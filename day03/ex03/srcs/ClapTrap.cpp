@@ -15,7 +15,7 @@
 
 // Constructor
 
-ClapTrap::ClapTrap(std::string const &name, unsigned int hitPts,
+ClapTrap::ClapTrap(const std::string &name, unsigned int hitPts,
 		unsigned int maxHitPts, unsigned int energy, unsigned int maxEnergy,
 		unsigned int level, unsigned int meleeDamage, unsigned int rangedDamage,
 		unsigned int armor) : _name(name), _hitPts(hitPts),
@@ -79,16 +79,17 @@ std::string		ClapTrap::getName() const
 
 // Setter
 
-void			ClapTrap::setName(std::string const &name)
+void			ClapTrap::setName(const std::string &name)
 {
 	this->_name = name;
+
 	std::cout << "<" << this->_name << "> " << this->_setNameMessage
 			  << std::endl;
 }
 
 // Assignation operator overload
 
-ClapTrap &		ClapTrap::operator= (ClapTrap const &rhs)
+ClapTrap &		ClapTrap::operator=(const ClapTrap &rhs)
 {
 	this->_name = rhs._name;
 	this->_hitPts = rhs._hitPts;
@@ -105,7 +106,7 @@ ClapTrap &		ClapTrap::operator= (ClapTrap const &rhs)
 
 // Ranged attack
 
-void			ClapTrap::rangedAttack(std::string const &target)
+void			ClapTrap::rangedAttack(const std::string &target)
 {
 	std::cout << "<" << this->_name << "> "<< this->_rangedAttackMessage
 			  << std::endl;
@@ -116,7 +117,7 @@ void			ClapTrap::rangedAttack(std::string const &target)
 
 // Melee attack
 
-void			ClapTrap::meleeAttack(std::string const &target)
+void			ClapTrap::meleeAttack(const std::string &target)
 {
 	std::cout << "<" << this->_name << "> " << this->_meleeAttackMessage
 			  << std::endl;
