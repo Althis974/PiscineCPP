@@ -17,23 +17,23 @@
 int				main()
 {
 	ScavTrap	scavTrap("SC4V-TP");
-	FragTrap	fragtrap("FR4G-TP");
+	FragTrap	fragTrap("FR4G-TP");
 
 	scavTrap.challengeNewcomer("FR4G-TP");
 
-	fragtrap.rangedAttack("SC4V-TP");
+	fragTrap.rangedAttack("SC4V-TP");
 	scavTrap.takeDamage(20);
 
 	scavTrap.rangedAttack("FR4G-TP");
-	fragtrap.takeDamage(15);
+	fragTrap.takeDamage(15);
 
 	scavTrap.challengeNewcomer("FR4G-TP");
 
-	fragtrap.meleeAttack("SC4V-TP");
+	fragTrap.meleeAttack("SC4V-TP");
 	scavTrap.takeDamage(30);
 
 	scavTrap.meleeAttack("FR4G-TP");
-	fragtrap.takeDamage(20);
+	fragTrap.takeDamage(20);
 
 	for (int i = 0; i < 3; ++i)
 		scavTrap.beRepaired(25);
@@ -45,7 +45,7 @@ int				main()
 	claptrap.challengeNewcomer("FR4G-TP");
 
 	for (int i = 0; i < 5; ++i)
-		fragtrap.vaulthunter_dot_exe("SC4V-TP and Clappy");
+		fragTrap.vaulthunter_dot_exe("SC4V-TP and Clappy");
 
 	for (int i = 0; i < 4; ++i)
 	{
