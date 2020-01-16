@@ -15,20 +15,20 @@
 
 int 			main()
 {
-	FragTrap	fragtrap("FR4G-TP");
+	FragTrap	fragTrap("FR4G-TP");
 
-	fragtrap.rangedAttack("Mitrakk");
+	fragTrap.rangedAttack("Mitrakk");
 
 	for (int i = 0; i < 2; ++i)
-		fragtrap.takeDamage(40);
+		fragTrap.takeDamage(40);
 
-	FragTrap claptrap(fragtrap);
+	FragTrap claptrap(fragTrap);
 	claptrap.setName("Clappy");
 
 	claptrap.meleeAttack("Skagzilla");
 
 	for (int i = 0; i < 3; ++i)
-		fragtrap.beRepaired(50);
+		fragTrap.beRepaired(50);
 
 	for (int i = 0; i < 5; ++i)
 		claptrap.vaulthunter_dot_exe("The Empyrean Sentinel");
@@ -37,7 +37,7 @@ int 			main()
 		claptrap.takeDamage(100);
 
 	for (int i = 0; i < 5; ++i)
-		fragtrap.vaulthunter_dot_exe("The Empyrean Sentinel");
+		fragTrap.vaulthunter_dot_exe("The Empyrean Sentinel");
 
 	return (0);
 }
