@@ -15,6 +15,8 @@
 #define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
+#include <iostream>
+#include <string>
 
 class ScavTrap : public ClapTrap
 {
@@ -22,7 +24,7 @@ class ScavTrap : public ClapTrap
 public:
 
 	// Constructor
-	ScavTrap(std::string const &name);
+	ScavTrap(const std::string &name);
 
 	// Copy constructor
 	ScavTrap(const ScavTrap &src);
@@ -31,10 +33,10 @@ public:
 	virtual ~ScavTrap();
 
 	// Assignation operator overload
-	ScavTrap &			operator=(ScavTrap const &rhs);
+	ScavTrap &			operator=(const ScavTrap &rhs);
 
 	// Challenge opponent
-	void				challengeNewcomer(std::string const & target);
+	void				challengeNewcomer(const std::string &target);
 
 private:
 

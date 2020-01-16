@@ -15,7 +15,7 @@
 
 // Constructor
 
-FragTrap::FragTrap(std::string const &name) : ClapTrap(name, 100,
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name, 100,
 		100, 100, 100,1, 30,
 		20, 5)
 {
@@ -61,7 +61,7 @@ FragTrap::~FragTrap()
 
 // Assignation operator overload
 
-FragTrap &		FragTrap::operator= (FragTrap const &rhs)
+FragTrap &		FragTrap::operator=(const FragTrap &rhs)
 {
 	ClapTrap::operator=(rhs);
 
@@ -70,15 +70,18 @@ FragTrap &		FragTrap::operator= (FragTrap const &rhs)
 
 // Action Packages activating
 
-void			FragTrap::vaulthunter_dot_exe(std::string const &target)
+void			FragTrap::vaulthunter_dot_exe(const std::string &target)
 {
 	if (this->_energy < 25)
 	{
 		std::cout << "<" << this->_name << "> Dangit, I'm out!" << std::endl;
 		std::cout << "*not enough energy*\n" << std::endl;
+
 		return;
 	}
+
 	this->_energy -= 25;
+
 	std::cout << "<" << this->_name << "> This time it'll be awesome, ";
 	std::cout << "I promise!\n" << std::endl;
 	std::cout << "*" << this->_name << " activates VaultHunter.EXE on "

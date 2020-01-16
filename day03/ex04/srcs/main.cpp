@@ -16,20 +16,20 @@
 #include "../includes/NinjaTrap.hpp"
 #include "../includes/SuperTrap.hpp"
 
-int main()
+int				main()
 {
-	SuperTrap superTrap("SUP3R-TP");
-	ClapTrap clapTrap("Clappy", 100, 100, 0,
+	SuperTrap	superTrap("SUP3R-TP");
+	ClapTrap	clapTrap("Clappy", 100, 100, 0,
 			0, 1, 0, 0, 0);
-	FragTrap fragtrap("FR4G-TP");
-	ScavTrap scavTrap("SC4V-TP");
-	NinjaTrap ninjaTrap("N1NJ4-TP");
+	FragTrap	fragTrap("FR4G-TP");
+	ScavTrap	scavTrap("SC4V-TP");
+	NinjaTrap	ninjaTrap("N1NJ4-TP");
 
 	superTrap.meleeAttack("N1NJ4-TP");
 	ninjaTrap.takeDamage(60);
 
 	superTrap.rangedAttack("FR4G-TP");
-	fragtrap.takeDamage(20);
+	fragTrap.takeDamage(20);
 
 	superTrap.vaulthunter_dot_exe("SC4V-TP");
 	scavTrap.takeDamage(120);
@@ -37,7 +37,7 @@ int main()
 	superTrap.ninjaShoebox(clapTrap);
 	clapTrap.takeDamage(120);
 
-	SuperTrap fakeTrap(superTrap);
+	SuperTrap	fakeTrap(superTrap);
 	fakeTrap.setName("F4K3-TP");
 
 	fakeTrap.meleeAttack("SUP3R-TP");
@@ -49,4 +49,6 @@ int main()
 		superTrap.vaulthunter_dot_exe("F4K3-TP");
 
 	fakeTrap.takeDamage(200);
+
+	return (0);
 }

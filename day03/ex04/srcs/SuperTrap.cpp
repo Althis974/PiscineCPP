@@ -15,7 +15,7 @@
 
 // Constructor
 
-SuperTrap::SuperTrap(std::string const &name) : ClapTrap(name, 100,
+SuperTrap::SuperTrap(const std::string &name) : ClapTrap(name, 100,
 		100, 120, 120,1, 60,
 		20, 5), FragTrap(name), NinjaTrap(name)
 {
@@ -58,7 +58,7 @@ SuperTrap::~SuperTrap()
 
 // Assignation operator overload
 
-SuperTrap &		SuperTrap::operator= (SuperTrap const &rhs)
+SuperTrap &		SuperTrap::operator= (const SuperTrap &rhs)
 {
 	ClapTrap::operator=(rhs);
 

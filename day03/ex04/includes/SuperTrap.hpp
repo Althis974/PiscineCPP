@@ -16,6 +16,8 @@
 
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
+#include <iostream>
+#include <string>
 
 class SuperTrap : virtual public FragTrap, virtual public NinjaTrap
 {
@@ -23,7 +25,7 @@ class SuperTrap : virtual public FragTrap, virtual public NinjaTrap
 public:
 
 	// Constructor
-	SuperTrap(std::string const &name);
+	SuperTrap(const std::string &name);
 
 	// Copy constructor
 	SuperTrap(const SuperTrap &src);
@@ -32,7 +34,7 @@ public:
 	virtual ~SuperTrap();
 
 	// Assignation operator overload
-	SuperTrap &			operator=(SuperTrap const &rhs);
+	SuperTrap &			operator=(const SuperTrap &rhs);
 };
 
 
