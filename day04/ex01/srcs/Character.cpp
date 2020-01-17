@@ -23,7 +23,7 @@ Character::Character(const std::string &name) : _name(name), _AP(40),
 
 // Copy constructor
 
-Character::Character(Character &src) : _name(src._name), _AP(src._AP),
+Character::Character(const Character &src) : _name(src._name), _AP(src._AP),
 						_weapon(src._weapon)
 {
 
@@ -38,7 +38,7 @@ Character::~Character()
 
 // Assignation operator overload
 
-Character &			Character::operator=(Character const &rhs)
+Character &			Character::operator=(const Character &rhs)
 {
 	this->_name = rhs._name;
 	this->_AP = rhs._AP;
@@ -93,6 +93,7 @@ void				Character::attack(Enemy *enemy)
 			this->_AP -= this->_weapon->getAPCost();
 
 			enemy->takeDamage(this->_weapon->getDamage());
+
 			if (enemy->getHP() <= 0)
 				delete enemy;
 		}
@@ -101,7 +102,7 @@ void				Character::attack(Enemy *enemy)
 
 // Insertion operator overload
 
-std::ostream &		operator<<(std::ostream &out, Character const &rhs)
+std::ostream &		operator<<(std::ostream &out, const Character &rhs)
 {
 	if (rhs.getWeapon())
 		out << rhs.getName() << " has " << rhs.getAP() << " AP and wields a "

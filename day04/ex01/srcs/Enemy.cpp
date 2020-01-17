@@ -15,7 +15,7 @@
 
 // Constructor
 
-Enemy::Enemy( std::string const &type, int hp) : _type(type), _hp(hp)
+Enemy::Enemy(const std::string &type, int hp) : _type(type), _hp(hp)
 {
 
 }
@@ -36,7 +36,7 @@ Enemy::~Enemy()
 
 // Assignation operator overload
 
-Enemy &			Enemy::operator=(Enemy const &rhs)
+Enemy &			Enemy::operator=(const Enemy &rhs)
 {
 	this->_type = rhs._type;
 	this->_hp = rhs._hp;

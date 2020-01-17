@@ -15,6 +15,8 @@
 #define SLIME_HPP
 
 #include "Enemy.hpp"
+#include <iostream>
+#include <string>
 
 class Slime : public Enemy
 {
@@ -25,13 +27,13 @@ public:
 	Slime();
 
 	// Copy constructor
-	Slime(Slime &src);
+	Slime(const Slime &src);
 
 	// Destructor
 	virtual ~Slime();
 
 	// Assignation operator overload
-	Slime &operator=(Slime const &rhs);
+	Slime &				operator=(const Slime &rhs);
 
 	// Suffer
 	virtual void		takeDamage(int damage);

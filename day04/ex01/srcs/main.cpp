@@ -19,6 +19,7 @@
 #include "../includes/Undead.hpp"
 #include "../includes/Slime.hpp"
 #include "../includes/Grenade.hpp"
+#include <iostream>
 
 int main()
 {

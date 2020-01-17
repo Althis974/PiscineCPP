@@ -15,6 +15,8 @@
 #define GRENADE_HPP
 
 #include "AWeapon.hpp"
+#include <iostream>
+#include <string>
 
 class Grenade : public AWeapon
 {
@@ -25,13 +27,13 @@ public:
 	Grenade();
 
 	// Copy constructor
-	Grenade(const Grenade &obj);
+	Grenade(const Grenade &src);
 
 	// Destructor
 	virtual ~Grenade();
 
 	// Assignation operator overload
-	Grenade &		operator=(Grenade const &rhs);
+	Grenade &		operator=(const Grenade &rhs);
 
 	// Attack
 	void			attack() const;

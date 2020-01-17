@@ -22,7 +22,7 @@ SuperMutant::SuperMutant() : Enemy("Super Mutant", 170)
 
 // Copy constructor
 
-SuperMutant::SuperMutant(SuperMutant &src) : Enemy(src)
+SuperMutant::SuperMutant(const SuperMutant &src) : Enemy(src)
 {
 	std::cout << "Gaaah. Me want smash heads !" << std::endl;
 }
@@ -34,7 +34,7 @@ SuperMutant::~SuperMutant()
 	std::cout << "Aaargh ..." << std::endl;
 }
 
-SuperMutant &		SuperMutant::operator=(SuperMutant const &rhs)
+SuperMutant &		SuperMutant::operator=(const SuperMutant &rhs)
 {
 	Enemy::operator=(rhs);
 

@@ -15,6 +15,8 @@
 #define FLAMETHROWER_HPP
 
 #include "AWeapon.hpp"
+#include <iostream>
+#include <string>
 
 class FlameThrower : public AWeapon
 {
@@ -25,13 +27,13 @@ public:
 	FlameThrower();
 
 	// Copy constructor
-	FlameThrower(const FlameThrower &obj);
+	FlameThrower(const FlameThrower &src);
 
 	// Destructor
 	virtual ~FlameThrower();
 
 	// Assignation operator overload
-	FlameThrower &		operator=(FlameThrower const &rhs);
+	FlameThrower &		operator=(const FlameThrower &rhs);
 
 	// Attack
 	void			attack() const;

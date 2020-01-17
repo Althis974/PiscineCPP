@@ -14,7 +14,8 @@
 #ifndef ENEMY_HPP
 #define ENEMY_HPP
 
-#include "iostream"
+#include <iostream>
+#include <string>
 
 class Enemy
 {
@@ -23,8 +24,7 @@ public:
 
 	// Constructors
 	Enemy();
-
-	Enemy( std::string const &type, int hp);
+	Enemy(const std::string &type, int hp);
 
 	// Copy constructor
 	Enemy(const Enemy &src);
@@ -33,7 +33,7 @@ public:
 	virtual ~Enemy();
 
 	// Assignation operator overload
-	Enemy &			operator=(Enemy const &rhs);
+	Enemy &			operator=(const Enemy &rhs);
 
 	// Getters
 	std::string		getType() const;

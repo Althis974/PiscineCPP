@@ -24,7 +24,6 @@ public:
 
 	// Constructors
 	AWeapon();
-
 	AWeapon(const std::string &name, int APCost, int damage);
 
 	// Copy constructor
@@ -34,7 +33,7 @@ public:
 	virtual				~AWeapon();
 
 	// Assignation operator overload
-	AWeapon &			operator= (const AWeapon &rhs);
+	AWeapon &			operator=(const AWeapon &rhs);
 
 	// Getters
 	std::string			getName() const;

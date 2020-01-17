@@ -22,7 +22,7 @@ Grenade::Grenade() : AWeapon("Grenade", 20, 100)
 
 // Copy constructor
 
-Grenade::Grenade(const Grenade &obj) : AWeapon(obj)
+Grenade::Grenade(const Grenade &src) : AWeapon(src)
 {
 
 }
@@ -36,7 +36,7 @@ Grenade::~Grenade()
 
 // Assignation operator overload
 
-Grenade &			Grenade::operator=(Grenade const &rhs)
+Grenade &			Grenade::operator=(const Grenade &rhs)
 {
 	AWeapon::operator=(rhs);
 

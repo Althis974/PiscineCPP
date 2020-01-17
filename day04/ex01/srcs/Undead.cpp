@@ -22,7 +22,7 @@ Undead::Undead() : Enemy("Undead", 100)
 
 // Copy constructor
 
-Undead::Undead(Undead &src) : Enemy(src)
+Undead::Undead(const Undead &src) : Enemy(src)
 {
 	std::cout << "Braiiiiiiinnnssss..." << std::endl;
 }
@@ -34,7 +34,7 @@ Undead::~Undead()
 	std::cout << "Aaaaarggggghhh..." << std::endl;
 }
 
-Undead &		Undead::operator=(Undead const &rhs)
+Undead &			Undead::operator=(const Undead &rhs)
 {
 	Enemy::operator=(rhs);
 

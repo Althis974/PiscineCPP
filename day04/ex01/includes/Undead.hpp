@@ -15,6 +15,8 @@
 #define UNDEAD_HPP
 
 #include "Enemy.hpp"
+#include <iostream>
+#include <string>
 
 class Undead : public Enemy
 {
@@ -25,13 +27,13 @@ public:
 	Undead();
 
 	// Copy constructor
-	Undead(Undead &src);
+	Undead(const Undead &src);
 
 	// Destructor
 	virtual ~Undead();
 
 	// Assignation operator overload
-	Undead &operator=(Undead const &rhs);
+	Undead &			operator=(const Undead &rhs);
 
 	// Suffer
 	virtual void		takeDamage(int damage);

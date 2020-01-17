@@ -22,7 +22,7 @@ FlameThrower::FlameThrower() : AWeapon("FlameThrower", 15, 75)
 
 // Copy constructor
 
-FlameThrower::FlameThrower(const FlameThrower &obj) : AWeapon(obj)
+FlameThrower::FlameThrower(const FlameThrower &src) : AWeapon(src)
 {
 
 }
@@ -36,7 +36,7 @@ FlameThrower::~FlameThrower()
 
 // Assignation operator overload
 
-FlameThrower &			FlameThrower::operator=(FlameThrower const &rhs)
+FlameThrower &			FlameThrower::operator=(const FlameThrower &rhs)
 {
 	AWeapon::operator=(rhs);
 

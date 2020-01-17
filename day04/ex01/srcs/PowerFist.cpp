@@ -22,7 +22,7 @@ PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
 
 // Copy constructor
 
-PowerFist::PowerFist(const PowerFist &obj) : AWeapon(obj)
+PowerFist::PowerFist(const PowerFist &src) : AWeapon(src)
 {
 
 }

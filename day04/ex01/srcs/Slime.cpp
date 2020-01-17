@@ -22,7 +22,7 @@ Slime::Slime() : Enemy("Slime", 200)
 
 // Copy constructor
 
-Slime::Slime(Slime &src) : Enemy(src)
+Slime::Slime(const Slime &src) : Enemy(src)
 {
 	std::cout << "Slurp." << std::endl;
 }
@@ -34,7 +34,7 @@ Slime::~Slime()
 	std::cout << "Sprotch." << std::endl;
 }
 
-Slime &		Slime::operator=(Slime const &rhs)
+Slime &				Slime::operator=(const Slime &rhs)
 {
 	Enemy::operator=(rhs);
 

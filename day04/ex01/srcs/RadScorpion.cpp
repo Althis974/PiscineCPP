@@ -36,7 +36,7 @@ RadScorpion::~RadScorpion()
 
 // Assignation operator overload
 
-RadScorpion &	RadScorpion::operator=(RadScorpion const &rhs)
+RadScorpion &	RadScorpion::operator=(const RadScorpion &rhs)
 {
 	Enemy::operator=(rhs);
 

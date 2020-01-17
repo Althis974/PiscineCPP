@@ -15,11 +15,6 @@
 
 // Constructors
 
-AWeapon::AWeapon()
-{
-
-}
-
 AWeapon::AWeapon(const std::string &name, int APCost, int damage) :
 		_name(name), _APCost(APCost), _damage(damage)
 {

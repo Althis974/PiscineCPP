@@ -15,6 +15,8 @@
 #define POWERFIST_HPP
 
 #include "AWeapon.hpp"
+#include <iostream>
+#include <string>
 
 class PowerFist : public AWeapon
 {
@@ -25,7 +27,7 @@ public:
 	PowerFist();
 
 	// Copy constructor
-	PowerFist(const PowerFist &obj);
+	PowerFist(const PowerFist &src);
 
 	// Destructor
 	virtual ~PowerFist();

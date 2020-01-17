@@ -15,9 +15,12 @@
 #define RADSCORPION_HPP
 
 # include "Enemy.hpp"
+# include <iostream>
+# include <string>
 
 class RadScorpion : public Enemy
 {
+
 public:
 
 	// Constructor

@@ -15,6 +15,8 @@
 #define SUPERMUTANT_HPP
 
 #include "Enemy.hpp"
+#include <iostream>
+#include <string>
 
 class SuperMutant : public Enemy
 {
@@ -25,13 +27,13 @@ public:
 	SuperMutant();
 
 	// Copy constructor
-	SuperMutant(SuperMutant &src);
+	SuperMutant(const SuperMutant &src);
 
 	// Destructor
 	virtual ~SuperMutant();
 
 	// Assignation operator overload
-	SuperMutant &operator=(SuperMutant const &rhs);
+	SuperMutant &		operator=(const SuperMutant &rhs);
 
 	// Suffer
 	virtual void		takeDamage(int damage);

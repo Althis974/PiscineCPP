@@ -16,6 +16,8 @@
 
 #include "AWeapon.hpp"
 #include "Enemy.hpp"
+#include <iostream>
+#include <string>
 
 class Character
 {
@@ -24,17 +26,16 @@ public:
 
 	// Constructors
 	Character();
-
 	Character(const std::string &name);
 
 	// Copy constructor
-	Character(Character &src);
+	Character(const Character &src);
 
 	// Destructor
 	~Character();
 
 	// Assignation operator overload
-	Character &		operator=(Character const &rhs);
+	Character &		operator=(const Character &rhs);
 
 	// Getters
 	std::string		getName() const;
@@ -54,11 +55,11 @@ private:
 
 	std::string		_name;
 	int				_AP;
-	AWeapon			*_weapon;
+	AWeapon *		_weapon;
 };
 
 // Insertion operator overload
-std::ostream &		operator<<(std::ostream &out, Character const &rhs);
+std::ostream &		operator<<(std::ostream &out, const Character &rhs);
 
 
 #endif //CHARACTER_HPP
