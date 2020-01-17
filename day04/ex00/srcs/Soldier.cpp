@@ -41,7 +41,7 @@ Soldier::~Soldier()
 
 // Assignation operator overload
 
-Soldier &			Soldier::operator= (const Soldier &rhs)
+Soldier &			Soldier::operator=(const Soldier &rhs)
 {
 	Victim::operator=(rhs);
 

@@ -15,6 +15,8 @@
 #define SOLDIER_HPP
 
 # include "Victim.hpp"
+# include <iostream>
+# include <string>
 
 class Soldier : public Victim
 {
@@ -23,7 +25,6 @@ public:
 
 	// Constructors
 	Soldier();
-
 	Soldier(const std::string &name);
 
 	// Copy constructor
@@ -33,7 +34,7 @@ public:
 	virtual ~Soldier();
 
 	// Assignation operator overload
-	Soldier &			operator= (const Soldier &rhs);
+	Soldier &			operator=(const Soldier &rhs);
 
 	// Suffer a fantastic spell
 	void				getPolymorphed() const;

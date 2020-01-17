@@ -41,7 +41,7 @@ Noble::~Noble()
 
 // Assignation operator overload
 
-Noble &			Noble::operator= (const Noble &rhs)
+Noble &			Noble::operator=(const Noble &rhs)
 {
 	Victim::operator=(rhs);
 

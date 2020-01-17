@@ -15,6 +15,8 @@
 #define PEON_HPP
 
 # include "Victim.hpp"
+# include <iostream>
+# include <string>
 
 class Peon : public Victim
 {
@@ -23,7 +25,6 @@ public:
 
 	// Constructors
 	Peon();
-
 	Peon(const std::string &name);
 
 	// Copy constructor
@@ -33,7 +34,7 @@ public:
 	virtual ~Peon();
 
 	// Assignation operator overload
-	Peon &				operator= (const Peon &rhs);
+	Peon &				operator=(const Peon &rhs);
 
 	// Suffer a fantastic spell
 	void				getPolymorphed() const;

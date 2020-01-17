@@ -16,8 +16,9 @@
 #include "../includes/Peon.hpp"
 #include "../includes/Soldier.hpp"
 #include "../includes/Noble.hpp"
+#include <iostream>
 
-int	main()
+int				main()
 {
 	std::cout << "\n---------------- MAIN PART ----------------\n" << std::endl;
 
@@ -34,7 +35,7 @@ int	main()
 	std::cout << "\n-------------- DERIVED PART --------------\n" << std::endl;
 
 	Soldier		moos("Moos");
-	Noble		wilhelm("wilhelm");
+	Noble		wilhelm("Wilhelm");
 
 	std::cout << moos << wilhelm;
 

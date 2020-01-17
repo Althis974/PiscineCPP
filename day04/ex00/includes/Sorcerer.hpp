@@ -25,7 +25,6 @@ public:
 
 	// Constructors
 	Sorcerer();
-
 	Sorcerer(const std::string &name, const std::string &title);
 
 	// Copy constructor
@@ -35,18 +34,18 @@ public:
 	~Sorcerer();
 
 	// Assignation operator overload
-	Sorcerer &		operator= (const Sorcerer &rhs);
+	Sorcerer &		operator=(const Sorcerer &rhs);
 
 	// Getters
 	std::string		getName() const;
 	std::string		getTitle() const;
 
 	// Setters
-	void			setName(const std::string& name);
-	void			setTitle(const std::string& title);
+	void			setName(const std::string &name);
+	void			setTitle(const std::string &title);
 
 	// Polymorph spell
-	void			polymorph(Victim const &victim) const;
+	void			polymorph(const Victim &victim) const;
 
 private:
 

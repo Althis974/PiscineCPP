@@ -24,7 +24,6 @@ public:
 
 	// Constructors
 	Victim();
-
 	Victim(const std::string &name);
 
 	// Copy constructor
@@ -34,13 +33,13 @@ public:
 	virtual ~Victim();
 
 	// Assignation operator overload
-	Victim &		operator= (const Victim &rhs);
+	Victim &		operator=(const Victim &rhs);
 
 	// Getter
 	std::string		getName() const;
 
 	// Setter
-	void			setName(const std::string& name);
+	void			setName(const std::string &name);
 
 	// Suffer a fantastic spell
 	virtual void	getPolymorphed() const;

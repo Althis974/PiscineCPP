@@ -15,6 +15,8 @@
 #define NOBLE_HPP
 
 # include "Victim.hpp"
+# include <iostream>
+# include <string>
 
 class Noble : public Victim
 {
@@ -23,7 +25,6 @@ public:
 
 	// Constructors
 	Noble();
-
 	Noble(const std::string &name);
 
 	// Copy constructor
@@ -33,10 +34,10 @@ public:
 	virtual ~Noble();
 
 	// Assignation operator overload
-	Noble &			operator= (const Noble &rhs);
+	Noble &			operator=(const Noble &rhs);
 
 	// Suffer a fantastic spell
-	void				getPolymorphed() const;
+	void			getPolymorphed() const;
 };
 
 

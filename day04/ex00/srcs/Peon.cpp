@@ -41,7 +41,7 @@ Peon::~Peon()
 
 // Assignation operator overload
 
-Peon &			Peon::operator= (const Peon &rhs)
+Peon &			Peon::operator=(const Peon &rhs)
 {
 	Victim::operator=(rhs);
 
