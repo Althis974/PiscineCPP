@@ -21,8 +21,8 @@ SuperTrap::SuperTrap(const std::string &name) : ClapTrap(name, 100,
 {
 	this->_setNameMessage = "Does this mean I can start dancing? ";
 	this->_setNameMessage += "Pleeeeeeaaaaase?\n";
-	this->_rangedAttackMessage = "I'm a tornado of death and bullets!";
-	this->_meleeAttackMessage = "Hyperiooooon Punch!";
+	this->_rangedAttackMessage += " I'm a tornado of death and bullets!";
+	this->_meleeAttackMessage += " Hyperiooooon Punch!";
 	this->_takeDamageMessage = "Get away from me!";
 	this->_beRepairedMessage = "Ha ha ha! I LIVE! Hahaha!";
 
@@ -38,8 +38,8 @@ SuperTrap::SuperTrap(const SuperTrap &src) : ClapTrap(src), FragTrap(src),
 {
 	this->_setNameMessage = "Does this mean I can start dancing? ";
 	this->_setNameMessage += "Pleeeeeeaaaaase?\n";
-	this->_rangedAttackMessage = "I'm a tornado of death and bullets!";
-	this->_meleeAttackMessage = "Hyperiooooon Punch!";
+	this->_rangedAttackMessage += " I'm a tornado of death and bullets!";
+	this->_meleeAttackMessage += " Hyperiooooon Punch!";
 	this->_takeDamageMessage = "Get away from me!";
 	this->_beRepairedMessage = "Ha ha ha! I LIVE! Hahaha!";
 

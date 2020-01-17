@@ -35,6 +35,10 @@ public:
 
 	// Assignation operator overload
 	SuperTrap &			operator=(const SuperTrap &rhs);
+
+	// Attacks
+	using				FragTrap::rangedAttack;
+	using				NinjaTrap::meleeAttack;
 };
 
 
