@@ -35,10 +35,10 @@ public:
 	MiningBarge &			operator=(const MiningBarge &rhs);
 
 	// Equip a laser
-	void					equip(IMiningLaser*);
+	void					equip(IMiningLaser *laser);
 
 	// Mine
-	void					mine(IAsteroid*) const;
+	void					mine(IAsteroid *asteroid) const;
 
 private:
 

@@ -15,6 +15,7 @@
 #define IASTEROID_HPP
 
 #include <string>
+
 class StripMiner;
 class DeepCoreMiner;
 
@@ -28,5 +29,6 @@ public:
 	virtual	std::string	beMined(StripMiner *) const = 0;
 	virtual	std::string	getName() const = 0;
 };
+
 
 #endif //IASTEROID_HPP

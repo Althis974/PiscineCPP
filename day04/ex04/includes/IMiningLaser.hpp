@@ -25,4 +25,5 @@ public:
 	virtual void mine(IAsteroid*) = 0;
 };
 
+
 #endif //IMININGLASER_HPP

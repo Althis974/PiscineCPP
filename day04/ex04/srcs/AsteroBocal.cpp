@@ -38,7 +38,7 @@ AsteroBocal::~AsteroBocal()
 
 AsteroBocal &			AsteroBocal::operator=(const AsteroBocal &rhs)
 {
-	(void)rhs;
+	this->_name = rhs._name;
 
 	return (*this);
 }

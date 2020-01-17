@@ -61,6 +61,6 @@ void				MiningBarge::equip(IMiningLaser *laser)
 void				MiningBarge::mine(IAsteroid *asteroid) const
 {
 	for (int i = 0 ;i < 4; ++i)
-		if (_lasers[i])
-			_lasers[i]->mine(asteroid);
+		if (this->_lasers[i])
+			this->_lasers[i]->mine(asteroid);
 }
