@@ -22,7 +22,8 @@ class ClapTrap
 
 public:
 
-	// Constructor
+	// Constructors
+	ClapTrap();
 	ClapTrap(const std::string &name, unsigned int hitPts,
 			 unsigned int maxHitPts, unsigned int energy,
 			 unsigned int maxEnergy, unsigned int level,

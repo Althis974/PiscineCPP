@@ -22,7 +22,8 @@ class FragTrap
 
 public:
 
-	// Constructor
+	// Constructors
+	FragTrap();
 	FragTrap(const std::string &name);
 
 	// Copy constructor

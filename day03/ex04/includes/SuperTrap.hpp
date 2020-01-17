@@ -24,7 +24,8 @@ class SuperTrap : virtual public FragTrap, virtual public NinjaTrap
 
 public:
 
-	// Constructor
+	// Constructors
+	SuperTrap();
 	SuperTrap(const std::string &name);
 
 	// Copy constructor

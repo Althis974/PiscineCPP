@@ -25,7 +25,8 @@ class NinjaTrap : public ClapTrap
 
 public:
 
-	// Constructor
+	// Constructors
+	NinjaTrap();
 	NinjaTrap(const std::string &name);
 
 	// Copy constructor

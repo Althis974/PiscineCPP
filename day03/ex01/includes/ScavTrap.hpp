@@ -22,7 +22,8 @@ class ScavTrap
 
 public:
 
-	// Constructor
+	// Constructors
+	ScavTrap();
 	ScavTrap(const std::string &name);
 
 	// Copy constructor
