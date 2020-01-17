@@ -38,7 +38,7 @@ AssaultTerminator::~AssaultTerminator()
 
 // Assignation operator overload
 
-AssaultTerminator &		AssaultTerminator::operator=(AssaultTerminator const &rhs)
+AssaultTerminator &		AssaultTerminator::operator=(const AssaultTerminator &rhs)
 {
 	(void)rhs;
 
@@ -47,7 +47,7 @@ AssaultTerminator &		AssaultTerminator::operator=(AssaultTerminator const &rhs)
 
 // Return copy of current object
 
-ISpaceMarine			*AssaultTerminator::clone() const
+ISpaceMarine *			AssaultTerminator::clone() const
 {
 	ISpaceMarine	*clone = new AssaultTerminator(*this);
 

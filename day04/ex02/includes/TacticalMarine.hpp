@@ -14,9 +14,8 @@
 #ifndef TACTICALMARINE_HPP
 #define TACTICALMARINE_HPP
 
-# include <iostream>
-
 # include "ISpaceMarine.hpp"
+# include <iostream>
 
 class TacticalMarine : public ISpaceMarine
 {
@@ -27,13 +26,13 @@ public:
 	TacticalMarine();
 
 	// Copy constructor
-	TacticalMarine(TacticalMarine const &src);
+	TacticalMarine(const TacticalMarine &src);
 
 	// Destructor
 	virtual ~TacticalMarine();
 
 	// Assignation operator overload
-	TacticalMarine &		operator=(TacticalMarine const &rhs);
+	TacticalMarine &		operator=(const TacticalMarine &rhs);
 
 	// Return copy of current object
 	ISpaceMarine *			clone() const;

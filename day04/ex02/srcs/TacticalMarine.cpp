@@ -22,9 +22,10 @@ TacticalMarine::TacticalMarine()
 
 // Copy constructor
 
-TacticalMarine::TacticalMarine(TacticalMarine const &src)
+TacticalMarine::TacticalMarine(const TacticalMarine &src)
 {
 	*this = src;
+
 	std::cout << "Tactical Marine ready for battle" << std::endl;
 }
 
@@ -35,18 +36,18 @@ TacticalMarine::~TacticalMarine()
 	std::cout << "Aaargh ..." << std::endl;
 }
 
-// Assigantion operator overload
+// Assignation operator overload
 
-TacticalMarine &TacticalMarine::operator=(TacticalMarine const &r)
+TacticalMarine &	TacticalMarine::operator=(const TacticalMarine &rhs)
 {
-	(void)r;
+	(void)rhs;
 
 	return (*this);
 }
 
 // Return copy of current object
 
-ISpaceMarine	*TacticalMarine::clone() const
+ISpaceMarine *		TacticalMarine::clone() const
 {
 	ISpaceMarine	*clone = new TacticalMarine(*this);
 
@@ -55,21 +56,21 @@ ISpaceMarine	*TacticalMarine::clone() const
 
 // Say something nice
 
-void			TacticalMarine::battleCry() const
+void				TacticalMarine::battleCry() const
 {
 	std::cout << "For the holy PLOT !" << std::endl;
 }
 
 // Ranged attack
 
-void			TacticalMarine::rangedAttack() const
+void				TacticalMarine::rangedAttack() const
 {
 	std::cout << "* attacks with bolter *" << std::endl;
 }
 
 // Melee attack
 
-void			TacticalMarine::meleeAttack() const
+void				TacticalMarine::meleeAttack() const
 {
 	std::cout << "* attacks with chainsword *" << std::endl;
 }

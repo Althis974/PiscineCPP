@@ -37,14 +37,14 @@ public:
 	virtual ~Squad();
 
 	// Assignation operator overload
-	Squad &						operator=(Squad const &rhs);
+	Squad &						operator=(const Squad &rhs);
 
 	// Getters
 	int							getCount() const;
-	ISpaceMarine*				getUnit(int n) const;
+	ISpaceMarine *				getUnit(int n) const;
 
 	// Add a unit to the end of squad
-	int							push(ISpaceMarine*);
+	int							push(ISpaceMarine *marine);
 
 private:
 

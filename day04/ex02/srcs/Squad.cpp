@@ -36,7 +36,7 @@ Squad::~Squad()
 
 // Assignation operator overload
 
-Squad &				Squad::operator= (const Squad &rhs)
+Squad &				Squad::operator=(const Squad &rhs)
 {
 	this->_unitsNb = rhs._unitsNb;
 	this->destroyMarinesList();
@@ -129,8 +129,11 @@ void				Squad::destroyMarinesList()
 	if (this->_marines)
 	{
 		delete this->_marines->marine;
+
 		tmp = this->_marines;
+
 		this->_marines = this->_marines->next;
+
 		delete tmp;
 
 		return (this->destroyMarinesList());

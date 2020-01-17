@@ -14,6 +14,7 @@
 #include "../includes/Squad.hpp"
 #include "../includes/TacticalMarine.hpp"
 #include "../includes/AssaultTerminator.hpp"
+#include <iostream>
 
 int		main()
 {

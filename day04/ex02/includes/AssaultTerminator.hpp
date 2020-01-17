@@ -26,13 +26,13 @@ public:
 	AssaultTerminator();
 
 	// Copy constructor
-	AssaultTerminator(AssaultTerminator const &src);
+	AssaultTerminator(const AssaultTerminator &src);
 
 	// Destructor
 	virtual ~AssaultTerminator();
 
 	// Assignation operator overload
-	AssaultTerminator &		operator=(AssaultTerminator const &rhs);
+	AssaultTerminator &		operator=(const AssaultTerminator &rhs);
 
 	// Return copy of current object
 	ISpaceMarine *			clone() const;
