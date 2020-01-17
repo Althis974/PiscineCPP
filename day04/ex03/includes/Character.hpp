@@ -18,6 +18,7 @@
 # include "Cure.hpp"
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
+# include <string>
 
 class Character : public ICharacter
 {
@@ -47,7 +48,7 @@ public:
 	virtual void					unequip(int idx);
 
 	// Use a materia
-	virtual void                	use(int idx, ICharacter& target);
+	virtual void                	use(int idx, ICharacter &target);
 
 private:
 

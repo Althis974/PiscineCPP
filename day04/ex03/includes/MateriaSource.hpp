@@ -14,9 +14,10 @@
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-# include "IMateriaSource.hpp"
+#include "IMateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include <string>
 
 class MateriaSource : public IMateriaSource
 {
@@ -43,8 +44,8 @@ public:
 
 private:
 
-	int					_index;
-	AMateria *			_inventory[4];
+	int						_index;
+	AMateria *				_inventory[4];
 };
 
 

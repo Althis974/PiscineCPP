@@ -14,8 +14,8 @@
 #ifndef CURE_HPP
 #define CURE_HPP
 
-# include <iostream>
 # include "AMateria.hpp"
+# include <iostream>
 
 class Cure : public AMateria
 {
@@ -38,7 +38,7 @@ public:
 	AMateria *		clone() const;
 
 	// Use materia and increase xp
-	virtual void	use(ICharacter &target);
+	void			use(ICharacter &target);
 };
 
 

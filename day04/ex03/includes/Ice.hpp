@@ -14,8 +14,8 @@
 #ifndef ICE_HPP
 #define ICE_HPP
 
-# include <iostream>
 # include "AMateria.hpp"
+# include <iostream>
 
 class Ice : public AMateria
 {
@@ -35,10 +35,11 @@ public:
 	Ice	&			operator=(const Ice &rhs);
 
 	// Returns a new instance of materia
-	AMateria		*clone() const;
+	AMateria *		clone() const;
 
 	// Use materia and increase xp
-	virtual void	use(ICharacter &target);
+	void			use(ICharacter &target);
 };
+
 
 #endif //ICE_HPP

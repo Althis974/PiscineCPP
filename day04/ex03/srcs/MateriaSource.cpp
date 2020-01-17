@@ -37,7 +37,7 @@ MateriaSource::~MateriaSource()
 
 }
 
-// Assigantion operator overload
+// Assignation operator overload
 
 MateriaSource &			MateriaSource::operator=(const MateriaSource &rhs)
 {

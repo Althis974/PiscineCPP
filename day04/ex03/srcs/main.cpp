@@ -17,6 +17,8 @@
 
 int		main()
 {
+	std::cout << "\n---------------- MAIN PART ----------------\n" << std::endl;
+
 	IMateriaSource *src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -29,10 +31,21 @@ int		main()
 	tmp = src->createMateria("cure");
 	zaz->equip(tmp);
 
-	ICharacter* bob = new Character("bob");
+	ICharacter *bob = new Character("bob");
 
 	zaz->use(0, *bob);
 	zaz->use(1, *bob);
+
+	std::cout << "\n-------------- DERIVED PART --------------\n" << std::endl;
+
+	std::cout << "Type : " << tmp->getType() << ", XP : "
+			  << tmp->getXP() << std::endl;
+
+	bob->equip(tmp);
+	bob->use(0, *zaz);
+
+	std::cout << "Type : " << tmp->getType() << ", XP : "
+			  << tmp->getXP() << std::endl;
 
 	delete bob;
 	delete zaz;

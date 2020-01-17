@@ -14,8 +14,8 @@
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-# include <string>
 # include "ICharacter.hpp"
+# include <string>
 
 class AMateria
 {
@@ -32,18 +32,18 @@ public:
 	// Destructor
 	virtual ~AMateria();
 
-	// Assignation operator overlaod
+	// Assignation operator overload
 	AMateria &				operator=(const AMateria &rhs);
 
 	// Getters
-	std::string const &		getType() const;
+	const std::string &		getType() const;
 	unsigned int			getXP() const;
 
 	// Returns a new instance of materia
 	virtual AMateria *		clone() const = 0;
 
 	// Use materia and increase xp
-	virtual void			use(ICharacter& target) = 0;
+	virtual void			use(ICharacter &target);
 
 protected:
 
