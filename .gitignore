@@ -21,6 +21,7 @@ build/
 *.replace
 *.log
 *_shrubbery
+sos
 
 # executables
 
@@ -46,6 +47,7 @@ NinjaTrap
 SuperTrap
 sorcerer
 weapon
+marines
 materia
 mine
 bureaucrat
@@ -64,3 +66,5 @@ easyfind
 span
 mutantstack
 mindopen
+rpn
+ft_retro
