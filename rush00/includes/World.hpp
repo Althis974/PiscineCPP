@@ -32,13 +32,14 @@ public:
 	World(const World &src);
 
 	// Destructor
-	~World();
+	virtual ~World();
 
 	// Assignation operator overload
 	World &		operator=(const World &rhs);
 
 	// Getters
-	int 		getStatus();
+	int 		getMaxNbPlayerBullets() const;
+	int 		getPlayerLives() const;
 
 	// Spawners
 	void		spawnPlayer();
@@ -48,20 +49,8 @@ public:
 	void		printPlayer();
 	void		printEnemies();
 
-	// Enemies moves manager
-	void		moveEnemies();
-	void		clearMoves();
 
-private:
-
-	// Value to know if game is over, running, paused etc...
-	int			_gameStatus;
-
-	// Explicit
-	int 		_score;
-
-	// Number of enemies killed
-	int 		_nbFrags;
+protected:
 
 	// Number of enemies
 	int 		_nbEnemies;

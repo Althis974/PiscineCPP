@@ -17,12 +17,9 @@
 
 World::World(t_pos pos) : _map(pos)
 {
-	this->_gameStatus = 3;
-	this->_score = 0;
-	this->_nbFrags = 0;
 	this->_nbEnemies = 10;
-	this->_nbPlayerBullets = 20;
-	this->_nbEnemiesBullets = 10;
+	this->_nbPlayerBullets = this->_nbEnemies * 2;
+	this->_nbEnemiesBullets = this->_nbEnemies;
 
 	this->_enemies = new Enemy[this->_nbEnemies];
 	this->_playerBullets = new Bullet[this->_nbPlayerBullets];
@@ -36,9 +33,6 @@ World::World(t_pos pos) : _map(pos)
 
 World::World(const World &src) : _map(src._map)
 {
-	this->_gameStatus = src._gameStatus;
-	this->_score = src._score;
-	this->_nbFrags = src._nbFrags;
 	this->_nbEnemies = src._nbEnemies;
 	this->_nbPlayerBullets = src._nbPlayerBullets;
 	this->_nbEnemiesBullets = src._nbEnemiesBullets;
@@ -69,9 +63,6 @@ World::~World()
 
 World &			World::operator=(const World &rhs)
 {
-	this->_gameStatus = rhs._gameStatus;
-	this->_score = rhs._score;
-	this->_nbFrags = rhs._nbFrags;
 	this->_nbEnemies = rhs._nbEnemies;
 	this->_nbPlayerBullets = rhs._nbPlayerBullets;
 	this->_nbEnemiesBullets = rhs._nbPlayerBullets;
@@ -92,23 +83,28 @@ World &			World::operator=(const World &rhs)
 
 // Getters
 
-int				World::getStatus()
+int				World::getMaxNbPlayerBullets() const
 {
-	return (this->_gameStatus);
+	return (this->_nbPlayerBullets);
+}
+
+int 			World::getPlayerLives() const
+{
+	return (this->_player.getLives());
 }
 
 // Spawners
 
-void		World::spawnPlayer()
+void			World::spawnPlayer()
 {
-	t_pos	pos = {this->_map.x / 2, this->_map.y - 1};
+	t_pos	pos = {this->_map.x / 2, this->_map.y - 2};
 
 	this->_player = Player(pos);
 
 	printPlayer();
 }
 
-void		World::spawnEnemies()
+void			World::spawnEnemies()
 {
 	clear();
 
@@ -116,9 +112,9 @@ void		World::spawnEnemies()
 	delete [] this->_enemies;
 	delete [] this->_playerBullets;
 
+	this->_nbEnemiesBullets = this->_nbEnemies;
 	this->_nbEnemies = 10;
-	this->_nbEnemiesBullets = 10;
-	this->_nbPlayerBullets = 20;
+	this->_nbPlayerBullets = this->_nbEnemies * 2;
 
 	this->_enemiesBullets = new Bullet[this->_nbEnemiesBullets];
 	this->_enemies = new Enemy[this->_nbEnemies];
@@ -135,53 +131,27 @@ void		World::spawnEnemies()
 
 	for (int i = 0; i < this->_nbEnemies; ++i)
 	{
-		this->_enemies[i].setPos(3 + (rand() % this->_map.x + 2), 1 + (rand() % 2 + 1));
+		this->_enemies[i].setPos(3 + (rand() % this->_map.x + 2),
+				1 + (rand() % 2 + 1));
 		this->_enemies[i].setLives(1);
 	}
 }
 
-// Enemies moves manager
-
-void		World::moveEnemies()
-{
-	this->_nbFrags = 0;
-
-	clearMoves();
-	for (int i = 0; i < this->_nbEnemies; i++){
-		if (this->_enemies[i].getLives())
-		{
-			if(this->_enemies[i].movement(this->_map))
-			{
-				if(this->_player.loseLive())
-					this->_gameStatus = 0;
-			}
-			mvprintw(this->_enemies[i].getPosY(), this->_enemies[i].getPosX(), "ꆜ");
-		}
-		if (!this->_enemies[i].getLives())
-			this->_nbFrags++;
-	}
-
-	if (this->_nbFrags == this->_nbEnemies)
-		spawnEnemies();
-
-	printPlayer();
-}
-
-void		World::clearMoves()
-{
-	for (int i = 0; i < this->_nbEnemies; ++i)
-		mvprintw(this->_enemies[i].getPosY(), this->_enemies[i].getPosX(), " ");
-}
-
 // Printers
 
-void		World::printPlayer()
+void			World::printPlayer()
 {
-	// TODO: Complete
+	mvprintw(this->_player.getPosY(), this->_player.getPosX(), "P");
+
 	printEnemies();
+
+	box(stdscr, 0, 0);
+	refresh();
 }
 
-void		World::printEnemies()
+void			World::printEnemies()
 {
-	// TODO: Complete
+	for (int i = 0; i < this->_nbEnemies; ++i)
+		if (this->_enemies[i].getLives())
+			mvprintw(this->_enemies[i].getPosY(), this->_enemies[i].getPosX(), "E");
 }
