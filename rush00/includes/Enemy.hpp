@@ -38,7 +38,7 @@ public:
 	int             movement(t_pos map);
 
 	// Check if enemy is alive
-	bool			isAlive();
+	bool			isAlive() const;
 };
 
 

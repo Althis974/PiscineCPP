@@ -17,6 +17,7 @@
 #include <string>
 #include <iostream>
 #include <ncurses.h>
+#include "keycode.hpp"
 
 typedef struct				s_pos
 {

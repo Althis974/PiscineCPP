@@ -16,7 +16,8 @@
 
 #include "Entity.hpp"
 
-class	Player : public Entity {
+class	Player : public Entity
+{
 
 public:
 

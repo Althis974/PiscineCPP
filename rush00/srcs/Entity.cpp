@@ -69,17 +69,17 @@ void			Entity::setLives(int n)
 
 // Getters
 
-int				Entity::getPosX()
+int				Entity::getPosX() const
 {
 	return (this->_pos.x);
 }
 
-int				Entity::getPosY()
+int				Entity::getPosY() const
 {
 	return (this->_pos.y);
 }
 
-int				Entity::getLives()
+int				Entity::getLives() const
 {
 	return (this->_lives);
 }
@@ -108,15 +108,15 @@ void			Entity::moveDown()
 
 // Check it entity has been hit
 
-int				Entity::isHit(int x, int y)
+bool			Entity::isHit(int x, int y)
 {
 	if (this->_pos.x == x && this->_pos.y == y)
 	{
 		this->_lives = 0;
 
-		return (1);
+		return (true);
 	}
 
-	return (0);
+	return (false);
 }
 

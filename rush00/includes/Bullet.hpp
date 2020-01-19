@@ -37,24 +37,22 @@ public:
 	void			setInfo(int x, int y, int lives);
 
 	// Getters
-	int				getPosX();
-	int				getPosY();
-	int				getLives();
+	int				getPosX() const;
+	int				getPosY() const;
+	int				getLives() const;
 
 	// Moves management
 	void			moveUp();
 	void			moveDown();
 
 	// Print a bullet shot by player
-	void			shootBullet();
+	void			shootBullet() const;
 
 	// Print a bullet shot by enemies
-	void			shootEnemiesBullet();
+	void			shootEnemiesBullet() const;
 
 	// Explicit
-	void			clearBullet();
-
-
+	void			clearBullet() const;
 
 protected:
 

@@ -65,17 +65,17 @@ void			Bullet::setInfo(int x, int y, int lives)
 
 // Getters
 
-int				Bullet::getPosX()
+int				Bullet::getPosX()  const
 {
 	return (this->_pos.x);
 }
 
-int				Bullet::getPosY()
+int				Bullet::getPosY()  const
 {
 	return (this->_pos.y);
 }
 
-int				Bullet::getLives()
+int				Bullet::getLives()  const
 {
 	return (this->_lives);
 }
@@ -94,21 +94,21 @@ void			Bullet::moveDown()
 
 // Print a bullet shot by player
 
-void			Bullet::shootBullet()
+void			Bullet::shootBullet() const
 {
-	mvprintw(this->_pos.y, this->_pos.x, "⥉");
+	mvprintw(this->_pos.y, this->_pos.x, "^");
 }
 
 // Print a bullet shot by enemies
 
-void			Bullet::shootEnemiesBullet()
+void			Bullet::shootEnemiesBullet() const
 {
-	mvprintw(this->_pos.y, this->_pos.x, "⌬");
+	mvprintw(this->_pos.y, this->_pos.x, "!");
 }
 
 // Explicit
 
-void			Bullet::clearBullet()
+void			Bullet::clearBullet() const
 {
-	mvprintw(_pos.y, _pos.x, " ");
+	mvprintw(this->_pos.y, this->_pos.x, " ");
 }

@@ -69,7 +69,7 @@ int				Enemy::movement(t_pos map)
 
 // Check if enemy is alive
 
-bool			Enemy::isAlive()
+bool			Enemy::isAlive() const
 {
 	return (this->getLives() > 0);
 }

@@ -40,9 +40,9 @@ public:
 	void			setLives(int n);
 
 	// Getters
-	int				getPosX();
-	int				getPosY();
-	int				getLives();
+	int				getPosX() const;
+	int				getPosY() const;
+	int				getLives() const;
 
 	// Moves
 	void			moveRight();
@@ -51,10 +51,9 @@ public:
 	void			moveDown();
 
 	// Collision
-	int				isHit(int x, int y);
+	bool			isHit(int x, int y);
 
 protected:
-
 
 	t_pos			_pos;
 	int				_lives;
