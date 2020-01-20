@@ -49,8 +49,8 @@ Intern &					Intern::operator=(const Intern &rhs)
 
 // Make a form
 
-Form *						Intern::makeForm(const std::string& form, const
-															std::string& target)
+Form *						Intern::makeForm(const std::string &form, const
+															std::string &target)
 {
 	if (form == "ShrubberyCreation")
 	{
@@ -105,8 +105,10 @@ InvalidFormException::~InvalidFormException() throw()
 // Assignation operator overload
 
 InvalidFormException &		InvalidFormException::operator=(const
-														InvalidFormException &)
+													InvalidFormException &rhs)
 {
+	(void)rhs;
+
 	return (*this);
 }
 

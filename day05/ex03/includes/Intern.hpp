@@ -18,6 +18,8 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <stdexcept>
+#include <iostream>
 
 class Intern
 {

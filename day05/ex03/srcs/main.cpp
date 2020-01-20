@@ -11,9 +11,10 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../includes/Bureaucrat.hpp"
 #include "../includes/Form.hpp"
 #include "../includes/Intern.hpp"
+#include <iostream>
+#include <stdexcept>
 
 int	main()
 {

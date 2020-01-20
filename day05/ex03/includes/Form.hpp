@@ -27,7 +27,8 @@ public:
 	{
 		public:
 
-			// Constructor
+			// Constructors
+			GradeTooHighException();
 			GradeTooHighException(int grade);
 
 			// Copy constructor
@@ -55,7 +56,8 @@ public:
 
 		public:
 
-			// Constructor
+			// Constructors
+			GradeTooLowException();
 			GradeTooLowException(int grade);
 
 			// Copy constructor
@@ -92,13 +94,14 @@ public:
 			virtual ~UnsignedException() throw();
 
 			// Assignation operator overload
-			UnsignedException &		operator=(UnsignedException const &rhs);
+			UnsignedException &		operator=(const UnsignedException &rhs);
 
 			// Returns a pointer to the error description
 			const char *			what() const throw();
 	};
 
-	// Constructor
+	// Constructors
+	Form();
 	Form(const std::string &name, int gradeToBeSigned, int gradeToBeExecuted,
 			const std::string &target);
 
