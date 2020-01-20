@@ -109,7 +109,7 @@ public:
 	Form(const Form &src);
 
 	// Destructor
-	~Form();
+	virtual ~Form();
 
 	// Assignation operator overload
 	Form &							operator=(const Form &rhs);

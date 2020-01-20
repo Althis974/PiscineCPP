@@ -31,6 +31,7 @@ int	main()
 	{
 		shrubbery = jack.makeForm("ShrubberyCreation", "HomeGarden");
 		std::cout << *shrubbery << std::endl;
+		delete shrubbery;
 	}
 	catch (std::exception &e)
 	{
@@ -43,6 +44,7 @@ int	main()
 	{
 		robotomy = jack.makeForm("RobotomyRequest", "Clappy");
 		std::cout << *robotomy << std::endl;
+		delete robotomy;
 	}
 	catch (std::exception &e)
 	{
@@ -55,6 +57,7 @@ int	main()
 	{
 		pardon = jack.makeForm("PresidentialPardon", "Francky");
 		std::cout << *pardon << std::endl;
+		delete pardon;
 	}
 	catch (std::exception &e)
 	{
