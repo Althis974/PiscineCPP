@@ -17,11 +17,7 @@
 
 CentralBureaucracy::CentralBureaucracy() : _officeIndex(0)
 {
-	for (int i = 0; i < 20; ++i)
-		this->_blocks[i] = OfficeBlock();
 
-	for (int i = 0; i < 42; ++i)
-		this->_queue[i] = "";
 }
 
 // Copy constructor
@@ -29,18 +25,24 @@ CentralBureaucracy::CentralBureaucracy() : _officeIndex(0)
 CentralBureaucracy::CentralBureaucracy(const CentralBureaucracy &src) :
 						_officeIndex(src._officeIndex)
 {
-	for (int i = 0; i < 20; ++i)
-		this->_blocks[i] = src._blocks[i];
 
-	for (int i = 0; i < 42; ++i)
-		this->_queue[i] = src._queue[i];
 }
 
 // Destructor
 
 CentralBureaucracy::~CentralBureaucracy()
 {
+	for (int i = 0; i < 20; ++i)
+	{
+		if (this->_blocks[i].getIntern())
+			delete this->_blocks[i].getIntern();
 
+		if (this->_blocks[i].getSigner())
+			delete this->_blocks[i].getSigner();
+
+		if (this->_blocks[i].getExecutor())
+			delete this->_blocks[i].getExecutor();
+	}
 }
 
 // Assignation operator overload
@@ -50,18 +52,12 @@ CentralBureaucracy &	CentralBureaucracy::operator=(const CentralBureaucracy
 {
 	this->_officeIndex = rhs._officeIndex;
 
-	for (int i = 0; i < 20; ++i)
-		this->_blocks[i] = rhs._blocks[i];
-
-	for (int i = 0; i < 42; ++i)
-		this->_queue[i] = rhs._queue[i];
-
 	return (*this);
 }
 
 // Feed office blocks
 
-void CentralBureaucracy::feed(Bureaucrat *bureaucrat)
+void					CentralBureaucracy::feed(Bureaucrat *bureaucrat)
 {
 	for (int i = 0; i < 20; ++i)
 	{
@@ -73,12 +69,14 @@ void CentralBureaucracy::feed(Bureaucrat *bureaucrat)
 		if (!officeBlock.getSigner())
 		{
 			officeBlock.setSigner(bureaucrat);
+
 			return;
 		}
 
 		if (!officeBlock.getExecutor())
 		{
 			officeBlock.setExecutor(bureaucrat);
+
 			return;
 		}
 	}
@@ -88,13 +86,14 @@ void CentralBureaucracy::feed(Bureaucrat *bureaucrat)
 
 // Queue targets
 
-void CentralBureaucracy::queueUp(const std::string &target)
+void					CentralBureaucracy::queueUp(const std::string &target)
 {
 	for (int i = 0; i < 42; ++i)
 	{
 		if (this->_queue[i].empty())
 		{
 			this->_queue[i] = target;
+
 			return;
 		}
 	}
@@ -104,7 +103,7 @@ void CentralBureaucracy::queueUp(const std::string &target)
 
 // Make all these sla.. employees work
 
-void CentralBureaucracy::doBureaucracy()
+void					CentralBureaucracy::doBureaucracy()
 {
 	std::string types[3] = {
 			"ShrubberyCreation",
@@ -121,6 +120,7 @@ void CentralBureaucracy::doBureaucracy()
 		{
 			std::cout << "\n----- OFFICE BLOCK NUMBER " << this->_officeIndex
 					  << " -----\n" << std::endl;
+
 			this->_blocks[this->_officeIndex].doBureaucracy(
 					types[std::rand() % 3], this->_queue[i]);
 		}
@@ -128,8 +128,6 @@ void CentralBureaucracy::doBureaucracy()
 		{
 			std::cout << e.what() << std::endl;
 		}
-
-		this->_queue[i] = "";
 
 		this->_officeIndex++;
 

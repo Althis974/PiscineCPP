@@ -16,6 +16,8 @@
 
 # include "Bureaucrat.hpp"
 # include "OfficeBlock.hpp"
+#include <iostream>
+#include <stdexcept>
 
 class CentralBureaucracy
 {

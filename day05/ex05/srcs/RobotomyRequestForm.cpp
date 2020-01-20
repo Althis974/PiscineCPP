@@ -24,7 +24,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target) :
 
 // Copy constructor
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) :
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) :
 						Form(src)
 {
 

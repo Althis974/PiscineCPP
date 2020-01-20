@@ -22,7 +22,8 @@ class ShrubberyCreationForm : public Form
 
 public:
 
-	// Constructor
+	// Constructors
+	ShrubberyCreationForm();
 	ShrubberyCreationForm(const std::string &target);
 
 	// Copy constructor

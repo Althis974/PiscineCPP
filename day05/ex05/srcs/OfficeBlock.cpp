@@ -92,7 +92,7 @@ void						OfficeBlock::setExecutor(Bureaucrat *executor)
 // Attempt to create, sign and execute a form
 
 void 						OfficeBlock::doBureaucracy(const std::string &type,
-													const std::string	&target)
+													const std::string &target)
 {
 	if (!this->_intern)
 		throw NoInternException();
@@ -107,6 +107,8 @@ void 						OfficeBlock::doBureaucracy(const std::string &type,
 
 	this->_signer->signForm(*form);
 	this->_executor->executeForm(*form);
+
+	delete form;
 }
 
 /*
@@ -128,9 +130,9 @@ NoInternException::NoInternException()
 
 // Copy constructor
 
-NoInternException::NoInternException(const NoInternException &)
+NoInternException::NoInternException(const NoInternException &src)
 {
-
+	*this = src;
 }
 
 // Destructor
@@ -142,9 +144,11 @@ NoInternException::~NoInternException() throw()
 
 // Assignation operator overload
 
-NoInternException &			NoInternException::operator=(const
-															NoInternException &)
+NoInternException &			NoInternException::operator=(const NoInternException
+																		&rhs)
 {
+	(void)rhs;
+
 	return (*this);
 }
 
@@ -170,9 +174,9 @@ NoSignerException::NoSignerException()
 
 // Copy constructor
 
-NoSignerException::NoSignerException(const NoSignerException &)
+NoSignerException::NoSignerException(const NoSignerException &src)
 {
-
+	*this = src;
 }
 
 // Destructor
@@ -181,9 +185,11 @@ NoSignerException::~NoSignerException() throw() {}
 
 // Assignation operator overload
 
-NoSignerException &			NoSignerException::operator=(const
-															NoSignerException &)
+NoSignerException &			NoSignerException::operator=(const NoSignerException
+																		&rhs)
 {
+	(void)rhs;
+
 	return (*this);
 }
 
@@ -209,9 +215,9 @@ NoExecutorException::NoExecutorException()
 
 // Copy constructor
 
-NoExecutorException::NoExecutorException(const NoExecutorException &)
+NoExecutorException::NoExecutorException(const NoExecutorException &src)
 {
-
+	*this = src;
 }
 
 // Destructor
@@ -222,8 +228,10 @@ NoExecutorException::~NoExecutorException() throw()
 }
 
 NoExecutorException &		NoExecutorException::operator=(const
-														NoExecutorException &)
+													NoExecutorException &rhs)
 {
+	(void)rhs;
+
 	return (*this);
 }
 
