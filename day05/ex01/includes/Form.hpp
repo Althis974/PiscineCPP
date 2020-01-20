@@ -78,7 +78,8 @@ public:
 			int						_grade;
 	};
 	
-	// Constructor
+	// Constructors
+	Form();
 	Form(const std::string &name, int gradeToBeSigned, int gradeToBeExecuted);
 
 	// Copy constructor
