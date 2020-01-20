@@ -94,7 +94,7 @@ public:
 			virtual ~UnsignedException() throw();
 
 			// Assignation operator overload
-			UnsignedException &		operator=(const UnsignedException &);
+			UnsignedException &		operator=(const UnsignedException&);
 
 			// Returns a pointer to the error description
 			const char *			what() const throw();
