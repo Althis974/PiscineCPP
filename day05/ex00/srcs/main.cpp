@@ -12,6 +12,8 @@
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
+#include <iostream>
+#include <stdexcept>
 
 int	main()
 {
@@ -27,6 +29,17 @@ int	main()
 	try
 	{
 		Bureaucrat jim = Bureaucrat("Jim", 151);
+		std::cout << jim << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << "\n----- Try to create Jim (again) -----\n" << std::endl;
+	try
+	{
+		Bureaucrat jim = Bureaucrat("Jim", -1);
 		std::cout << jim << std::endl;
 	}
 	catch (std::exception &e)
