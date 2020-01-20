@@ -55,16 +55,19 @@ Form *						Intern::makeForm(const std::string &form, const
 	if (form == "ShrubberyCreation")
 	{
 		std::cout << "Intern creates " << form << "." << std::endl;
+
 		return (new ShrubberyCreationForm(target));
 	}
 	else if (form == "RobotomyRequest")
 	{
 		std::cout << "Intern creates " << form << "." << std::endl;
+
 		return (new RobotomyRequestForm(target));
 	}
 	else if (form == "PresidentialPardon")
 	{
 		std::cout << "Intern creates " << form << "." << std::endl;
+
 		return (new PresidentialPardonForm(target));
 	}
 	else
