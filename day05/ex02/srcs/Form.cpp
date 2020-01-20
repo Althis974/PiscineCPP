@@ -260,8 +260,10 @@ UnsignedException::~UnsignedException() throw()
 // Assignation operator overload
 
 UnsignedException &				UnsignedException::operator=(const
-														UnsignedException &)
+														UnsignedException &rhs)
 {
+	(void)rhs;
+
 	return (*this);
 }
 
