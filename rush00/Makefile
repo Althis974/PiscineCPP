@@ -14,7 +14,8 @@
 NAME		=	ft_retro
 
 HEADER		=	./includes/
-FILENAMES	=	main.cpp
+FILENAMES	=	main.cpp Entity.cpp Player.cpp Enemy.cpp Bullet.cpp World.cpp
+FILENAMES	+=	GameManager.cpp Display.cpp
 
 SOURCES		=	$(addprefix srcs/, $(FILENAMES))
 OBJECTS		=	$(addprefix build/, $(FILENAMES:.cpp=.o))

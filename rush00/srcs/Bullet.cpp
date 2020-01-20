@@ -91,24 +91,3 @@ void			Bullet::moveDown()
 {
 	this->_pos.y++;
 }
-
-// Print a bullet shot by player
-
-void			Bullet::shootBullet() const
-{
-	mvprintw(this->_pos.y, this->_pos.x, "^");
-}
-
-// Print a bullet shot by enemies
-
-void			Bullet::shootEnemiesBullet() const
-{
-	mvprintw(this->_pos.y, this->_pos.x, "!");
-}
-
-// Explicit
-
-void			Bullet::clearBullet() const
-{
-	mvprintw(this->_pos.y, this->_pos.x, " ");
-}

@@ -54,9 +54,10 @@ int				Player::loseLive()
 {
 	this->_lives--;
 
-	if (this->_lives <= 0)
+	if (this->_lives < 0) {
+		this->_lives = 0;
 		return (1);
-
+	}
 	return (0);
 }
 
@@ -68,10 +69,10 @@ int				Player::hitByBullet()
 
 	this->_lives--;
 
-	if (!this->_lives || (this->_lives < 0 && i >= 2))
+	if (/*!this->_lives ||*/ (this->_lives < 0 && i > 2))
 	{
 		i = 0;
-
+		this->_lives = 0;
 		return (1);
 	}
 

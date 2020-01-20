@@ -44,16 +44,7 @@ public:
 	// Moves management
 	void			moveUp();
 	void			moveDown();
-
-	// Print a bullet shot by player
-	void			shootBullet() const;
-
-	// Print a bullet shot by enemies
-	void			shootEnemiesBullet() const;
-
-	// Explicit
-	void			clearBullet() const;
-
+	
 protected:
 
 	t_pos			_pos;

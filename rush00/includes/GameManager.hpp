@@ -38,12 +38,14 @@ public:
 	void		setStatus(int status);
 
 	// Getters
+	time_t		getStartTime() const;
+	int			getCurrentLevel() const;
 	int 		getStatus() const;
 	int 		getScore() const;
 
 	// Enemies moves manager
 	void		moveEnemies();
-	void		clearMoves();
+	
 
 	// Collisions manager
 	bool 		isEnemyHit(int x, int y);
@@ -61,6 +63,9 @@ public:
 	// Inputs manager
 	void		getInput(int key);
 
+	// Update display
+	void		updateDisplay();
+
 private:
 
 	// Value to know if game is over, running, paused etc...
@@ -71,6 +76,10 @@ private:
 
 	// Number of enemies killed
 	int 		_nbFrags;
+
+	// For display
+	time_t		_startTime;
+	int			_level; // not working
 
 };
 

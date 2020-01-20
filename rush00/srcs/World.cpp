@@ -12,6 +12,7 @@
 /* ************************************************************************** */
 
 #include "../includes/World.hpp"
+#include "../includes/Display.hpp"
 
 // Constructors
 
@@ -46,8 +47,8 @@ World::World(const World &src) : _map(src._map)
 	for (int i = 0; i < this->_nbPlayerBullets; ++i)
 		this->_enemiesBullets[i] = src._enemiesBullets[i];
 
-	spawnEnemies();
-	spawnPlayer();
+//	spawnEnemies();
+//	spawnPlayer();
 }
 
 // Destructor
@@ -93,6 +94,35 @@ int 			World::getPlayerLives() const
 	return (this->_player.getLives());
 }
 
+Player			World::getPlayer() const
+{
+	return (this->_player);
+}
+
+Enemy *			World::getEnemies() const
+{
+	return (this->_enemies);
+}
+
+Bullet *		World::getEnemiesBullets() const
+{
+	return (this->_enemiesBullets);
+}
+
+Bullet *		World::getPlayerBullets() const
+{
+	return (this->_playerBullets);
+}
+
+int				World::getNbEnemies() const
+{
+	return (this->_nbEnemies);
+}
+
+int				World::getMaxNbEnemiesBullets() const
+{
+	return (this->_nbEnemiesBullets);
+}
 // Spawners
 
 void			World::spawnPlayer()
@@ -101,7 +131,7 @@ void			World::spawnPlayer()
 
 	this->_player = Player(pos);
 
-	printPlayer();
+//	printPlayer();
 }
 
 void			World::spawnEnemies()
@@ -123,10 +153,7 @@ void			World::spawnEnemies()
 	for (int i = 0; i < this->_nbPlayerBullets; ++i)
 	{
 		if (this->_playerBullets[i].getLives())
-		{
 			this->_playerBullets[i].setLives(0);
-			this->_playerBullets[i].clearBullet();
-		}
 	}
 
 	for (int i = 0; i < this->_nbEnemies; ++i)
@@ -135,23 +162,4 @@ void			World::spawnEnemies()
 				1 + (rand() % 2 + 1));
 		this->_enemies[i].setLives(1);
 	}
-}
-
-// Printers
-
-void			World::printPlayer()
-{
-	mvprintw(this->_player.getPosY(), this->_player.getPosX(), "P");
-
-	printEnemies();
-
-	box(stdscr, 0, 0);
-	refresh();
-}
-
-void			World::printEnemies()
-{
-	for (int i = 0; i < this->_nbEnemies; ++i)
-		if (this->_enemies[i].getLives())
-			mvprintw(this->_enemies[i].getPosY(), this->_enemies[i].getPosX(), "E");
 }

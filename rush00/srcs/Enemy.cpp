@@ -59,8 +59,6 @@ int				Enemy::movement(t_pos map)
 	{
 		this->_lives = 0;
 
-		mvprintw(this->_pos.y, this->_pos.x, " ");
-
 		return (1);
 	}
 

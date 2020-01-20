@@ -16,8 +16,8 @@
 
 #include "env.hpp"
 #include "Player.hpp"
-#include "Enemy.hpp"
 #include "Bullet.hpp"
+#include "Enemy.hpp"
 
 class World
 {
@@ -40,15 +40,16 @@ public:
 	// Getters
 	int 		getMaxNbPlayerBullets() const;
 	int 		getPlayerLives() const;
+	Player		getPlayer() const;
+	Enemy *		getEnemies() const;
+	Bullet *	getEnemiesBullets() const;
+	Bullet *	getPlayerBullets() const;
+	int			getNbEnemies() const;
+	int			getMaxNbEnemiesBullets() const;
 
 	// Spawners
 	void		spawnPlayer();
 	void		spawnEnemies();
-
-	// Printers
-	void		printPlayer();
-	void		printEnemies();
-
 
 protected:
 
@@ -75,6 +76,7 @@ protected:
 
 	// List of bullets shot by enemies
 	Bullet *	_enemiesBullets;
+
 };
 
 
