@@ -77,7 +77,8 @@ public:
 			int						_grade;
 	};
 
-	// Constructor
+	// Constructors
+	Bureaucrat();
 	Bureaucrat(const std::string &name, int grade);
 
 	// Copy constructor
