@@ -21,7 +21,8 @@ class PresidentialPardonForm : public Form
 
 public:
 
-	// Constructor
+	// Constructors
+	PresidentialPardonForm();
 	PresidentialPardonForm(const std::string &target);
 
 	// Copy constructor

@@ -21,7 +21,8 @@ class RobotomyRequestForm : public Form
 
 public:
 
-	// Constructor
+	// Constructors
+	RobotomyRequestForm();
 	RobotomyRequestForm(const std::string &target);
 
 	// Copy constructor

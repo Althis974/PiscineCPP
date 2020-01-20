@@ -16,6 +16,8 @@
 #include "../includes/ShrubberyCreationForm.hpp"
 #include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/PresidentialPardonForm.hpp"
+#include <iostream>
+#include <stdexcept>
 
 int	main()
 {
@@ -65,7 +67,7 @@ int	main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << "\n----- Try to execute Form SShrubberyCreation with Bruce "
+	std::cout << "\n----- Try to execute Form ShrubberyCreation with Bruce "
 			  << "-----\n" << std::endl;
 	try
 	{

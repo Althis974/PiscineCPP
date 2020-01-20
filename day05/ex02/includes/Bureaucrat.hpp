@@ -28,7 +28,8 @@ public:
 	{
 		public:
 
-			// Constructor
+			// Constructors
+			GradeTooHighException();
 			GradeTooHighException(int grade);
 
 			// Copy constructor
@@ -56,7 +57,8 @@ public:
 
 		public:
 
-			// Constructor
+			// Constructors
+			GradeTooLowException();
 			GradeTooLowException(int grade);
 
 			// Copy constructor
@@ -79,7 +81,8 @@ public:
 			int						_grade;
 	};
 
-	// Constructor
+	// Constructors
+	Bureaucrat();
 	Bureaucrat(const std::string &name, int grade);
 
 	// Copy constructor
