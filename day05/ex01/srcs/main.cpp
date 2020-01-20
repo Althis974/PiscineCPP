@@ -13,6 +13,8 @@
 
 #include "../includes/Bureaucrat.hpp"
 #include "../includes/Form.hpp"
+#include <iostream>
+#include <stdexcept>
 
 int	main()
 {
@@ -67,7 +69,7 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "\n----- Try to sign B65 with Jim -----\n" << std::endl;
+	std::cout << "\n----- Try to sign B65 with Maggie -----\n" << std::endl;
 	try
 	{
 		maggie.signForm(b65);
@@ -89,7 +91,7 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "\n----- Try to sign A38 with Jim -----\n" << std::endl;
+	std::cout << "\n----- Try to sign A38 with Maggie -----\n" << std::endl;
 	try
 	{
 		a38.beSigned(maggie);
