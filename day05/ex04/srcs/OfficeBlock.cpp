@@ -107,6 +107,8 @@ void 						OfficeBlock::doBureaucracy(const std::string &type,
 
 	this->_signer->signForm(*form);
 	this->_executor->executeForm(*form);
+
+	delete form;
 }
 
 /*
