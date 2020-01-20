@@ -16,6 +16,7 @@
 
 # include "Bureaucrat.hpp"
 # include "Intern.hpp"
+# include <stdexcept>
 
 class OfficeBlock
 {
@@ -83,14 +84,18 @@ public:
 			const char *			what() const throw();
 	};
 
-	// Constructor
+	// Constructors
 	OfficeBlock();
+	OfficeBlock(Intern *intern, Bureaucrat *signer, Bureaucrat *executor);
 
 	// Copy constructor
-	OfficeBlock(Intern *intern, Bureaucrat *signer, Bureaucrat *executor);
+	OfficeBlock(const OfficeBlock &src);
 
 	// Destructor
 	~OfficeBlock();
+
+	// Assignation operator overload
+	OfficeBlock &					operator=(const OfficeBlock &rhs);
 
 	// Getters
 	Intern *						getIntern() const;
@@ -103,8 +108,8 @@ public:
 	void							setExecutor(Bureaucrat *executor);
 
 	// Attempt to create, sign and execute a form
-	void 							doBureaucracy(const std::string& type,
-													const std::string& target);
+	void 							doBureaucracy(const std::string &type,
+													const std::string &target);
 
 private:
 

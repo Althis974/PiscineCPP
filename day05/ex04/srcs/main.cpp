@@ -14,6 +14,8 @@
 #include "../includes/Bureaucrat.hpp"
 #include "../includes/Intern.hpp"
 #include "../includes/OfficeBlock.hpp"
+#include <iostream>
+#include <stdexcept>
 
 int	main()
 {
@@ -100,7 +102,7 @@ int	main()
 	}
 
 	Bureaucrat		armando = Bureaucrat("Armando", 50);
-	Bureaucrat		lucca = Bureaucrat("lucca", 115);
+	Bureaucrat		lucca = Bureaucrat("Lucca", 115);
 
 	std::cout << "\n----- Ritals try to make us compete -----\n" << std::endl;
 	try

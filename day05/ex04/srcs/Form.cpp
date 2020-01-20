@@ -37,7 +37,7 @@ Form::Form(const std::string &name, int gradeToBeSigned, int gradeToBeExecuted,
 
 // Copy constructor
 
-Form::Form(Form const &src) : _name(src._name), _signed(src._signed),
+Form::Form(const Form &src) : _name(src._name), _signed(src._signed),
 			_gradeToBeSigned(src._gradeToBeSigned),
 			_gradeToBeExecuted(src._gradeToBeExecuted), _target(src._target)
 {
@@ -120,7 +120,7 @@ std::ostream &		operator<<(std::ostream &out, const Form &rhs)
 		<< rhs.getGradeToBeExecuted() << ", status: "
 		<< (rhs.isSigned() ? "signed" : "not signed") << ").";
 
-	return out;
+	return (out);
 }
 
 /*
@@ -261,8 +261,10 @@ UnsignedException::~UnsignedException() throw()
 // Assignation operator overload
 
 UnsignedException &				UnsignedException::operator=(const
-															UnsignedException&)
+														UnsignedException &rhs)
 {
+	(void)rhs;
+
 	return (*this);
 }
 
