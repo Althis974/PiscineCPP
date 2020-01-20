@@ -63,7 +63,7 @@ int						Bureaucrat::getGrade() const
 
 // Setter
 
-void Bureaucrat::setGrade(int grade)
+void					Bureaucrat::setGrade(int grade)
 {
 	if (grade < 1)
 		throw GradeTooHighException(grade);
