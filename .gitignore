@@ -23,6 +23,10 @@ build/
 *_shrubbery
 sos
 
+# valgrind files
+
+*.dSYM/
+
 # executables
 
 megaphone
