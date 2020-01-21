@@ -15,7 +15,8 @@
 #include <string>
 #include <cstdlib>
 
-struct 				Data {
+struct 				Data
+{
 	std::string		s1;
 	int				n;
 	std::string		s2;
@@ -40,15 +41,19 @@ void *				serialize()
 
 	std::cout << "\n----- Serialized data -----\n" << std::endl;
 	std::cout << "Str (8 bytes): ";
+
 	for (int i = 0; i < 8; ++i)
 		std::cout << bytes[i] ;
+
 	std::cout << std::endl;
 	std::cout << "int (4 bytes): ";
 	std::cout << static_cast<int>(bytes[8]);
 	std::cout << std::endl;
 	std::cout << "Str (8 bytes): ";
+
 	for (int i = 12; i < 20; ++i)
 		std::cout << bytes[i];
+
 	std::cout << std::endl;
 
 	return (reinterpret_cast<void*>(bytes));
@@ -63,7 +68,9 @@ Data *				deserialize(void *raw)
 
 	for (int i = 0; i < 8; ++i)
 		data->s1 = data->s1 + bytes[i];
+
 	data->n = bytes[8];
+
 	for (int i = 12; i < 20; ++i)
 		data->s2 = data->s2 + bytes[i];
 
@@ -72,11 +79,12 @@ Data *				deserialize(void *raw)
 
 int					main()
 {
-	void *raw = serialize();
+	size_t *raw = static_cast<size_t*>(serialize());
 
 	if (!raw)
 	{
 		std::cout << "Allocation failed." << std::endl;
+
 		return (1);
 	}
 
@@ -87,6 +95,7 @@ int					main()
 	std::cout << "data->n      : " << std::dec << data->n << std::endl;
 	std::cout << "data->s2     : " << data->s2 << std::endl;
 
+	delete raw;
 	delete data;
 
 	return (0);
