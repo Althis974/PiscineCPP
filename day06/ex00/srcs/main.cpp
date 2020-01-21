@@ -36,7 +36,7 @@ void	convertToInt(double d)
 {
 	std::cout << "int: ";
 
-	if (d > INT_MAX || d < INT_MIN || std::isnan(d))
+	if (std::isnan(d) || d > INT_MAX || d < INT_MIN)
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << static_cast<int>(d) << std::endl;
@@ -48,7 +48,7 @@ void	convertToFloat(double d)
 {
 	std::cout << "float: ";
 
-	if (!(isinf(d) || isnan(d)) && (d < FLT_MIN || d > FLT_MAX))
+	if ((isinf(d) || isnan(d)) && (d < FLT_MIN || d > FLT_MAX))
 		std::cout << "impossible" << std::endl;
 	else if (floor(d) == d)
 		std::cout << std::fixed << std::setprecision(1)
@@ -63,7 +63,7 @@ void	convertToDouble(double d)
 {
 	std::cout << "double: ";
 
-	if (!(isinf(d) || isnan(d)) && (d < DBL_MIN || d > DBL_MAX))
+	if ((isinf(d) || isnan(d)) && (d < DBL_MIN || d > DBL_MAX))
 		std::cout << "impossible" << std::endl;
 	else if (floor(d) == d)
 		std::cout << std::fixed << std::setprecision(1) << d << std::endl;
@@ -92,16 +92,17 @@ void	check(const std::string &str)
 	convertToDouble(d);
 }
 
-int		main(int ac, char **av)
+int		main(int argc, char **argv)
 {
-	if (ac != 2)
+	if (argc != 2)
 	{
-		std::cout << ("usage: ./convert [char | int | float | double ]")
+		std::cout << "usage: " << argv[0] << " [char | int | float | double]"
 				  << std::endl;
+
 		return (1);
 	}
 
-	check(av[1]);
+	check(argv[1]);
 
 	return (0);
 }
