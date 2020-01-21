@@ -65,11 +65,11 @@ Base *			generate()
 
 void			identify_from_pointer(Base *p)
 {
-	if (dynamic_cast<A *>(p))
+	if (dynamic_cast<A*>(p))
 		std::cout << "A";
-	else if (dynamic_cast<B *>(p))
+	else if (dynamic_cast<B*>(p))
 		std::cout << "B";
-	else if (dynamic_cast<C *>(p))
+	else if (dynamic_cast<C*>(p))
 		std::cout << "C";
 }
 
@@ -79,7 +79,7 @@ void			identify_from_reference(Base &p)
 {
 	try
 	{
-		Base a = dynamic_cast<A &>(p);
+		Base a = dynamic_cast<A&>(p);
 		std::cout << "A";
 	}
 	catch(std::bad_cast e)
@@ -89,7 +89,7 @@ void			identify_from_reference(Base &p)
 
 	try
 	{
-		Base b = dynamic_cast<B &>(p);
+		Base b = dynamic_cast<B&>(p);
 		std::cout << "B";
 	}
 	catch(std::bad_cast e)
@@ -99,7 +99,7 @@ void			identify_from_reference(Base &p)
 
 	try
 	{
-		Base c = dynamic_cast<C &>(p);
+		Base c = dynamic_cast<C&>(p);
 		std::cout << "C";
 	}
 	catch(std::bad_cast e)
@@ -116,11 +116,14 @@ int				main()
 	{
 		std::cout << "\n----- ONE-MORE-TIME -----\n\n";
 
-		Base *ptr = generate();
+		Base *	ptr = generate();
 
 		identify_from_pointer(ptr);
+
 		std::cout << std::setw(WIDTH) << "|" << std::setw(WIDTH + 2);
+
 		identify_from_reference(*ptr);
+
 		std::cout << std::endl;
 
 		delete ptr;
