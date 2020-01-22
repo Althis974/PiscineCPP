@@ -12,6 +12,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 // Compares two arguments and returns the smallest one
 
