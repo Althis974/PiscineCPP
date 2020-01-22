@@ -26,22 +26,27 @@ void				iter(T *array, size_t len, void (*f)(const T &))
 // Print
 
 template <typename T>
-void				print(T const & x)
+void				print(const T &x)
 {
 	std::cout << x << std::endl;
 }
 
-int	main()
+int					main()
 {
 	int				tab[] = {2, 4, 7, 1, 9};
 	char			list[] = {'c', 'z', 'n', 'q', 'g'};
 	std::string		array[] = {"hello", "hallo", "salut", "ciao", "hola"};
 
 	std::cout << "\n------------ INT ARRAY -----------------\n" << std::endl;
+
 	iter<int>(tab, 5, print);
+
 	std::cout << "\n------------ CHAR ARRAY ----------------\n" << std::endl;
+
 	iter<char>(list, 5, print);
+
 	std::cout << "\n------------ STRING ARRAY --------------\n" << std::endl;
+
 	iter<std::string>(array, 5, print);
 
 	return (0);
