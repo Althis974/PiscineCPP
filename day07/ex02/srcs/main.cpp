@@ -16,6 +16,11 @@
 int main()
 {
 
+	std::cout << "\n------------- EMPTY ARRAY ---------------\n" << std::endl;
+
+	Array<int> empty;
+	std::cout << "Size = " << empty.size() << "\n" << std::endl;
+
 	std::cout << "\n------------- STRING ARRAY ---------------\n" << std::endl;
 
 	Array<std::string> array(5);
@@ -54,7 +59,7 @@ int main()
 
 	try
 	{
-		for (unsigned int i = 0; i < tab.size() + 1; i++)
+		for (unsigned int i = 0; i < tab.size() + 1; ++i)
 			std::cout << tab[i] << std::endl;
 	}
 	catch (std::exception &e)
