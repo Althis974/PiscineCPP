@@ -14,6 +14,7 @@
 #include "../includes/easyfind.hpp"
 #include <iostream>
 #include <list>
+#include <stdexcept>
 
 
 int main()
