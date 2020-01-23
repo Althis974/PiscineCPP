@@ -17,12 +17,12 @@
 
 Span::Span(unsigned int n) : _n(n)
 {
-	_v.reserve(n);
+	this->_vector.reserve(n);
 }
 
 // Copy constructor
 
-Span::Span(const Span &src) : _n(src._n), _v(src._v)
+Span::Span(const Span &src) : _n(src._n), _vector(src._vector)
 {
 
 }
@@ -36,25 +36,25 @@ Span::~Span()
 
 // Assignation operator overload
 
-Span &				Span::operator=(const Span &rhs)
+Span &					Span::operator=(const Span &rhs)
 {
-	_n = rhs._n;
-	_v = rhs._v;
+	this->_n = rhs._n;
+	this->_vector = rhs._vector;
 
 	return (*this);
 }
 
 // Store a number
 
-void				Span::addNumber(int n)
+void					Span::addNumber(int n)
 {
-	if (_v.size() < _n)
-		_v.push_back(n);
+	if (this->_vector.size() < this->_n)
+		this->_vector.push_back(n);
 	else
 		throw std::length_error("\n/!\\ Limit reached!\n");
 }
 
-void				swap(int *x, int *y)
+void					swap(int *x, int *y)
 {
 	int		tmp = *x;
 
@@ -64,30 +64,31 @@ void				swap(int *x, int *y)
 
 // Store a range of numbers
 
-void				Span::addRange(int x, int y)
+void					Span::addRange(int x, int y)
 {
 	if (x > y)
 		swap(&x, &y);
 
 	for (;x <= y; ++x)
 	{
-		if (_v.size() > _n)
+		if (this->_vector.size() > this->_n)
 			throw std::length_error("\n/!\\ Limit reached!\n");
 
-		_v.push_back(x);
+		this->_vector.push_back(x);
 	}
 }
 
 // Find the shortest span
 
-unsigned int		Span::shortestSpan()
+unsigned int			Span::shortestSpan()
 {
-	if (_v.size() <= 1)
+	if (this->_vector.size() < 2)
 		throw std::logic_error("\n/!\\ No span to find!\n");
 
-	int 						find;
-	int 						span = INT_MAX;
-	std::vector<int>			tmp = _v;
+	int					find;
+	int					span = INT_MAX;
+	std::vector<int>	tmp = this->_vector;
+
 	std::sort(tmp.begin(), tmp.end());
 	std::vector<int>::iterator	iterator = tmp.begin();
 	
@@ -106,11 +107,13 @@ unsigned int		Span::shortestSpan()
 
 // Find the longest span
 
-unsigned int		Span::longestSpan()
+unsigned int			Span::longestSpan()
 {
-	if (_v.size() <= 1)
+	if (this->_vector.size() < 2)
 		throw std::logic_error("\n/!\\ No span to find!\n");
 
-	return (*std::max_element(_v.begin(), _v.end()) -
-			*std::min_element(_v.begin(), _v.end()));
+	return (*std::max_element(this->_vector.begin(),
+			this->_vector.end()) -
+			*std::min_element(this->_vector.begin(),
+					this->_vector.end()));
 }

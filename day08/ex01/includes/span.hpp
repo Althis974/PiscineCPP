@@ -15,6 +15,7 @@
 #define SPAN_HPP
 
 #include <vector>
+#include <iostream>
 
 class Span
 {
@@ -22,6 +23,7 @@ class Span
 public:
 
 	// Constructor
+	Span();
 	Span(unsigned int n);
 
 	// Copy constructor
@@ -48,7 +50,7 @@ public:
 private:
 
 	unsigned int		_n;
-	std::vector<int>	_v;
+	std::vector<int>	_vector;
 };
 
 

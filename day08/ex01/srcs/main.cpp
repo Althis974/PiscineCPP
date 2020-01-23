@@ -13,8 +13,9 @@
 
 #include "../includes/span.hpp"
 #include <iostream>
+#include <stdexcept>
 
-int main()
+int			main()
 {
 	std::cout << "\n----------------- SPAN 5 ------------------\n" << std::endl;
 
