@@ -87,9 +87,15 @@ public:
 		_mutant.pop_back();
 	}
 
+	// Returns the number of elements
+	T					size()
+	{
+		return (_mutant.size());
+	}
+
 private:
 
-	std::vector<T>	_mutant;
+	std::vector<T>		_mutant;
 };
 
 

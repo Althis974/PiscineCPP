@@ -11,8 +11,9 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "../includes/mutantstack.hpp"
+#include <iostream>
+#include <list>
 
 int main()
 {
@@ -45,15 +46,42 @@ int main()
 
 	std::stack<int> a(mstack);
 
+	std::cout << "\n--------------- WITH LIST -----------------\n" << std::endl;
+
+	std::list<int> list;
+
+	list.push_front(5);
+	list.push_front(17);
+	std::cout << list.front() << std::endl;
+
+	list.pop_front();
+	std::cout << list.size() << std::endl;
+
+	list.push_back(3);
+	list.push_back(5);
+	list.push_back(737);
+	list.push_back(0);
+
+	std::list<int>::iterator iter = list.begin();
+	std::list<int>::iterator itere = list.end();
+
+	++iter;
+	--iter;
+	while (iter != itere)
+	{
+		std::cout << *iter << std::endl;
+		++iter;
+	}
+
 	std::cout << "\n--------------- DERIVED PART --------------\n" << std::endl;
 
-	MutantStack<int>	mutantstack(a);
+	MutantStack<int>	mutantStack(a);
 
 	for (int i = 1; i < 43; ++i)
-		mutantstack.push(i);
+		mutantStack.push(i);
 
-	it = mutantstack.begin();
-	ite = mutantstack.end();
+	it = mutantStack.begin();
+	ite = mutantStack.end();
 
 	while (it != ite)
 	{
