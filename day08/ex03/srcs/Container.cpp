@@ -88,7 +88,7 @@ void					Container::decrement()
 
 // . : output the byte at the data pointer
 
-void Container::write()
+void					Container::write()
 {
 	std::cout << *this->getCell();
 	std::cout.flush();
@@ -97,7 +97,7 @@ void Container::write()
 // , : accept one byte of input, storing its value in the byte
 // at the data pointer
 
-void Container::read()
+void					Container::read()
 {
 	std::cin >> *this->getCell();
 }

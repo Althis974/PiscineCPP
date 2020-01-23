@@ -36,7 +36,7 @@ Decrement::~Decrement()
 
 // Assignation operator overload
 
-Decrement &Decrement::operator=(const Decrement &rhs)
+Decrement &		Decrement::operator=(const Decrement &rhs)
 {
 	AInstructions::operator=(rhs);
 
@@ -45,7 +45,7 @@ Decrement &Decrement::operator=(const Decrement &rhs)
 
 // Execute instructions
 
-void Decrement::execute()
+void			Decrement::execute()
 {
 	this->_container->decrement();
 }

@@ -19,17 +19,20 @@ void			mindopen(std::istream &input)
 {
 	Parser parser;
 	std::stringstream stringStream;
-	std::vector<AInstructions *> vector;
+	std::vector<AInstructions*> vector;
 
 	stringStream << input.rdbuf();
 
 	parser.parse(vector, stringStream);
 
-	for (std::vector<AInstructions *>::iterator it = vector.begin();
+	for (std::vector<AInstructions*>::iterator it = vector.begin();
 			it != vector.end(); ++it)
 	{
 		(*it)->execute();
 	}
+
+	for (size_t i = 0; i < vector.size(); ++i)
+		delete vector[i];
 }
 
 int				main(int argc, char **argv)

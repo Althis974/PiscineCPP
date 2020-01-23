@@ -23,7 +23,7 @@ class Loop : public AInstructions
 public:
 
 	// Constructor
-	Loop(Container *container, const std::vector<AInstructions *> &vector);
+	Loop(Container *container, const std::vector<AInstructions*> &vector);
 
 	// Copy constructor
 	Loop(const Loop &src);
@@ -39,7 +39,7 @@ public:
 
 private:
 
-	std::vector<AInstructions *>	_vector;
+	std::vector<AInstructions*>		_vector;
 };
 
 

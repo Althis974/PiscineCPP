@@ -42,8 +42,8 @@ public:
 	Parser &	operator=(const Parser &rhs);
 
 	// Parse instructions
-	void		parse(std::vector<AInstructions *> &vector,
-			std::stringstream &stringStream);
+	void		parse(std::vector<AInstructions*> &vector,
+						std::stringstream &stringStream);
 
 private:
 

@@ -34,7 +34,7 @@ public:
 	Container &			operator=(const Container &rhs);
 
 	// Getter
-	char 				*getCell();
+	char *				getCell();
 
 	// > : increment the data pointer (to point to the next cell to the right)
 	void				moveRight();

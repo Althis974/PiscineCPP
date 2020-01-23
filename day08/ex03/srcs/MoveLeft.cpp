@@ -36,7 +36,7 @@ MoveLeft::~MoveLeft()
 
 // Assignation operator overload
 
-MoveLeft &				MoveLeft::operator=(const MoveLeft &rhs)
+MoveLeft &		MoveLeft::operator=(const MoveLeft &rhs)
 {
 	AInstructions::operator=(rhs);
 
@@ -45,7 +45,7 @@ MoveLeft &				MoveLeft::operator=(const MoveLeft &rhs)
 
 // Execute instructions
 
-void MoveLeft::execute()
+void			MoveLeft::execute()
 {
 	this->_container->moveLeft();
 }

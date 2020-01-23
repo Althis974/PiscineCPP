@@ -14,7 +14,6 @@
 #ifndef WRITE_HPP
 #define WRITE_HPP
 
-
 #include "AInstructions.hpp"
 
 class Write : public AInstructions

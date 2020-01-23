@@ -15,7 +15,7 @@
 
 // Constructor
 
-Loop::Loop(Container *container, const std::vector<AInstructions *> &vector) :
+Loop::Loop(Container *container, const std::vector<AInstructions*> &vector) :
 			AInstructions(container), _vector(vector)
 {
 
@@ -32,7 +32,8 @@ Loop::Loop(const Loop &src) : AInstructions(src), _vector(src._vector)
 
 Loop::~Loop()
 {
-
+	for (size_t i = 0; i < this->_vector.size(); ++i)
+		delete this->_vector[i];
 }
 
 // Assignation operator overload
@@ -47,10 +48,10 @@ Loop &				Loop::operator=(const Loop &rhs)
 
 void				Loop::execute()
 {
-	if (!*this->_container->getCell())
+	if (!(*this->_container->getCell()))
 		return;
 
-	for (std::vector<AInstructions *>::iterator it = this->_vector.begin();
+	for (std::vector<AInstructions*>::iterator it = this->_vector.begin();
 			it != this->_vector.end(); ++it)
 	{
 		(*it)->execute();
