@@ -28,14 +28,26 @@ Token::Token(int n) : _type(NUM), _value(n)
 
 Token::Token(char c) : _value(c)
 {
-	if (c == '+' || c == '-' || c == '/' || c == '*')
-		this->_type = OP;
-	else if (c == '(')
-		this->_type = PAR_OPEN;
-	else if (c == ')')
-		this->_type = PAR_CLOSE;
-	else
-		throw std::runtime_error("Invalid token");
+	switch (c)
+	{
+		case '+':
+		case '-':
+		case '/':
+		case '*':
+			this->_type = OP;
+			break;
+
+		case '(':
+			this->_type = PAR_OPEN;
+			break;
+
+		case ')':
+			this->_type = PAR_CLOSE;
+			break;
+
+		default:
+			throw std::runtime_error("Invalid token");
+	}
 }
 
 // Copy constructor

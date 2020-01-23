@@ -16,6 +16,8 @@
 #include "../includes/Rpn.hpp"
 #include "../includes/Solver.hpp"
 #include <iostream>
+#include <vector>
+#include <stdexcept>
 
 int 				checkExpression(const std::string &expr)
 {
