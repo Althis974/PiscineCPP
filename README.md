@@ -6,15 +6,15 @@ Cette piscine C++ est le passage obligé pour le déblocage des projets de progr
 
 ## Objectives
 
-Classes et objets
-Héritage
-Polymorphisme
-Casts C/C++
-Templates
-STL
+- Classes et objets
+- Héritage
+- Polymorphisme
+- Casts C/C++
+- Templates
+- STL
 
 ## Skills
 
-Object-oriented programming
-Imperative programming
-Rigor
+- Object-oriented programming
+- Imperative programming
+- Rigor
